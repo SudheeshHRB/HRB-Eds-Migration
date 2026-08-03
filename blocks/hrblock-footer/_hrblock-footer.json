@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "H&R Block Footer",
+      "id": "hrblock-footer",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "H&R Block Footer",
+              "model": "hrblock-footer",
+              "filter": "hrblock-footer",
+              "classes": "green-dark-theme"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hrblock-footer",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Footer Theme",
+          "valueType": "string",
+          "value": "green-dark-theme",
+          "options": [
+            { "name": "Green Dark Theme", "value": "green-dark-theme" },
+            { "name": "Default", "value": "" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "hrblock-footer",
+      "components": [
+        "section",
+        "columns",
+        "text",
+        "button",
+        "title",
+        "image",
+        "footer-support",
+        "footer-links",
+        "footer-legal",
+        "footer-seals"
+      ]
+    }
+  ]
+}

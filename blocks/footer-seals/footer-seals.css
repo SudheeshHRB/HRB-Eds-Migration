@@ -7,13 +7,13 @@
   padding: 0 25px;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .footer-seals .container {
     padding: 0 40px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .footer-seals .container {
     padding: 0 80px;
   }
@@ -28,6 +28,7 @@
 
 .footer-seals .truste-seal img {
   display: block;
+  width: 100%;
   max-width: 126px;
   height: auto;
 }
@@ -40,5 +41,5 @@
 
 .footer-seals .privacy-choices:hover,
 .footer-seals .privacy-choices:focus {
-  opacity: 0.85;
+  opacity: 85%;
 }

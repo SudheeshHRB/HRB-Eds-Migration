@@ -1,7 +1,4 @@
-/**
- * Footer Links block — S2 Link Columns
- * Renders 4-column footer menu grid matching hrblock.com production footer.
- */
+
 export default function decorate(block) {
   const rows = [...block.children];
   if (rows.length === 0) return;

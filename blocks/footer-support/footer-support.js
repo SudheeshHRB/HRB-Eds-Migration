@@ -1,11 +1,10 @@
-/**
- * Footer Support block — S1 Need Support
- * Heading + Customer help / Find an office / Search CTAs
- */
+
 export default function decorate(block) {
   const data = {};
+
   [...block.children].forEach((row) => {
     const cells = [...row.children];
+
     if (cells.length >= 2) {
       data[cells[0].textContent.trim()] = cells[1].innerHTML.trim();
     }
@@ -33,23 +32,55 @@ export default function decorate(block) {
   list.className = 'support-actions';
 
   const actions = [
-    { label: helpLabel, href: helpLink, track: 'call block', type: 'link' },
-    { label: officeLabel, href: officeAction, track: 'find an office', type: 'button' },
-    { label: searchLabel, href: searchAction, track: 'search', type: 'button' },
+    {
+      label: helpLabel,
+      href: helpLink,
+      track: 'call block',
+      type: 'link',
+    },
+    {
+      label: officeLabel,
+      href: officeAction,
+      track: 'find an office',
+      type: 'button',
+    },
+    {
+      label: searchLabel,
+      href: searchAction,
+      track: 'search',
+      type: 'button',
+    },
   ];
 
   actions.forEach((action) => {
     const li = document.createElement('li');
-    const el = document.createElement(action.type === 'link' ? 'a' : 'button');
+
+    const el = document.createElement(
+      action.type === 'link' ? 'a' : 'button',
+    );
+
     el.className = 'icon-btn';
     el.textContent = action.label;
-    el.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: action.track }));
+
+    el.setAttribute(
+      'data-track',
+      JSON.stringify({
+        loc: 'f',
+        nm: action.track,
+      }),
+    );
+
     if (action.type === 'link') {
       el.href = action.href;
     } else {
       el.type = 'button';
-      el.setAttribute('data-action', action.href.replace(/^#/, ''));
+
+      el.setAttribute(
+        'data-action',
+        action.href.replace(/^#/, ''),
+      );
     }
+
     li.appendChild(el);
     list.appendChild(li);
   });

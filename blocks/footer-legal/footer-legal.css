@@ -3,6 +3,7 @@
   padding: 30px 0;
   border-top: 1px solid rgb(246 244 233 / 20%);
 }
+
 .footer-legal .container {
   padding: 0 25px;
 }
@@ -11,11 +12,13 @@
     padding: 0 40px;
   }
 }
+
 @media (width >= 1024px) {
   .footer-legal .container {
     padding: 0 80px;
   }
 }
+
 .footer-legal .copyright-inner {
   display: flex;
   flex: 0 1 auto;
@@ -30,6 +33,7 @@
     flex-flow: row wrap;
   }
 }
+
 .footer-legal .legal-copy {
   flex: 1 1 280px;
   color: #f6f4e9;
@@ -49,6 +53,7 @@
   padding: 0;
   list-style: none;
 }
+
 .footer-legal .social-link {
   display: inline-flex;
   align-items: center;

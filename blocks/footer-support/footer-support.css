@@ -7,13 +7,13 @@
   padding: 0 25px;
 }
 
-@media (min-width: 768px) {
+@media (min-width >= 768px) {
   .footer-support .container {
     padding: 0 40px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width >= 1024px) {
   .footer-support .container {
     padding: 0 80px;
   }

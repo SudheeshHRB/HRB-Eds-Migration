@@ -1,5 +1,5 @@
 .footer-links.links-footer {
-  width>= 100%;
+  width: 100%;
 }
 
 .footer-links .container {
@@ -7,13 +7,13 @@
   position: relative;
 }
 
-@media (width>= 768px) {
+@media (min-width: 768px) {
   .footer-links .container {
     padding: 0 40px;
   }
 }
 
-@media (width>= 1024px) {
+@media (min-width: 1024px) {
   .footer-links .container {
     padding: 0 80px;
   }
@@ -25,19 +25,19 @@
 }
 
 .footer-links .column {
-  width>= 100%;
+  width: 100%;
   flex-basis: auto;
 }
 
-@media (width>= 768px) {
+@media (min-width: 768px) {
   .footer-links .column {
-    width>= 50%;
+    width: 50%;
   }
 }
 
-@media (width>= 1024px) {
+@media (min-width: 1024px) {
   .footer-links .column {
-    width>= 25%;
+    width: 25%;
     padding-right: 20px;
   }
 }

@@ -3,7 +3,8 @@ footer.site-footer.green-dark-theme,
   background-color: #00534c;
   color: #f6f4e9;
   padding: 40px 0 20px;
-  width>= 100%;
+  width: 100%;
+}
 
 footer.site-footer .color-eggshell,
 .hrblock-footer .color-eggshell {
@@ -18,7 +19,7 @@ footer.site-footer a,
 /* Nested section spacing inside footer XF */
 footer.site-footer > .section,
 footer.site-footer > div {
-  max-width>= 100%;
+  max-width: 100%;
 }
 
 footer.site-footer .need-help-footer h2,
@@ -66,7 +67,7 @@ footer.site-footer .copyright-footer.sm-md-column-reverse,
   flex-direction: column-reverse;
 }
 
-@media (width>= 768px) {
+@media (min-width: 768px) {
   footer.site-footer .copyright-footer.sm-md-column-reverse,
   .hrblock-footer .copyright-footer.sm-md-column-reverse {
     flex-direction: row;

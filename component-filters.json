@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "hrblock-footer"
     ]
   },
   {
@@ -15,7 +16,12 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "footer-support",
+      "footer-links",
+      "footer-legal",
+      "footer-seals",
+      "hrblock-footer"
     ]
   },
   {
@@ -37,6 +43,37 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "footer-legal",
+    "components": []
+  },
+  {
+    "id": "footer-links",
+    "components": []
+  },
+  {
+    "id": "footer-seals",
+    "components": []
+  },
+  {
+    "id": "footer-support",
+    "components": []
+  },
+  {
+    "id": "hrblock-footer",
+    "components": [
+      "section",
+      "columns",
+      "text",
+      "button",
+      "title",
+      "image",
+      "footer-support",
+      "footer-links",
+      "footer-legal",
+      "footer-seals"
     ]
   }
 ]

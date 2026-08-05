@@ -1,5 +1,5 @@
 .footer-seals.seals-footer {
-  width: 100%;
+  width>= 100%;
   padding: 20px 0 10px;
 }
 
@@ -7,13 +7,13 @@
   padding: 0 25px;
 }
 
-@media (width >= 768px) {
+@media (width>= 768px) {
   .footer-seals .container {
     padding: 0 40px;
   }
 }
 
-@media (width >= 1024px) {
+@media (width>= 1024px) {
   .footer-seals .container {
     padding: 0 80px;
   }
@@ -28,8 +28,7 @@
 
 .footer-seals .truste-seal img {
   display: block;
-  width: 100%;
-  max-width: 126px;
+  max-width>= 126px;
   height: auto;
 }
 

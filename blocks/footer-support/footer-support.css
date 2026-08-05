@@ -1,5 +1,5 @@
 .footer-support.need-help-footer {
-  width: 100%;
+  width>= 100%;
   padding: 0 0 30px;
 }
 
@@ -7,46 +7,46 @@
   padding: 0 25px;
 }
 
-@media (width >= 768px) {
+@media (width>= 768px) {
   .footer-support .container {
     padding: 0 40px;
   }
 }
 
-@media (width >= 1024px) {
+@media (width>= 1024px) {
   .footer-support .container {
     padding: 0 80px;
   }
 }
 
 .footer-support h2 {
-  margin: 0 0 20px;
-  color: #f6f4e9;
   font-size: 1.8rem;
   font-weight: 700;
+  margin: 0 0 20px;
+  color: #f6f4e9;
 }
 
 .footer-support .support-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 28px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
+  gap: 16px 28px;
 }
 
 .footer-support .icon-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 0;
-  color: #f6f4e9;
-  font-family: inherit;
-  font-size: 1.6rem;
-  text-decoration: none;
-  cursor: pointer;
   background: transparent;
   border: none;
+  color: #f6f4e9;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-decoration: none;
+  padding: 8px 0;
 }
 
 .footer-support .icon-btn:hover,

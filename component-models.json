@@ -185,44 +185,16 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "legal_text",
+        "name": "legal",
         "label": "Legal / Copyright Text",
         "value": "<p>Copyright © 2025-2026 HRB Digital LLC. All Rights Reserved.</p><p>Bank products and services are offered by Pathward®, N.A.</p><p>All deposit accounts through Pathward® are FDIC insured.</p>"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "tiktok_url",
-        "label": "TikTok URL",
-        "value": "https://www.tiktok.com/@hrblock"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "facebook_url",
-        "label": "Facebook URL",
-        "value": "https://www.facebook.com/hrblock"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "instagram_url",
-        "label": "Instagram URL",
-        "value": "https://www.instagram.com/hrblock/"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "youtube_url",
-        "label": "YouTube URL",
-        "value": "https://www.youtube.com/hrblock"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "linkedin_url",
-        "label": "LinkedIn URL",
-        "value": "https://www.linkedin.com/company/h&r-block"
+        "name": "socialLinks",
+        "label": "Social Links (JSON)",
+        "value": "{\"tiktok\":\"https://www.tiktok.com/@hrblock\",\"facebook\":\"https://www.facebook.com/hrblock\",\"instagram\":\"https://www.instagram.com/hrblock/\",\"youtube\":\"https://www.youtube.com/hrblock\",\"linkedin\":\"https://www.linkedin.com/company/h&r-block\"}"
       }
     ]
   },
@@ -230,151 +202,32 @@
     "id": "footer-links",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "col1_menu1_title",
-        "label": "Col 1 — Menu 1 Title",
-        "value": "Tax Services"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col1_menu1_id",
-        "label": "Col 1 — Menu 1 ID",
-        "value": "Tax_Services"
+        "name": "col1",
+        "label": "Column 1",
+        "value": "<div><h5><strong>Tax Services</strong></h5><ul><li><a href=\"/tax-offices/manage-appointment/\">Reschedule or manage appointment</a></li><li><a href=\"/online-tax-filing/\">Online tax filing</a></li><li><a href=\"/tax-offices/\">File with a tax pro</a></li><li><a href=\"/online-tax-filing/free-online-tax-filing/\">Free online tax filing</a></li><li><a href=\"/tax-software/\">Tax software</a></li><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield</a></li><li><a href=\"/tax-offices/extended-tax-services/tax-audit/audit-support/\">Audit &amp; Tax Notice Support</a></li><li><a href=\"/expat-tax-preparation/\">Expat tax services</a></li></ul><h5><strong>Small Business Services</strong></h5><ul><li><a href=\"https://www.blockadvisors.com/\" target=\"_blank\">Block Advisors</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li><li><a href=\"/tax-offices/business-services/small-business-bookkeeping-services/\">Small business bookkeeping</a></li><li><a href=\"/tax-offices/business-services/small-business-payroll-services/\">Small business payroll</a></li><li><a href=\"/tax-offices/business-services/business-formation-incorporation-services/\">Business formation services</a></li><li><a href=\"https://www.waveapps.com/\" target=\"_blank\">Wave Financial</a></li></ul></div>"
       },
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "col1_menu1_links",
-        "label": "Col 1 — Menu 1 Links (HTML list)",
-        "value": "<ul><li><a href=\"/tax-offices/manage-appointment/\">Reschedule or manage appointment</a></li><li><a href=\"/online-tax-filing/\">Online tax filing</a></li><li><a href=\"/tax-offices/\">File with a tax pro</a></li><li><a href=\"/online-tax-filing/free-online-tax-filing/\">Free online tax filing</a></li><li><a href=\"/tax-software/\">Tax software</a></li><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield</a></li><li><a href=\"/tax-offices/extended-tax-services/tax-audit/audit-support/\">Audit &amp; Tax Notice Support</a></li><li><a href=\"/expat-tax-preparation/\">Expat tax services</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col1_menu2_title",
-        "label": "Col 1 — Menu 2 Title",
-        "value": "Small Business Services"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col1_menu2_id",
-        "label": "Col 1 — Menu 2 ID",
-        "value": "Small_Business_Services"
+        "name": "col2",
+        "label": "Column 2",
+        "value": "<div><h5><strong>Tax Tools</strong></h5><ul><li><a href=\"/myblock-benefits/\">MyBlock</a></li><li><a href=\"/mobile-apps/\">Mobile apps</a></li><li><a href=\"/tax-calculator/\">Tax calculator</a></li><li><a href=\"/tax-prep-checklist/\">Tax prep checklist</a></li><li><a href=\"/tax-appointment-preparation/\">Appointment Prep Guide</a></li><li><a href=\"/tax-offices/tax-refund-payment/\">Refund &amp; payment options</a></li><li><a href=\"/tax-payment-center/\">Tax payment center</a></li><li><a href=\"/wheres-my-refund/\">Where's my refund?</a></li><li><a href=\"/w-4-calculator/\">W-4 calculator</a></li></ul><h5><strong>Legal</strong></h5><ul><li><a href=\"/universal/terms/\">Terms</a></li><li><a href=\"/universal/digital-online-mobile-privacy-principles/\">Privacy notice</a></li><li><a href=\"/financial-services/privacy-statement/\">Pathward privacy notice</a></li></ul></div>"
       },
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "col1_menu2_links",
-        "label": "Col 1 — Menu 2 Links (HTML list)",
-        "value": "<ul><li><a href=\"https://www.blockadvisors.com/\" target=\"_blank\">Block Advisors</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li><li><a href=\"/tax-offices/business-services/small-business-bookkeeping-services/\">Small business bookkeeping</a></li><li><a href=\"/tax-offices/business-services/small-business-payroll-services/\">Small business payroll</a></li><li><a href=\"/tax-offices/business-services/business-formation-incorporation-services/\">Business formation services</a></li><li><a href=\"https://www.waveapps.com/\" target=\"_blank\">Wave Financial</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col2_menu1_title",
-        "label": "Col 2 — Menu 1 Title",
-        "value": "Tax Tools"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col2_menu1_id",
-        "label": "Col 2 — Menu 1 ID",
-        "value": "Tax_Tools"
+        "name": "col3",
+        "label": "Column 3",
+        "value": "<div><h5><strong>Financial Services</strong></h5><ul><li><a href=\"/financial-services/emerald-advance-loan-vs-refund-advance/\">Explore loans</a></li><li><a href=\"/financial-services/spruce/\">Spruce</a></li><li><a href=\"/financial-services/emerald-card-services/\">Emerald Card</a></li><li><a href=\"/financial-services/tax-refund-payment/\">Refund Transfer</a></li><li><a href=\"/financial-services/emerald-advance-loan/\">Emerald Advance Loan</a></li><li><a href=\"/offers/refund-advance/\">Refund Advance</a></li></ul><h5><strong>Resources</strong></h5><ul><li><a href=\"/support/\">Customer help &amp; support</a></li><li><a href=\"/tax-center/\">Tax questions</a></li><li><a href=\"/tax-offices/local/\">Office locations</a></li><li><a href=\"/tax-offices/international/\">International locations</a></li><li><a href=\"/taxes-site-index/\">Sitemap</a></li></ul></div>"
       },
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "col2_menu1_links",
-        "label": "Col 2 — Menu 1 Links (HTML list)",
-        "value": "<ul><li><a href=\"/myblock-benefits/\">MyBlock</a></li><li><a href=\"/mobile-apps/\">Mobile apps</a></li><li><a href=\"/tax-calculator/\">Tax calculator</a></li><li><a href=\"/tax-prep-checklist/\">Tax prep checklist</a></li><li><a href=\"/tax-appointment-preparation/\">Appointment Prep Guide</a></li><li><a href=\"/tax-offices/tax-refund-payment/\">Refund &amp; payment options</a></li><li><a href=\"/tax-payment-center/\">Tax payment center</a></li><li><a href=\"/wheres-my-refund/\">Where's my refund?</a></li><li><a href=\"/w-4-calculator/\">W-4 calculator</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col2_menu2_title",
-        "label": "Col 2 — Menu 2 Title",
-        "value": "Legal"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col2_menu2_id",
-        "label": "Col 2 — Menu 2 ID",
-        "value": "Legal"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "col2_menu2_links",
-        "label": "Col 2 — Menu 2 Links (HTML list)",
-        "value": "<ul><li><a href=\"/universal/terms/\">Terms</a></li><li><a href=\"/universal/digital-online-mobile-privacy-principles/\">Privacy notice</a></li><li><a href=\"/financial-services/privacy-statement/\">Pathward privacy notice</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col3_menu1_title",
-        "label": "Col 3 — Menu 1 Title",
-        "value": "Financial Services"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col3_menu1_id",
-        "label": "Col 3 — Menu 1 ID",
-        "value": "Financial_Services"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "col3_menu1_links",
-        "label": "Col 3 — Menu 1 Links (HTML list)",
-        "value": "<ul><li><a href=\"/financial-services/emerald-advance-loan-vs-refund-advance/\">Explore loans</a></li><li><a href=\"/financial-services/spruce/\">Spruce</a></li><li><a href=\"/financial-services/emerald-card-services/\">Emerald Card</a></li><li><a href=\"/financial-services/tax-refund-payment/\">Refund Transfer</a></li><li><a href=\"/financial-services/emerald-advance-loan/\">Emerald Advance Loan</a></li><li><a href=\"/offers/refund-advance/\">Refund Advance</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col3_menu2_title",
-        "label": "Col 3 — Menu 2 Title",
-        "value": "Resources"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col3_menu2_id",
-        "label": "Col 3 — Menu 2 ID",
-        "value": "Resources"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "col3_menu2_links",
-        "label": "Col 3 — Menu 2 Links (HTML list)",
-        "value": "<ul><li><a href=\"/support/\">Customer help &amp; support</a></li><li><a href=\"/tax-center/\">Tax questions</a></li><li><a href=\"/tax-offices/local/\">Office locations</a></li><li><a href=\"/tax-offices/international/\">International locations</a></li><li><a href=\"/taxes-site-index/\">Sitemap</a></li></ul>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col4_menu1_title",
-        "label": "Col 4 — Menu 1 Title",
-        "value": "About H&R Block"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "col4_menu1_id",
-        "label": "Col 4 — Menu 1 ID",
-        "value": "About_H&R_Block"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "col4_menu1_links",
-        "label": "Col 4 — Menu 1 Links (HTML list)",
-        "value": "<ul><li><a href=\"/corporate/\">About us</a></li><li><a href=\"/makeeveryblockbetter/\">Make Every Block Better</a></li><li><a href=\"https://careers.hrblock.com\" target=\"_blank\">Careers</a></li><li><a href=\"/corporate/tax-franchise/\">Buy or sell an office</a></li><li><a href=\"/corporate/income-tax-course/\">Income tax course</a></li><li><a href=\"/tax-center/newsroom/\">News Center</a></li><li><a href=\"https://investors.hrblock.com/\" target=\"_blank\">Investor relations</a></li><li><a href=\"https://www.thetaxinstitute.com/\" target=\"_blank\">The Tax Institute</a></li><li><a href=\"/guarantees/\">Guarantees</a></li></ul>"
+        "name": "col4",
+        "label": "Column 4",
+        "value": "<div><h5><strong>About H&R Block</strong></h5><ul><li><a href=\"/corporate/\">About us</a></li><li><a href=\"/makeeveryblockbetter/\">Make Every Block Better</a></li><li><a href=\"https://careers.hrblock.com\" target=\"_blank\">Careers</a></li><li><a href=\"/corporate/tax-franchise/\">Buy or sell an office</a></li><li><a href=\"/corporate/income-tax-course/\">Income tax course</a></li><li><a href=\"/tax-center/newsroom/\">News Center</a></li><li><a href=\"https://investors.hrblock.com/\" target=\"_blank\">Investor relations</a></li><li><a href=\"https://www.thetaxinstitute.com/\" target=\"_blank\">The Tax Institute</a></li><li><a href=\"/guarantees/\">Guarantees</a></li></ul></div>"
       }
     ]
   },
@@ -384,37 +237,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "seal_src",
-        "label": "TRUSTe Seal Image URL",
-        "value": "//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d"
+        "name": "seal",
+        "label": "TRUSTe Seal Details (JSON)",
+        "value": "{\"src\":\"//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"href\":\"//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"alt\":\"TRUSTe Privacy Certification\"}"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "seal_href",
-        "label": "TRUSTe Seal Link",
-        "value": "//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "seal_alt",
-        "label": "Seal Alt Text",
-        "value": "TRUSTe Privacy Certification"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "privacy_label",
-        "label": "Privacy Choices Label",
-        "value": "Your Privacy Choices"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "privacy_href",
-        "label": "Privacy Choices URL",
-        "value": "https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107"
+        "name": "privacy",
+        "label": "Privacy Choices Details (JSON)",
+        "value": "{\"label\":\"Your Privacy Choices\",\"href\":\"https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107\"}"
       }
     ]
   },
@@ -431,44 +263,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "help_label",
-        "label": "Customer Help Label",
-        "value": "Customer help"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "help_link",
-        "label": "Customer Help Link",
-        "value": "/support/"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "office_label",
-        "label": "Find Office Label",
-        "value": "Find an office"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "office_action",
-        "label": "Find Office Action",
-        "value": "#find-office"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "search_label",
-        "label": "Search Label",
-        "value": "Search"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "search_action",
-        "label": "Search Action",
-        "value": "#site-search"
+        "name": "actions",
+        "label": "Support Actions (JSON)",
+        "value": "{\"help\":{\"label\":\"Customer help\",\"href\":\"/support/\"},\"office\":{\"label\":\"Find an office\",\"action\":\"#find-office\"},\"search\":{\"label\":\"Search\",\"action\":\"#site-search\"}}"
       }
     ]
   },

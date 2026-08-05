@@ -31,44 +31,9 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "help_label",
-          "label": "Customer Help Label",
-          "value": "Customer help"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "help_link",
-          "label": "Customer Help Link",
-          "value": "/support/"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "office_label",
-          "label": "Find Office Label",
-          "value": "Find an office"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "office_action",
-          "label": "Find Office Action",
-          "value": "#find-office"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "search_label",
-          "label": "Search Label",
-          "value": "Search"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "search_action",
-          "label": "Search Action",
-          "value": "#site-search"
+          "name": "actions",
+          "label": "Support Actions (JSON)",
+          "value": "{\"help\":{\"label\":\"Customer help\",\"href\":\"/support/\"},\"office\":{\"label\":\"Find an office\",\"action\":\"#find-office\"},\"search\":{\"label\":\"Search\",\"action\":\"#site-search\"}}"
         }
       ]
     }

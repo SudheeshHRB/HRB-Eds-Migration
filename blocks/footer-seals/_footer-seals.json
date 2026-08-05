@@ -24,37 +24,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "seal_src",
-          "label": "TRUSTe Seal Image URL",
-          "value": "//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d"
+          "name": "seal",
+          "label": "TRUSTe Seal Details (JSON)",
+          "value": "{\"src\":\"//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"href\":\"//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"alt\":\"TRUSTe Privacy Certification\"}"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "seal_href",
-          "label": "TRUSTe Seal Link",
-          "value": "//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "seal_alt",
-          "label": "Seal Alt Text",
-          "value": "TRUSTe Privacy Certification"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "privacy_label",
-          "label": "Privacy Choices Label",
-          "value": "Your Privacy Choices"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "privacy_href",
-          "label": "Privacy Choices URL",
-          "value": "https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107"
+          "name": "privacy",
+          "label": "Privacy Choices Details (JSON)",
+          "value": "{\"label\":\"Your Privacy Choices\",\"href\":\"https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107\"}"
         }
       ]
     }

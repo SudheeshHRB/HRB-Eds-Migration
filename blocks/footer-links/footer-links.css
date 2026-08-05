@@ -7,13 +7,13 @@
   position: relative;
 }
 
-@media (min-width >= 768px) {
+@media (width >= 768px) {
   .footer-links .container {
     padding: 0 40px;
   }
 }
 
-@media (min-width >= 1024px) {
+@media (width >= 1024px) {
   .footer-links .container {
     padding: 0 80px;
   }
@@ -29,13 +29,13 @@
   flex-basis: auto;
 }
 
-@media (min-width >= 768px) {
+@media (width >= 768px) {
   .footer-links .column {
     width: 50%;
   }
 }
 
-@media (min-width >= 1024px) {
+@media (width >= 1024px) {
   .footer-links .column {
     width: 25%;
     padding-right: 20px;

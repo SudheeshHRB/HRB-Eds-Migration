@@ -1,7 +1,6 @@
 .footer-legal.copyright-footer {
   width: 100%;
-  padding: 30px 0;
-  /* border-top: 1px solid rgb(246, 244, 233, 20%); */
+  padding: 30px 0;  /* border-top: 1px solid rgb(246, 244, 233, 20%); */
 }
 
 .footer-legal .container {
@@ -63,8 +62,7 @@
   padding: 8px 10px;
   color: #f6f4e9;
   text-decoration: none;
-  font-size: 1.2rem;
-  /* border: 1px solid rgb(246, 244, 233 / 35%); */
+  font-size: 1.2rem;  /* border: 1px solid rgb(246, 244, 233 / 35%); */
   border-radius: 4px;
 }
 

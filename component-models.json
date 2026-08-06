@@ -186,67 +186,92 @@
         "component": "richtext",
         "valueType": "string",
         "name": "legal",
-        "label": "Legal / Copyright Text",
-        "value": "<p>Copyright © 2025-2026 HRB Digital LLC. All Rights Reserved.</p><p>Bank products and services are offered by Pathward®, N.A.</p><p>All deposit accounts through Pathward® are FDIC insured.</p>"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "socialLinks",
-        "label": "Social Links (JSON)",
-        "value": "{\"tiktok\":\"https://www.tiktok.com/@hrblock\",\"facebook\":\"https://www.facebook.com/hrblock\",\"instagram\":\"https://www.instagram.com/hrblock/\",\"youtube\":\"https://www.youtube.com/hrblock\",\"linkedin\":\"https://www.linkedin.com/company/h&r-block\"}"
+        "label": "Legal / Copyright Text"
       }
     ]
   },
   {
-    "id": "footer-links",
+    "id": "social-link",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
-        "name": "col1",
-        "label": "Column 1",
-        "value": "<div><h5><strong>Tax Services</strong></h5><ul><li><a href=\"/tax-offices/manage-appointment/\">Reschedule or manage appointment</a></li><li><a href=\"/online-tax-filing/\">Online tax filing</a></li><li><a href=\"/tax-offices/\">File with a tax pro</a></li><li><a href=\"/online-tax-filing/free-online-tax-filing/\">Free online tax filing</a></li><li><a href=\"/tax-software/\">Tax software</a></li><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield</a></li><li><a href=\"/tax-offices/extended-tax-services/tax-audit/audit-support/\">Audit &amp; Tax Notice Support</a></li><li><a href=\"/expat-tax-preparation/\">Expat tax services</a></li></ul><h5><strong>Small Business Services</strong></h5><ul><li><a href=\"https://www.blockadvisors.com/\" target=\"_blank\">Block Advisors</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li><li><a href=\"/tax-offices/business-services/small-business-bookkeeping-services/\">Small business bookkeeping</a></li><li><a href=\"/tax-offices/business-services/small-business-payroll-services/\">Small business payroll</a></li><li><a href=\"/tax-offices/business-services/business-formation-incorporation-services/\">Business formation services</a></li><li><a href=\"https://www.waveapps.com/\" target=\"_blank\">Wave Financial</a></li></ul></div>"
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false,
+        "description": "Select icon image from DAM"
       },
       {
-        "component": "richtext",
+        "component": "text",
         "valueType": "string",
-        "name": "col2",
-        "label": "Column 2",
-        "value": "<div><h5><strong>Tax Tools</strong></h5><ul><li><a href=\"/myblock-benefits/\">MyBlock</a></li><li><a href=\"/mobile-apps/\">Mobile apps</a></li><li><a href=\"/tax-calculator/\">Tax calculator</a></li><li><a href=\"/tax-prep-checklist/\">Tax prep checklist</a></li><li><a href=\"/tax-appointment-preparation/\">Appointment Prep Guide</a></li><li><a href=\"/tax-offices/tax-refund-payment/\">Refund &amp; payment options</a></li><li><a href=\"/tax-payment-center/\">Tax payment center</a></li><li><a href=\"/wheres-my-refund/\">Where's my refund?</a></li><li><a href=\"/w-4-calculator/\">W-4 calculator</a></li></ul><h5><strong>Legal</strong></h5><ul><li><a href=\"/universal/terms/\">Terms</a></li><li><a href=\"/universal/digital-online-mobile-privacy-principles/\">Privacy notice</a></li><li><a href=\"/financial-services/privacy-statement/\">Pathward privacy notice</a></li></ul></div>"
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
       },
       {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "col3",
-        "label": "Column 3",
-        "value": "<div><h5><strong>Financial Services</strong></h5><ul><li><a href=\"/financial-services/emerald-advance-loan-vs-refund-advance/\">Explore loans</a></li><li><a href=\"/financial-services/spruce/\">Spruce</a></li><li><a href=\"/financial-services/emerald-card-services/\">Emerald Card</a></li><li><a href=\"/financial-services/tax-refund-payment/\">Refund Transfer</a></li><li><a href=\"/financial-services/emerald-advance-loan/\">Emerald Advance Loan</a></li><li><a href=\"/offers/refund-advance/\">Refund Advance</a></li></ul><h5><strong>Resources</strong></h5><ul><li><a href=\"/support/\">Customer help &amp; support</a></li><li><a href=\"/tax-center/\">Tax questions</a></li><li><a href=\"/tax-offices/local/\">Office locations</a></li><li><a href=\"/tax-offices/international/\">International locations</a></li><li><a href=\"/taxes-site-index/\">Sitemap</a></li></ul></div>"
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link URL",
+        "description": "Page that opens when the icon is clicked"
       },
       {
-        "component": "richtext",
+        "component": "text",
         "valueType": "string",
-        "name": "col4",
-        "label": "Column 4",
-        "value": "<div><h5><strong>About H&R Block</strong></h5><ul><li><a href=\"/corporate/\">About us</a></li><li><a href=\"/makeeveryblockbetter/\">Make Every Block Better</a></li><li><a href=\"https://careers.hrblock.com\" target=\"_blank\">Careers</a></li><li><a href=\"/corporate/tax-franchise/\">Buy or sell an office</a></li><li><a href=\"/corporate/income-tax-course/\">Income tax course</a></li><li><a href=\"/tax-center/newsroom/\">News Center</a></li><li><a href=\"https://investors.hrblock.com/\" target=\"_blank\">Investor relations</a></li><li><a href=\"https://www.thetaxinstitute.com/\" target=\"_blank\">The Tax Institute</a></li><li><a href=\"/guarantees/\">Guarantees</a></li></ul></div>"
+        "name": "linkText",
+        "label": "Accessible Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
       }
     ]
   },
   {
-    "id": "footer-seals",
+    "id": "footer-column",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
+        "name": "content",
+        "label": "Column Content",
         "valueType": "string",
-        "name": "seal",
-        "label": "TRUSTe Seal Details (JSON)",
-        "value": "{\"src\":\"//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"href\":\"//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d\",\"alt\":\"TRUSTe Privacy Certification\"}"
+        "description": "Add menu headings (H5) and link lists for this column"
+      }
+    ]
+  },
+  {
+    "id": "footer-seal",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Seal Image",
+        "multi": false,
+        "description": "Select seal image from DAM"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "privacy",
-        "label": "Privacy Choices Details (JSON)",
-        "value": "{\"label\":\"Your Privacy Choices\",\"href\":\"https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107\"}"
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title / Aria Label"
       }
     ]
   },
@@ -256,16 +281,64 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
-        "label": "Heading",
-        "value": "Need support?"
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "select",
+        "name": "headingType",
+        "label": "Heading Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "support-action",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false,
+        "description": "Select icon image from DAM"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "actions",
-        "label": "Support Actions (JSON)",
-        "value": "{\"help\":{\"label\":\"Customer help\",\"href\":\"/support/\"},\"office\":{\"label\":\"Find an office\",\"action\":\"#find-office\"},\"search\":{\"label\":\"Search\",\"action\":\"#site-search\"}}"
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link / Action URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Title / Aria Label"
       }
     ]
   },
@@ -309,21 +382,252 @@
     "id": "hrblock-footer",
     "fields": [
       {
-        "component": "select",
-        "name": "classes",
-        "label": "Footer Theme",
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "Label shown in the Content Tree"
+      }
+    ]
+  },
+  {
+    "id": "nav-brand",
+    "fields": [
+      {
+        "component": "reference",
         "valueType": "string",
-        "value": "green-dark-theme",
-        "options": [
-          {
-            "name": "Green Dark Theme",
-            "value": "green-dark-theme"
-          },
-          {
-            "name": "Default",
-            "value": ""
-          }
-        ]
+        "name": "image",
+        "label": "Logo Image",
+        "multi": false,
+        "description": "Select logo from DAM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Logo Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Logo Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Accessible Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
+      }
+    ]
+  },
+  {
+    "id": "nav-panel",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Top Nav Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Top Nav Label",
+        "description": "e.g. Taxes, Financial products"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
+      }
+    ]
+  },
+  {
+    "id": "mega-explore",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Explore Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Explore Label",
+        "description": "e.g. Explore taxes"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
+      }
+    ]
+  },
+  {
+    "id": "mega-primary",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Primary Links",
+        "description": "Bold primary links list (File online, Spruce, etc.)"
+      }
+    ]
+  },
+  {
+    "id": "mega-column",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Column Heading"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Column Links",
+        "description": "List of links for this column"
+      }
+    ]
+  },
+  {
+    "id": "mega-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Card Image",
+        "multi": false,
+        "description": "Optional image from DAM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Card Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Card Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description / Disclaimer",
+        "description": "Card body text. Add a second paragraph for disclaimer if needed."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Card Style Class",
+        "description": "Optional: green, cream, or accent"
+      }
+    ]
+  },
+  {
+    "id": "nav-tool",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false,
+        "description": "Select icon from DAM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title"
+      }
+    ]
+  },
+  {
+    "id": "nav-signin",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false,
+        "description": "Select icon from DAM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text",
+        "description": "Top line text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Sign In URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Primary Label",
+        "description": "Bottom line text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title / Aria Label"
       }
     ]
   }

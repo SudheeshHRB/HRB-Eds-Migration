@@ -6,81 +6,50 @@ description: H&R Block site footer — Experience Fragment for Edge Delivery Ser
 # Footer Experience Fragment
 
 **Live reference:** https://hrbcomlnp.hrblock.com/  
-**XF path:** `/content/experience-fragments/hrblock/us/en/site/footer/master`
+**XF path:** `/content/experience-fragments/hrblock/us/en/site/footer/master`  
+**Delivery path:** `/footer` (loaded by the auto `footer` block)
 
-## Block Tree (matches flowchart)
+## Architecture
 
 ```
 Footer XF master
-└── SECTION (hrblock-footer) — green-dark-theme / site-footer
-    ├── SECTION S1 — Need Support
-    │   └── FOOTER-SUPPORT (custom) — title + 3 CTAs
-    ├── SECTION S2 — Link Columns
-    │   └── FOOTER-LINKS (custom) — 4 cols, 7 menus, 48 links
-    ├── SECTION S3 — Legal and Social
-    │   └── FOOTER-LEGAL (custom) — copyright + 5 socials
-    └── SECTION S4 — Seals
-        └── FOOTER-SEALS (custom) — TRUSTe + Privacy Choices
+└── SECTION (hrblock-footer) — site-footer green-dark-theme
+    ├── FOOTER-SUPPORT — heading + support-action items
+    ├── FOOTER-LINKS — footer-column items (richtext menus)
+    ├── FOOTER-LEGAL — legal richtext + social-link items
+    └── FOOTER-SEALS — footer-seal items (image and/or text links)
 ```
 
----
+All copy, URLs, icons, and seals are authored in Universal Editor. Block JS only decorates markup — no hardcoded content.
 
-## S1 — Need Support (`footer-support`)
+## Reusable blocks
 
-| Field | Value |
-|-------|-------|
-| title | Need support? |
-| help_label / help_link | Customer help → `/support/` |
-| office_label / office_action | Find an office → `#find-office` |
-| search_label / search_action | Search → `#site-search` |
+| Block | Children | Authorable fields |
+|-------|----------|-------------------|
+| **footer-support** | `support-action` | Heading; per action: DAM icon, link, label |
+| **footer-links** | `footer-column` | Per column: richtext (H5 + link lists) |
+| **footer-legal** | `social-link` | Legal richtext; per social: DAM icon + link |
+| **footer-seals** | `footer-seal` | Per seal: DAM image, alt, link, label |
 
----
+Icons and seal images are selected from DAM — no hardcoded icon lists.
 
-## S2 — Footer Links (`footer-links`)
+## Universal Editor authoring
 
-| Column | Menus |
-|--------|-------|
-| Col 1 | Tax Services (10) + Small Business Services (6) |
-| Col 2 | Tax Tools (9) + Legal (3) |
-| Col 3 | Financial Services (6) + Resources (5) |
-| Col 4 | About H&R Block (9) |
+1. Create / open the footer XF (or `/footer` page).
+2. Add **H&R Block Footer** section (theme: Green Dark Theme).
+3. Inside it, add:
+   - **Footer Support** → set heading → add Support Action items
+   - **Footer Links** → add Footer Column items with menu richtext
+   - **Footer Legal** → set legal copy → add Social Link items
+   - **Footer Seals** → add Footer Seal items (DAM image and/or text link)
+4. Publish. Pages pick it up via the standard footer fragment (`footer` metadata or `/footer`).
 
----
+## Production content checklist (author in UE — do not hardcode)
 
-## S3 — Legal + Social (`footer-legal`)
+**Support:** Need support? → Customer help `/support/` · Find an office `#find-office` · Search `#site-search`
 
-Copyright © 2025-2026 HRB Digital LLC. All Rights Reserved.  
-Bank products and services are offered by Pathward®, N.A.  
-All deposit accounts through Pathward® are FDIC insured.
+**Link columns:** Tax Services, Small Business, Tax Tools, Legal, Financial Services, Resources, About H&R Block
 
-| Network | URL |
-|---------|-----|
-| TikTok | https://www.tiktok.com/@hrblock |
-| Facebook | https://www.facebook.com/hrblock |
-| Instagram | https://www.instagram.com/hrblock/ |
-| YouTube | https://www.youtube.com/hrblock |
-| LinkedIn | https://www.linkedin.com/company/h&r-block |
+**Legal:** Copyright / Pathward / FDIC copy + TikTok, Facebook, Instagram, YouTube, LinkedIn
 
----
-
-## S4 — Seals (`footer-seals`)
-
-| Field | Value |
-|-------|-------|
-| seal_src | `//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d` |
-| seal_href | `//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d` |
-| privacy_label | Your Privacy Choices |
-| privacy_href | TrustArc validation URL |
-
----
-
-## Universal Editor authoring steps
-
-1. Create XF at the path above.
-2. Drop **H&R Block Footer** (root section, theme `green-dark-theme`).
-3. Add four child sections (or drop blocks directly under root):
-   - **Footer Support**
-   - **Footer Links** (pre-seeded with production links)
-   - **Footer Legal**
-   - **Footer Seals**
-4. Reference XF from page templates via footer fragment / experience fragment.
+**Seals:** TRUSTe seal image + Your Privacy Choices link

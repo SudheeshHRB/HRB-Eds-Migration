@@ -11,7 +11,7 @@
               "name": "H&R Block Footer",
               "model": "hrblock-footer",
               "filter": "hrblock-footer",
-              "classes": "green-dark-theme"
+              "classes": "site-footer green-dark-theme"
             }
           }
         }
@@ -23,15 +23,10 @@
       "id": "hrblock-footer",
       "fields": [
         {
-          "component": "select",
-          "name": "classes",
-          "label": "Footer Theme",
-          "valueType": "string",
-          "value": "green-dark-theme",
-          "options": [
-            { "name": "Green Dark Theme", "value": "green-dark-theme" },
-            { "name": "Default", "value": "" }
-          ]
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "Label shown in the Content Tree"
         }
       ]
     }
@@ -40,16 +35,15 @@
     {
       "id": "hrblock-footer",
       "components": [
-        "section",
+        "footer-support",
+        "footer-links",
+        "footer-legal",
+        "footer-seals",
         "columns",
         "text",
         "button",
         "title",
-        "image",
-        "footer-support",
-        "footer-links",
-        "footer-legal",
-        "footer-seals"
+        "image"
       ]
     }
   ]

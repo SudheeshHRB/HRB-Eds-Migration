@@ -1,29 +1,31 @@
-.footer-support.need-help-footer {
+.footer-support {
   width: 100%;
   padding: 0 0 30px;
 }
 
-.footer-support .container {
+.footer-support .footer-support-inner {
   padding: 0 25px;
 }
 
 @media (width >= 768px) {
-  .footer-support .container {
+  .footer-support .footer-support-inner {
     padding: 0 40px;
   }
 }
 
 @media (width >= 1024px) {
-  .footer-support .container {
+  .footer-support .footer-support-inner {
     padding: 0 80px;
   }
 }
 
-.footer-support h2 {
+.footer-support h2,
+.footer-support h3,
+.footer-support h4 {
   font-size: 1.8rem;
   font-weight: 700;
   margin: 0 0 20px;
-  color: #f6f4e9;
+  color: inherit;
 }
 
 .footer-support .support-actions {
@@ -41,12 +43,20 @@
   gap: 8px;
   background: transparent;
   border: none;
-  color: #f6f4e9;
+  color: inherit;
   cursor: pointer;
   font-size: 1.6rem;
   font-family: inherit;
   text-decoration: none;
   padding: 8px 0;
+}
+
+.footer-support .icon-btn picture,
+.footer-support .icon-btn img {
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
 }
 
 .footer-support .icon-btn:hover,

@@ -1,30 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Footer Seals",
-      "id": "footer-seals",
+      "title": "Nav Brand",
+      "id": "nav-brand",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Footer Seals",
-              "filter": "footer-seals"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Footer Seal",
-      "id": "footer-seal",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Footer Seal",
-              "model": "footer-seal"
+              "name": "Nav Brand",
+              "model": "nav-brand"
             }
           }
         }
@@ -33,48 +18,41 @@
   ],
   "models": [
     {
-      "id": "footer-seal",
+      "id": "nav-brand",
       "fields": [
         {
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Seal Image",
+          "label": "Logo Image",
           "multi": false,
-          "description": "Select seal image from DAM"
+          "description": "Select logo from DAM"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt Text"
+          "label": "Logo Alt Text"
         },
         {
           "component": "aem-content",
           "name": "link",
-          "label": "Link URL"
+          "label": "Logo Link"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "linkText",
-          "label": "Link Label"
+          "label": "Accessible Name"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "linkTitle",
-          "label": "Link Title / Aria Label"
+          "label": "Link Title"
         }
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "footer-seals",
-      "components": [
-        "footer-seal"
-      ]
-    }
-  ]
+  "filters": []
 }

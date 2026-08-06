@@ -1,44 +1,40 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
+/**
+ * Footer Links — authorable link columns (menus + links).
+ * @param {Element} block
+ */
 export default function decorate(block) {
   const rows = [...block.children];
-  if (rows.length === 0) return;
-
-  const data = {};
-  rows.forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length >= 2) {
-      const key = cells[0].textContent.trim();
-      const value = cells[1].innerHTML.trim();
-      data[key] = value;
-    }
-  });
-
-  const columns = [data.col1, data.col2, data.col3, data.col4];
-
-  block.innerHTML = '';
-  block.classList.add('links-footer', 'color-eggshell');
+  if (!rows.length) return;
 
   const container = document.createElement('div');
-  container.className = 'container';
+  container.className = 'footer-links-inner';
 
   const columnContainer = document.createElement('div');
-  columnContainer.className = 'column-container links-footer color-eggshell';
+  columnContainer.className = 'column-container';
 
-  columns.forEach((html) => {
+  rows.forEach((row) => {
     const columnEl = document.createElement('div');
     columnEl.className = 'column';
+    moveInstrumentation(row, columnEl);
 
-    if (html) {
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = html;
-      wrapper.querySelectorAll('a').forEach((link) => {
-        link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: link.textContent.trim().toLowerCase() }));
-      });
-      columnEl.appendChild(wrapper.firstElementChild || wrapper);
+    const contentCell = row.querySelector(':scope > div') || row;
+    while (contentCell.firstChild) {
+      columnEl.append(contentCell.firstChild);
     }
 
-    columnContainer.appendChild(columnEl);
+    columnEl.querySelectorAll('a').forEach((link) => {
+      const name = link.textContent.trim().toLowerCase();
+      if (name) {
+        link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: name }));
+      }
+    });
+
+    columnContainer.append(columnEl);
   });
 
-  container.appendChild(columnContainer);
-  block.appendChild(container);
+  container.append(columnContainer);
+  block.replaceChildren(container);
+  block.classList.add('links-footer');
 }

@@ -1,69 +1,78 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
+/**
+ * Use EDS image optimization for same-origin/DAM assets; keep external seals as-is.
+ * @param {HTMLImageElement} img
+ * @param {string} alt
+ * @returns {Element}
+ */
+function wrapSealImage(img, alt) {
+  try {
+    const url = new URL(img.src, window.location.href);
+    if (url.origin === window.location.origin) {
+      const optimized = createOptimizedPicture(img.src, alt, false, [{ width: '126' }]);
+      moveInstrumentation(img, optimized.querySelector('img'));
+      return optimized;
+    }
+  } catch {
+    // fall through
+  }
+  const picture = img.closest('picture');
+  if (picture) {
+    img.alt = alt || img.alt;
+    img.loading = 'lazy';
+    return picture;
+  }
+  img.alt = alt || img.alt;
+  img.loading = 'lazy';
+  return img;
+}
+
+/**
+ * Footer Seals — authorable certification seals and privacy links.
+ * @param {Element} block
+ */
 export default function decorate(block) {
-  const data = {};
-  [...block.children].forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length >= 2) {
-      data[cells[0].textContent.trim()] = cells[1].innerHTML.trim();
-    }
-  });
-
-  const sealJson = data.seal || '{}';
-  const privacyJson = data.privacy || '{}';
-  const parsedSeal = (() => {
-    try {
-      return JSON.parse(sealJson);
-    } catch (error) {
-      return {};
-    }
-  })();
-  const parsedPrivacy = (() => {
-    try {
-      return JSON.parse(privacyJson);
-    } catch (error) {
-      return {};
-    }
-  })();
-
-  const sealSrc = (parsedSeal.src || '//privacy-policy.truste.com/privacy-seal/seal?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d')
-    .replace(/<[^>]+>/g, '').trim();
-  const sealHref = (parsedSeal.href || '//privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d')
-    .replace(/<[^>]+>/g, '').trim();
-  const sealAlt = (parsedSeal.alt || 'TRUSTe Privacy Certification').replace(/<[^>]+>/g, '').trim();
-  const privacyLabel = (parsedPrivacy.label || 'Your Privacy Choices').replace(/<[^>]+>/g, '').trim();
-  const privacyHref = (parsedPrivacy.href || 'https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107')
-    .replace(/<[^>]+>/g, '').trim();
-
-  block.innerHTML = '';
-  block.classList.add('seals-footer', 'color-eggshell');
+  const rows = [...block.children];
+  if (!rows.length) return;
 
   const container = document.createElement('div');
-  container.className = 'container seals-inner';
+  container.className = 'seals-inner';
 
-  const sealLink = document.createElement('a');
-  sealLink.href = sealHref;
-  sealLink.target = '_blank';
-  sealLink.rel = 'noopener noreferrer';
-  sealLink.className = 'truste-seal';
-  sealLink.setAttribute('aria-label', sealAlt);
-  sealLink.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: 'truste seal' }));
+  rows.forEach((row) => {
+    const link = row.querySelector('a');
+    const img = row.querySelector('img');
+    if (!link && !img) return;
 
-  const img = document.createElement('img');
-  img.src = sealSrc.startsWith('//') ? `https:${sealSrc}` : sealSrc;
-  img.alt = sealAlt;
-  img.width = 126;
-  img.height = 50;
-  img.loading = 'lazy';
-  sealLink.appendChild(img);
-  container.appendChild(sealLink);
+    const item = document.createElement('div');
+    item.className = 'seal-item';
+    moveInstrumentation(row, item);
 
-  const privacy = document.createElement('a');
-  privacy.href = privacyHref;
-  privacy.target = '_blank';
-  privacy.rel = 'noopener noreferrer';
-  privacy.className = 'privacy-choices';
-  privacy.textContent = privacyLabel;
-  privacy.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: 'privacy choice' }));
-  container.appendChild(privacy);
+    if (link) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const trackName = (link.textContent || img?.alt || 'seal').trim().toLowerCase();
+      link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: trackName }));
 
-  block.appendChild(container);
+      if (img) {
+        link.classList.add('truste-seal');
+        const alt = img.alt || link.textContent.trim();
+        link.textContent = '';
+        link.append(wrapSealImage(img, alt));
+        if (alt) link.setAttribute('aria-label', alt);
+      } else {
+        link.classList.add('privacy-choices');
+      }
+
+      item.append(link);
+    } else if (img) {
+      item.append(wrapSealImage(img, img.alt));
+    }
+
+    container.append(item);
+  });
+
+  block.replaceChildren(container);
+  block.classList.add('seals-footer');
 }

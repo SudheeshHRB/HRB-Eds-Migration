@@ -1,1 +1,23 @@
 /* add global styles that can be loaded post LCP here */
+
+/* H&R Block site footer (hrblock-footer section theme) */
+.section.site-footer,
+.section.green-dark-theme {
+  --footer-bg: #00534c;
+  --footer-fg: #f6f4e9;
+
+  background-color: var(--footer-bg);
+  color: var(--footer-fg);
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.section.site-footer a,
+.section.green-dark-theme a {
+  color: inherit;
+}
+
+.section.site-footer .default-content-wrapper,
+.section.green-dark-theme .default-content-wrapper {
+  max-width: 100%;
+}

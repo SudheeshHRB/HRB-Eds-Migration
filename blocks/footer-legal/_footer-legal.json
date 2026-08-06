@@ -15,6 +15,21 @@
           }
         }
       }
+    },
+    {
+      "title": "Social Link",
+      "id": "social-link",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Social Link",
+              "model": "social-link"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -25,15 +40,44 @@
           "component": "richtext",
           "valueType": "string",
           "name": "legal",
-          "label": "Legal / Copyright Text",
-          "value": "<p>Copyright © 2025-2026 HRB Digital LLC. All Rights Reserved.</p><p>Bank products and services are offered by Pathward®, N.A.</p><p>All deposit accounts through Pathward® are FDIC insured.</p>"
+          "label": "Legal / Copyright Text"
+        }
+      ]
+    },
+    {
+      "id": "social-link",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Icon Image",
+          "multi": false,
+          "description": "Select icon image from DAM"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "socialLinks",
-          "label": "Social Links (JSON)",
-          "value": "{\"tiktok\":\"https://www.tiktok.com/@hrblock\",\"facebook\":\"https://www.facebook.com/hrblock\",\"instagram\":\"https://www.instagram.com/hrblock/\",\"youtube\":\"https://www.youtube.com/hrblock\",\"linkedin\":\"https://www.linkedin.com/company/h&r-block\"}"
+          "name": "imageAlt",
+          "label": "Icon Alt Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link URL",
+          "description": "Page that opens when the icon is clicked"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Accessible Name"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkTitle",
+          "label": "Link Title"
         }
       ]
     }
@@ -41,7 +85,9 @@
   "filters": [
     {
       "id": "footer-legal",
-      "components": []
+      "components": [
+        "social-link"
+      ]
     }
   ]
 }

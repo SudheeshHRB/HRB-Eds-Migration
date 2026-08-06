@@ -1,23 +1,7 @@
-.footer-legal.copyright-footer {
+.footer-legal {
   width: 100%;
   padding: 30px 0;
-  /* border-top: 1px solid rgb(246, 244, 233, 20%); */
-}
-
-.footer-legal .container {
-  padding: 0 25px;
-} 
-
-@media (width >= 768px) {
-  .footer-legal .container {
-    padding: 0 40px;
-  }
-}
-
-@media (width >= 1024px) {
-  .footer-legal .container {
-    padding: 0 80px;
-  }
+  border-top: 1px solid rgb(246 244 233 / 20%);
 }
 
 .footer-legal .copyright-inner {
@@ -25,18 +9,26 @@
   flex-flow: column-reverse wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 24px; 
+  gap: 24px;
+  padding: 0 25px;
 }
 
 @media (width >= 768px) {
   .footer-legal .copyright-inner {
     flex-direction: row;
+    padding: 0 40px;
+  }
+}
+
+@media (width >= 1024px) {
+  .footer-legal .copyright-inner {
+    padding: 0 80px;
   }
 }
 
 .footer-legal .legal-copy {
   flex: 1 1 280px;
-  color: #f6f4e9;
+  color: inherit;
   font-size: 1.2rem;
   line-height: 1.5;
 }
@@ -50,26 +42,50 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer-legal .social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  min-height: 40px;
-  padding: 8px 10px;
-  color: #f6f4e9;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
-  /* border: 1px solid rgb(246, 244, 233 / 35%); */
-  border-radius: 4px;
+  background-color: rgb(246 244 233 / 18%);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
 }
 
 .footer-legal .social-link:hover,
 .footer-legal .social-link:focus {
-  text-decoration: underline;
-  border-color: #f6f4e9;
+  background-color: rgb(246 244 233 / 28%);
+  text-decoration: none;
+  outline: 2px solid #f6f4e9;
+  outline-offset: 2px;
+}
+
+.footer-legal .social-link picture,
+.footer-legal .social-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.footer-legal .social-link .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }

@@ -15,6 +15,21 @@
           }
         }
       }
+    },
+    {
+      "title": "Support Action",
+      "id": "support-action",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Support Action",
+              "model": "support-action"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -24,16 +39,55 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "title",
-          "label": "Heading",
-          "value": "Need support?"
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "select",
+          "name": "headingType",
+          "label": "Heading Type",
+          "valueType": "string",
+          "options": [
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" },
+            { "name": "H4", "value": "h4" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support-action",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Icon Image",
+          "multi": false,
+          "description": "Select icon image from DAM"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "actions",
-          "label": "Support Actions (JSON)",
-          "value": "{\"help\":{\"label\":\"Customer help\",\"href\":\"/support/\"},\"office\":{\"label\":\"Find an office\",\"action\":\"#find-office\"},\"search\":{\"label\":\"Search\",\"action\":\"#site-search\"}}"
+          "name": "imageAlt",
+          "label": "Icon Alt Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link / Action URL"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Label"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkTitle",
+          "label": "Title / Aria Label"
         }
       ]
     }
@@ -41,7 +95,9 @@
   "filters": [
     {
       "id": "footer-support",
-      "components": []
+      "components": [
+        "support-action"
+      ]
     }
   ]
 }

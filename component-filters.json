@@ -21,7 +21,11 @@
       "footer-links",
       "footer-legal",
       "footer-seals",
-      "hrblock-footer"
+      "hrblock-footer",
+      "nav-brand",
+      "nav-menu",
+      "nav-panel",
+      "nav-tools"
     ]
   },
   {
@@ -47,33 +51,62 @@
   },
   {
     "id": "footer-legal",
-    "components": []
+    "components": [
+      "social-link"
+    ]
   },
   {
     "id": "footer-links",
-    "components": []
+    "components": [
+      "footer-column"
+    ]
   },
   {
     "id": "footer-seals",
-    "components": []
+    "components": [
+      "footer-seal"
+    ]
   },
   {
     "id": "footer-support",
-    "components": []
+    "components": [
+      "support-action"
+    ]
   },
   {
     "id": "hrblock-footer",
     "components": [
-      "section",
+      "footer-support",
+      "footer-links",
+      "footer-legal",
+      "footer-seals",
       "columns",
       "text",
       "button",
       "title",
-      "image",
-      "footer-support",
-      "footer-links",
-      "footer-legal",
-      "footer-seals"
+      "image"
+    ]
+  },
+  {
+    "id": "nav-menu",
+    "components": [
+      "nav-panel"
+    ]
+  },
+  {
+    "id": "nav-panel",
+    "components": [
+      "mega-explore",
+      "mega-primary",
+      "mega-column",
+      "mega-card"
+    ]
+  },
+  {
+    "id": "nav-tools",
+    "components": [
+      "nav-tool",
+      "nav-signin"
     ]
   }
 ]

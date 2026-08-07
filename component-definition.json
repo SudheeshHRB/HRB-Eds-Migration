@@ -137,7 +137,8 @@
                 "template": {
                   "name": "Footer Legal",
                   "model": "footer-legal",
-                  "filter": "footer-legal"
+                  "filter": "footer-legal",
+                  "legal": "<p>Copyright © 2023-2024 HRB Digital LLC. All Rights Reserved.</p><p>Bank products and services are offered by Pathward®, N.A.</p><p>All deposit accounts through Pathward® are FDIC insured.</p>"
                 }
               }
             }
@@ -152,7 +153,87 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Social Link",
-                  "model": "social-link"
+                  "model": "social-link",
+                  "imageAlt": "TikTok",
+                  "link": "https://www.tiktok.com/@hrblock",
+                  "linkText": "TikTok",
+                  "linkTitle": "TikTok"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Social Link — Facebook",
+          "id": "social-link-facebook",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Social Link",
+                  "model": "social-link",
+                  "imageAlt": "Facebook",
+                  "link": "https://www.facebook.com/hrblock",
+                  "linkText": "Facebook",
+                  "linkTitle": "Facebook"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Social Link — Instagram",
+          "id": "social-link-instagram",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Social Link",
+                  "model": "social-link",
+                  "imageAlt": "Instagram",
+                  "link": "https://www.instagram.com/hrblock",
+                  "linkText": "Instagram",
+                  "linkTitle": "Instagram"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Social Link — YouTube",
+          "id": "social-link-youtube",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Social Link",
+                  "model": "social-link",
+                  "imageAlt": "YouTube",
+                  "link": "https://www.youtube.com/hrblock",
+                  "linkText": "YouTube",
+                  "linkTitle": "YouTube"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Social Link — X",
+          "id": "social-link-x",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Social Link",
+                  "model": "social-link",
+                  "imageAlt": "X",
+                  "link": "https://x.com/hrblock",
+                  "linkText": "X",
+                  "linkTitle": "X"
                 }
               }
             }
@@ -182,7 +263,56 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Footer Column",
-                  "model": "footer-column"
+                  "model": "footer-column",
+                  "content": "<h5><strong>Tax Services</strong></h5><ul><li><a href=\"/tax-offices/manage-appointment/\">Reschedule or manage appointment</a></li><li><a href=\"/online-tax-filing/\">Online tax filing</a></li><li><a href=\"/tax-offices/\">File with a tax pro</a></li><li><a href=\"/tax-software/\">Tax software</a></li></ul><h5><strong>Small Business Services</strong></h5><ul><li><a href=\"https://www.blockadvisors.com/\">Block Advisors</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li></ul>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Footer Column — Tax Tools / Legal",
+          "id": "footer-column-2",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Footer Column",
+                  "model": "footer-column",
+                  "content": "<h5><strong>Tax Tools</strong></h5><ul><li><a href=\"/myblock-benefits/\">MyBlock</a></li><li><a href=\"/mobile/\">Mobile apps</a></li><li><a href=\"/tax-calculator/\">Tax calculator</a></li><li><a href=\"/tax-prep-checklist/\">Tax prep checklist</a></li></ul><h5><strong>Legal</strong></h5><ul><li><a href=\"/legal/\">Legal</a></li><li><a href=\"/privacy/\">Privacy</a></li><li><a href=\"/terms/\">Terms of use</a></li></ul>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Footer Column — Financial / Resources",
+          "id": "footer-column-3",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Footer Column",
+                  "model": "footer-column",
+                  "content": "<h5><strong>Financial Services</strong></h5><ul><li><a href=\"/financial-services/\">Overview</a></li><li><a href=\"/spruce/\">Spruce</a></li><li><a href=\"/financial-services/tax-refund-payment/\">Refund &amp; payment options</a></li></ul><h5><strong>Resources</strong></h5><ul><li><a href=\"/tax-center/\">Tax Center</a></li><li><a href=\"/help/\">Help center</a></li></ul>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Footer Column — About",
+          "id": "footer-column-4",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Footer Column",
+                  "model": "footer-column",
+                  "content": "<h5><strong>About H&amp;R Block</strong></h5><ul><li><a href=\"/corporate/\">Company</a></li><li><a href=\"/careers/\">Careers</a></li><li><a href=\"/newsroom/\">Newsroom</a></li><li><a href=\"/investors/\">Investors</a></li></ul>"
                 }
               }
             }
@@ -212,7 +342,29 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Footer Seal",
-                  "model": "footer-seal"
+                  "model": "footer-seal",
+                  "imageAlt": "TRUSTe Privacy Certification",
+                  "link": "https://privacy.truste.com/privacy-seal/validation",
+                  "linkText": "TRUSTe Privacy Certification",
+                  "linkTitle": "TRUSTe Privacy Certification"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Footer Seal — Privacy Choices",
+          "id": "footer-seal-privacy",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Footer Seal",
+                  "model": "footer-seal",
+                  "link": "https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107",
+                  "linkText": "Your Privacy Choices",
+                  "linkTitle": "Your Privacy Choices"
                 }
               }
             }
@@ -228,7 +380,9 @@
                 "template": {
                   "name": "Footer Support",
                   "model": "footer-support",
-                  "filter": "footer-support"
+                  "filter": "footer-support",
+                  "title": "Need support?",
+                  "titleType": "h2"
                 }
               }
             }
@@ -243,7 +397,49 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Support Action",
-                  "model": "support-action"
+                  "model": "support-action",
+                  "imageAlt": "Customer help",
+                  "link": "/support/",
+                  "linkText": "Customer help",
+                  "linkTitle": "Customer help"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Support Action — Find an office",
+          "id": "support-action-office",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Support Action",
+                  "model": "support-action",
+                  "imageAlt": "Find an office",
+                  "link": "/tax-offices/local/",
+                  "linkText": "Find an office",
+                  "linkTitle": "Find an office"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Support Action — Search",
+          "id": "support-action-search",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Support Action",
+                  "model": "support-action",
+                  "imageAlt": "Search",
+                  "link": "#site-search",
+                  "linkText": "Search",
+                  "linkTitle": "Search"
                 }
               }
             }
@@ -287,10 +483,13 @@
               "page": {
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
-                  "name": "H&R Block Footer",
+                  "name": "Site Footer",
                   "model": "hrblock-footer",
                   "filter": "hrblock-footer",
-                  "style": "site-footer green-dark-theme"
+                  "style": [
+                    "site-footer",
+                    "green-dark-theme"
+                  ]
                 }
               }
             }
@@ -305,7 +504,11 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Nav Brand",
-                  "model": "nav-brand"
+                  "model": "nav-brand",
+                  "imageAlt": "H&R Block",
+                  "link": "/",
+                  "linkText": "H&R Block",
+                  "linkTitle": "H&R Block Home"
                 }
               }
             }
@@ -336,7 +539,10 @@
                 "template": {
                   "name": "Nav Panel",
                   "model": "nav-panel",
-                  "filter": "nav-panel"
+                  "filter": "nav-panel",
+                  "link": "/taxes/",
+                  "linkText": "Taxes",
+                  "linkTitle": "Taxes"
                 }
               }
             }
@@ -351,7 +557,10 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Explore",
-                  "model": "mega-explore"
+                  "model": "mega-explore",
+                  "link": "/taxes/",
+                  "linkText": "Explore taxes",
+                  "linkTitle": "Explore taxes"
                 }
               }
             }
@@ -366,7 +575,8 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Primary Links",
-                  "model": "mega-primary"
+                  "model": "mega-primary",
+                  "links": "<ul><li><a href=\"/online-tax-filing/\"><strong>File online</strong></a></li><li><a href=\"/tax-offices/\"><strong>File with a pro</strong></a></li><li><a href=\"/tax-software/\"><strong>Download software</strong></a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\"><strong>Small business taxes</strong></a></li></ul>"
                 }
               }
             }
@@ -381,7 +591,9 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Column",
-                  "model": "mega-column"
+                  "model": "mega-column",
+                  "heading": "More tax services",
+                  "links": "<ul><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look® Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind®</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield®</a></li></ul>"
                 }
               }
             }
@@ -396,7 +608,12 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Card",
-                  "model": "mega-card"
+                  "model": "mega-card",
+                  "link": "/tax-offices/",
+                  "linkText": "File with a tax pro",
+                  "linkTitle": "File with a tax pro",
+                  "description": "<p>Get expert help from a tax pro near you.</p>",
+                  "classes": "green"
                 }
               }
             }
@@ -426,7 +643,30 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Nav Tool",
-                  "model": "nav-tool"
+                  "model": "nav-tool",
+                  "imageAlt": "Find an office",
+                  "link": "/tax-offices/local/",
+                  "linkText": "Find an office",
+                  "linkTitle": "Find an office"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Tool — Search",
+          "id": "nav-tool-search",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Nav Tool",
+                  "model": "nav-tool",
+                  "imageAlt": "Search",
+                  "link": "#site-search",
+                  "linkText": "Search",
+                  "linkTitle": "Search"
                 }
               }
             }
@@ -441,7 +681,12 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Nav Sign In",
-                  "model": "nav-signin"
+                  "model": "nav-signin",
+                  "imageAlt": "Sign in",
+                  "eyebrow": "Sign in to",
+                  "link": "/myblock/",
+                  "linkText": "MyBlock",
+                  "linkTitle": "Sign in to MyBlock"
                 }
               }
             }

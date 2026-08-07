@@ -24,7 +24,30 @@
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Nav Tool",
-              "model": "nav-tool"
+              "model": "nav-tool",
+              "imageAlt": "Find an office",
+              "link": "/tax-offices/local/",
+              "linkText": "Find an office",
+              "linkTitle": "Find an office"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Nav Tool — Search",
+      "id": "nav-tool-search",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Nav Tool",
+              "model": "nav-tool",
+              "imageAlt": "Search",
+              "link": "#site-search",
+              "linkText": "Search",
+              "linkTitle": "Search"
             }
           }
         }
@@ -39,7 +62,12 @@
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Nav Sign In",
-              "model": "nav-signin"
+              "model": "nav-signin",
+              "imageAlt": "Sign in",
+              "eyebrow": "Sign in to",
+              "link": "/myblock/",
+              "linkText": "MyBlock",
+              "linkTitle": "Sign in to MyBlock"
             }
           }
         }
@@ -62,23 +90,28 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
+          "value": "Find an office",
           "label": "Icon Alt Text"
         },
         {
           "component": "aem-content",
+          "valueType": "string",
           "name": "link",
+          "value": "/tax-offices/local/",
           "label": "Link URL"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "linkText",
+          "value": "Find an office",
           "label": "Label"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "linkTitle",
+          "value": "Find an office",
           "label": "Link Title"
         }
       ]
@@ -98,24 +131,29 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
+          "value": "Sign in",
           "label": "Icon Alt Text"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "eyebrow",
+          "value": "Sign in to",
           "label": "Eyebrow Text",
           "description": "Top line text"
         },
         {
           "component": "aem-content",
+          "valueType": "string",
           "name": "link",
+          "value": "/myblock/",
           "label": "Sign In URL"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "linkText",
+          "value": "MyBlock",
           "label": "Primary Label",
           "description": "Bottom line text"
         },
@@ -123,6 +161,7 @@
           "component": "text",
           "valueType": "string",
           "name": "linkTitle",
+          "value": "Sign in to MyBlock",
           "label": "Link Title / Aria Label"
         }
       ]
@@ -133,6 +172,7 @@
       "id": "nav-tools",
       "components": [
         "nav-tool",
+        "nav-tool-search",
         "nav-signin"
       ]
     }

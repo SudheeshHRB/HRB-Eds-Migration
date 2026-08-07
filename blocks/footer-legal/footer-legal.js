@@ -2,34 +2,54 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
- * Returns true when a row is a social-link item (image and/or link), not legal copy.
+ * Social items are icon/link rows (usually with an image). Legal copy stays as richtext.
  * @param {Element} row
  */
 function isSocialRow(row) {
-  const link = row.querySelector('a');
   const img = row.querySelector('img');
-  if (!link && !img) return false;
-  const paragraphs = [...row.querySelectorAll('p')];
-  if (paragraphs.length > 1 && !img) return false;
+  const link = row.querySelector('a');
   if (img) return true;
   if (!link) return false;
+  // Plain single-link row (no multi-paragraph legal copy)
+  const paragraphs = [...row.querySelectorAll('p')];
+  if (paragraphs.length > 1) return false;
   if (paragraphs.length === 1) {
     const p = paragraphs[0];
     return p.querySelector('a') && p.textContent.trim() === link.textContent.trim();
   }
-  return [...row.children].length <= 2;
+  // Single cell with only a link (no other text nodes of substance)
+  const text = row.textContent.replace(link.textContent, '').trim();
+  return !text;
 }
 
 /**
- * Build picture from authored DAM image.
+ * Optimize same-origin raster icons; keep SVG / external assets as authored.
  * @param {HTMLImageElement} img
  * @param {string} alt
  * @returns {Element}
  */
 function buildIconPicture(img, alt) {
-  const optimized = createOptimizedPicture(img.src, alt || img.alt || '', false, [{ width: '96' }]);
-  moveInstrumentation(img, optimized.querySelector('img'));
-  return optimized;
+  const label = alt || img.alt || '';
+  try {
+    const url = new URL(img.src, window.location.href);
+    const isSvg = url.pathname.toLowerCase().endsWith('.svg');
+    if (url.origin === window.location.origin && !isSvg) {
+      const optimized = createOptimizedPicture(img.src, label, false, [{ width: '96' }]);
+      moveInstrumentation(img, optimized.querySelector('img'));
+      return optimized;
+    }
+  } catch {
+    // fall through
+  }
+  const picture = img.closest('picture');
+  if (picture) {
+    img.alt = label || img.alt;
+    img.loading = 'lazy';
+    return picture;
+  }
+  img.alt = label || img.alt;
+  img.loading = 'lazy';
+  return img;
 }
 
 /**
@@ -54,11 +74,11 @@ export default function decorate(block) {
     if (isSocialRow(row)) {
       const link = row.querySelector('a');
       const img = row.querySelector('img');
-      if (!link?.href) return;
+      if (!link?.href && !img) return;
 
       const label = (
-        link.getAttribute('title')
-        || link.textContent
+        link?.getAttribute('title')
+        || link?.textContent
         || img?.alt
         || 'Social link'
       ).trim();
@@ -66,23 +86,28 @@ export default function decorate(block) {
       const li = document.createElement('li');
       moveInstrumentation(row, li);
 
-      link.classList.add('social-link');
-      link.setAttribute('aria-label', label);
-      link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: label.toLowerCase() }));
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = '';
+      if (link?.href) {
+        link.classList.add('social-link');
+        link.setAttribute('aria-label', label);
+        link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: label.toLowerCase() }));
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = '';
 
-      if (img) {
-        link.append(buildIconPicture(img, label));
+        if (img) {
+          link.append(buildIconPicture(img, label));
+        } else {
+          const sr = document.createElement('span');
+          sr.className = 'sr-only';
+          sr.textContent = label;
+          link.append(sr);
+        }
+
+        li.append(link);
+      } else if (img) {
+        li.append(buildIconPicture(img, label));
       }
 
-      const sr = document.createElement('span');
-      sr.className = 'sr-only';
-      sr.textContent = label;
-      link.append(sr);
-
-      li.append(link);
       socialNav.append(li);
       return;
     }

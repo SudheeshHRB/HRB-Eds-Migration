@@ -320,29 +320,31 @@ header nav .nav-sections .nav-menu-link:focus {
   }
 }
 
-/* Mobile mega accordion */
-header nav[aria-expanded='true'] .nav-sections .mega-menu {
-  display: none;
-  padding: 12px 0 20px;
-  white-space: normal;
-}
+/* Mobile mega accordion — must not override desktop (nav is aria-expanded=true there) */
+@media (width < 900px) {
+  header nav[aria-expanded='true'] .nav-sections .mega-menu {
+    display: none;
+    padding: 12px 0 20px;
+    white-space: normal;
+  }
 
-header nav[aria-expanded='true'] .nav-sections .nav-drop[aria-expanded='true'] > .mega-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+  header nav[aria-expanded='true'] .nav-sections .nav-drop[aria-expanded='true'] > .mega-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
-header nav[aria-expanded='true'] .nav-sections .mega-cards {
-  max-width: none;
-  flex: none;
-}
+  header nav[aria-expanded='true'] .nav-sections .mega-cards {
+    max-width: none;
+    flex: none;
+  }
 
-header nav[aria-expanded='true'] .nav-sections .mega-menu-main,
-header nav[aria-expanded='true'] .nav-sections .mega-columns {
-  max-width: none;
-  flex: none;
-  width: 100%;
+  header nav[aria-expanded='true'] .nav-sections .mega-menu-main,
+  header nav[aria-expanded='true'] .nav-sections .mega-columns {
+    max-width: none;
+    flex: none;
+    width: 100%;
+  }
 }
 
 /* tools */

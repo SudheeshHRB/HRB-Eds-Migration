@@ -51,25 +51,35 @@
   {
     "id": "footer-legal",
     "components": [
-      "social-link"
+      "social-link",
+      "social-link-facebook",
+      "social-link-instagram",
+      "social-link-youtube",
+      "social-link-x"
     ]
   },
   {
     "id": "footer-links",
     "components": [
-      "footer-column"
+      "footer-column",
+      "footer-column-2",
+      "footer-column-3",
+      "footer-column-4"
     ]
   },
   {
     "id": "footer-seals",
     "components": [
-      "footer-seal"
+      "footer-seal",
+      "footer-seal-privacy"
     ]
   },
   {
     "id": "footer-support",
     "components": [
-      "support-action"
+      "support-action",
+      "support-action-office",
+      "support-action-search"
     ]
   },
   {
@@ -105,6 +115,7 @@
     "id": "nav-tools",
     "components": [
       "nav-tool",
+      "nav-tool-search",
       "nav-signin"
     ]
   }

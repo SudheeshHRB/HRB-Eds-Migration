@@ -56,13 +56,15 @@ export default function decorate(block) {
       link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: trackName }));
 
       if (img) {
-        link.classList.add('truste-seal');
-        const alt = img.alt || link.textContent.trim();
+        link.classList.add('seal-link');
+        const alt = link.getAttribute('title') || img.alt || link.textContent.trim();
         link.textContent = '';
         link.append(wrapSealImage(img, alt));
         if (alt) link.setAttribute('aria-label', alt);
       } else {
         link.classList.add('privacy-choices');
+        const label = link.getAttribute('title') || link.textContent.trim();
+        if (label) link.setAttribute('aria-label', label);
       }
 
       item.append(link);

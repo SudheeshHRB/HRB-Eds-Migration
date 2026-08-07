@@ -132,9 +132,10 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
-    document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
+  // Always reveal body (needed for Universal Editor if decoration is partial)
+  document.body.classList.add('appear');
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */

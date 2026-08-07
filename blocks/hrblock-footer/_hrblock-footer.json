@@ -11,7 +11,7 @@
               "name": "H&R Block Footer",
               "model": "hrblock-footer",
               "filter": "hrblock-footer",
-              "classes": "site-footer green-dark-theme"
+              "style": "site-footer green-dark-theme"
             }
           }
         }

@@ -136,6 +136,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Site Footer",
+            "value": "site-footer"
+          },
+          {
+            "name": "Green Dark Theme",
+            "value": "green-dark-theme"
           }
         ]
       }
@@ -543,11 +551,25 @@
         "description": "Card body text. Add a second paragraph for disclaimer if needed."
       },
       {
-        "component": "text",
+        "component": "select",
         "valueType": "string",
         "name": "classes",
-        "label": "Card Style Class",
-        "description": "Optional: green, cream, or accent"
+        "label": "Card Style",
+        "description": "Visual style for the promo card",
+        "options": [
+          {
+            "name": "Green (dark)",
+            "value": "green"
+          },
+          {
+            "name": "Cream",
+            "value": "cream"
+          },
+          {
+            "name": "Accent (eggshell + neon)",
+            "value": "accent"
+          }
+        ]
       }
     ]
   },

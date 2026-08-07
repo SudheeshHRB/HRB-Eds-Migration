@@ -1,3 +1,5 @@
+/* Mega menu children — AEM spike / navlinklist / accordion tokens */
+
 .nav-panel {
   position: static;
 }
@@ -10,16 +12,16 @@
   display: none;
 }
 
-/* Desktop mega panel layout is applied from header when open */
 .nav-panel .mega-explore {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: inherit;
+  color: var(--hrb-forest-green, #003512);
   text-decoration: none;
   margin: 0 0 20px;
+  line-height: 1.25;
 }
 
 .nav-panel .mega-explore::after,
@@ -32,7 +34,7 @@
 
 .nav-panel .mega-primary {
   list-style: none;
-  margin: 0 0 28px;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -40,35 +42,41 @@
 }
 
 .nav-panel .mega-primary-link {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: inherit;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--hrb-forest-green, #003512);
   text-decoration: none;
+  line-height: 1.3;
 }
 
 .nav-panel .mega-columns {
   display: flex;
   flex-wrap: wrap;
   gap: 28px 40px;
+  flex: 1 1 auto;
+  align-self: flex-start;
 }
 
 .nav-panel .mega-column {
-  min-width: 160px;
-  flex: 1 1 160px;
+  min-width: 150px;
+  flex: 1 1 150px;
+  max-width: 220px;
 }
 
 .nav-panel .mega-column-heading {
-  margin: 0 0 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #d9d9d9;
-  font-size: 1.3rem;
+  margin: 0 0 12px;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--hrb-column-rule, #d6dae0);
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #6b6b6b;
+  color: var(--hrb-primary-black, #262626);
+  line-height: 1.3;
+  box-sizing: content-box;
 }
 
 .nav-panel .mega-column-links {
   list-style: none;
-  margin: 0;
+  margin: 12px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -76,16 +84,11 @@
 }
 
 .nav-panel .mega-column-links a {
-  color: inherit;
+  color: var(--hrb-forest-green, #003512);
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-.nav-panel .mega-explore:hover,
-.nav-panel .mega-primary-link:hover,
-.nav-panel .mega-column-links a:hover {
-  text-decoration: underline;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .nav-panel .mega-cards {
@@ -94,65 +97,102 @@
   gap: 16px;
   min-width: 260px;
   max-width: 320px;
+  flex: 0 0 300px;
+}
+
+.nav-panel .mega-card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .nav-panel .mega-card {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
   padding: 20px;
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  min-height: 140px;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.nav-panel .mega-card-text {
+  flex-direction: column;
 }
 
 .nav-panel .mega-card-green {
-  background-color: #00534c;
+  background-color: var(--hrb-dark-green, #005d1f);
   color: #fff;
 }
 
 .nav-panel .mega-card-cream {
-  background-color: #f6f4e9;
-  color: #131313;
+  background-color: var(--hrb-eggshell, #f6f4e9);
+  color: var(--hrb-forest-green, #003512);
 }
 
 .nav-panel .mega-card-accent {
-  background-color: #f6f4e9;
-  color: #131313;
-  border-left: 6px solid #c4d600;
+  background-color: var(--hrb-eggshell, #f6f4e9);
+  color: var(--hrb-forest-green, #003512);
+  border-left: 6px solid #d2fa52;
 }
 
 .nav-panel .mega-card picture,
 .nav-panel .mega-card img {
   display: block;
-  width: 100%;
-  max-height: 120px;
+  width: 96px;
+  min-width: 96px;
+  height: 96px;
   object-fit: cover;
   border-radius: 4px;
+  align-self: center;
+}
+
+.nav-panel .mega-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
 }
 
 .nav-panel .mega-card-title {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.nav-panel .mega-explore:hover,
+.nav-panel .mega-primary-link:hover,
+.nav-panel .mega-column-links a:hover,
+.nav-panel .mega-card:hover .mega-card-title {
+  text-decoration: underline;
+  color: var(--hrb-dark-green, #005d1f);
 }
 
 .nav-panel .mega-card-desc {
-  margin: 8px 0 0;
+  margin: 0;
   font-size: 1.3rem;
   line-height: 1.4;
   font-weight: 400;
+  color: inherit;
+  opacity: 0.92;
 }
 
 .nav-panel .mega-card-disclaimer {
-  margin: 8px 0 0;
+  margin: 0;
   font-size: 1.1rem;
   color: #6b6b6b;
   line-height: 1.3;
 }
 
 .nav-panel .mega-menu-main {
-  flex: 1 1 auto;
+  flex: 0 1 240px;
+  min-width: 200px;
+  max-width: 280px;
 }

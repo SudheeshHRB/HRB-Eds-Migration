@@ -19,6 +19,15 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
+  /* H&R Block brand (from AEM reimagine clientlib tokens) */
+  --hrb-dark-green: #005d1f;
+  --hrb-forest-green: #003512;
+  --hrb-eggshell: #f6f4e9;
+  --hrb-primary-black: #262626;
+  --hrb-mega-border: #e8eef1;
+  --hrb-column-rule: #d6dae0;
+  --hrb-light-grey-1: #f1f5f7;
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
@@ -36,7 +45,7 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* nav height */
+  /* nav height — AEM header.less = 64px */
   --nav-height: 64px;
 }
 

@@ -1,16 +1,14 @@
+/* Footer legal — AEM .copyright-footer + .social-media */
+
 .footer-legal {
   width: 100%;
-  padding: 30px 0;
+  padding: 40px 0 0;
   border-top: 1px solid rgb(246 244 233 / 20%);
-}
-
-.footer-legal .container {
-  padding: 0 25px;
 }
 
 .footer-legal .copyright-inner {
   display: flex;
-  flex-flow: column-reverse wrap;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
@@ -18,35 +16,39 @@
 }
 
 @media (width >= 768px) {
-  .footer-legal .container {
-    padding: 0 40px;
-  }
-
   .footer-legal .copyright-inner {
     flex-direction: row;
+    align-items: center;
     padding: 0 40px;
   }
 }
 
-@media (width >= 1024px) {
-  .footer-legal .container {
-    padding: 0 80px;
-  }
-
+@media (width >= 900px) {
   .footer-legal .copyright-inner {
-    padding: 0 80px;
+    padding: 40px 80px 0;
   }
 }
 
 .footer-legal .legal-copy {
   flex: 1 1 280px;
-  color: #f6f4e9;
+  color: var(--hrb-eggshell, #f6f4e9);
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
 .footer-legal .legal-copy p {
-  margin: 0 0 6px;
+  margin: 0 20px 0 0;
+  font-size: 1.2rem;
+}
+
+@media (width >= 1200px) {
+  .footer-legal .legal-copy {
+    max-width: 90%;
+  }
+
+  .footer-legal .legal-copy p {
+    margin-right: 60px;
+  }
 }
 
 .footer-legal .social-media {
@@ -54,7 +56,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 16px;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -69,18 +71,16 @@
   overflow: hidden;
   color: #fff;
   text-decoration: none;
-  background-color: rgb(246 244 233 / 18%);
+  background-color: rgb(246 244 233 / 20%);
   border-radius: 50%;
-  transition: background-color 0.2s ease;
-  font-size: 1.2rem;
+  transition: background-color 0.2s ease-in;
 }
 
 .footer-legal .social-link:hover,
 .footer-legal .social-link:focus {
-  background-color: rgb(246 244 233 / 28%);
+  background-color: var(--hrb-eggshell, #f6f4e9);
   text-decoration: none;
-  outline: 2px solid #f6f4e9;
-  outline-offset: 2px;
+  outline: none;
 }
 
 .footer-legal .social-link picture,
@@ -89,6 +89,16 @@
   width: 22px;
   height: 22px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s ease-in;
+}
+
+.footer-legal .social-link:hover picture,
+.footer-legal .social-link:hover img,
+.footer-legal .social-link:focus picture,
+.footer-legal .social-link:focus img {
+  /* eggshell circle + dark-green icon on hover (AEM behavior) */
+  filter: invert(18%) sepia(42%) saturate(1200%) hue-rotate(98deg) brightness(90%) contrast(95%);
 }
 
 .footer-legal .social-link .sr-only {

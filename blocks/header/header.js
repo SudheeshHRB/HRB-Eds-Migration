@@ -130,7 +130,6 @@ function decorateNavDrops(navSections) {
       if (inMegaLink) return;
 
       if (!isDesktop.matches) {
-        // mobile: toggle this panel only
         if (e.target.closest('.nav-menu-link, :scope > a') || e.target === navSection) {
           const open = navSection.getAttribute('aria-expanded') === 'true';
           navSection.setAttribute('aria-expanded', open ? 'false' : 'true');
@@ -139,7 +138,6 @@ function decorateNavDrops(navSections) {
         return;
       }
 
-      // desktop: open this mega, close others
       if (!e.target.closest('.nav-menu-link, :scope > a') && e.target !== navSection) return;
       e.preventDefault();
       const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -152,7 +150,6 @@ function decorateNavDrops(navSections) {
     });
   });
 
-  // close when clicking outside
   document.addEventListener('click', (e) => {
     if (!isDesktop.matches) return;
     if (e.target.closest('#nav')) return;
@@ -161,13 +158,14 @@ function decorateNavDrops(navSections) {
 }
 
 /**
- * loads and decorates the header / primary navigation
+ * loads and decorates the header / primary navigation from the authored /nav fragment
  * @param {Element} block
  */
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
+  if (!fragment) return;
 
   block.textContent = '';
   const nav = document.createElement('nav');

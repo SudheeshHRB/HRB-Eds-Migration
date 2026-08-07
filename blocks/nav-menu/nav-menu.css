@@ -9,15 +9,16 @@
 }
 
 .nav-menu .nav-menu-link {
-  color: inherit;
+  color: var(--hrb-forest-green, #003512);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.6rem;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 .nav-menu .nav-menu-link:hover,
 .nav-menu .nav-menu-link:focus {
-  text-decoration: underline;
+  color: var(--hrb-dark-green, #005d1f);
+  text-decoration: none;
 }
 
 .nav-menu .nav-submenu {
@@ -27,7 +28,7 @@
 }
 
 .nav-menu .nav-submenu a {
-  color: inherit;
+  color: var(--hrb-forest-green, #003512);
   text-decoration: none;
   font-weight: 400;
 }

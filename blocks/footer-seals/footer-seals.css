@@ -1,13 +1,15 @@
+/* Footer seals — AEM .footer-seals */
+
 .footer-seals {
   width: 100%;
-  padding: 20px 0 10px;
+  padding: 20px 0;
 }
 
 .footer-seals .seals-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 0;
   padding: 0 25px;
 }
 
@@ -17,10 +19,14 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 900px) {
   .footer-seals .seals-inner {
     padding: 0 80px;
   }
+}
+
+.footer-seals .seal-item {
+  margin-right: 30px;
 }
 
 .footer-seals .truste-seal img,
@@ -31,12 +37,28 @@
 }
 
 .footer-seals .privacy-choices {
-  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hrb-eggshell, #f6f4e9);
   font-size: 1.4rem;
-  text-decoration: underline;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-seals .privacy-choices::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0a6cff 50%, #fff 50%);
+  border: 1px solid #cfd8e3;
+  box-sizing: border-box;
 }
 
 .footer-seals .privacy-choices:hover,
 .footer-seals .privacy-choices:focus {
-  opacity: 0.85;
+  text-decoration: underline;
+  color: #e8eef1;
 }

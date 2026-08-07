@@ -70,9 +70,10 @@ export default function decorate(block) {
     const img = row.querySelector('img');
     const texts = plainTexts(row);
 
-    // Promo card (DAM image + link)
-    if (img && link) {
-      const style = texts.find((t) => CARD_STYLES.has(t.toLowerCase()));
+    // Promo card: style from text cell or row class (UE "classes" / Card Style)
+    const classStyle = [...row.classList].find((c) => CARD_STYLES.has(c.toLowerCase()));
+    const style = texts.find((t) => CARD_STYLES.has(t.toLowerCase())) || classStyle;
+    if (link && style && !list) {
       const paragraphs = [...row.querySelectorAll('p')]
         .map((p) => p.textContent.trim())
         .filter((t) => t && t !== link.textContent.trim()
@@ -85,6 +86,7 @@ export default function decorate(block) {
       const card = document.createElement('a');
       card.href = link.href;
       card.className = `mega-card mega-card-${(style || 'cream').toLowerCase()}`;
+      if (!img) card.classList.add('mega-card-text');
       card.setAttribute(
         'aria-label',
         (link.getAttribute('title') || link.textContent || '').trim(),
@@ -92,7 +94,7 @@ export default function decorate(block) {
       if (link.target) card.target = link.target;
       moveInstrumentation(row, card);
 
-      card.append(pictureFrom(img, img.alt || link.textContent.trim()));
+      if (img) card.append(pictureFrom(img, img.alt || link.textContent.trim()));
 
       const body = document.createElement('div');
       body.className = 'mega-card-body';
@@ -155,8 +157,8 @@ export default function decorate(block) {
     }
   });
 
-  if (columnsWrap.children.length) main.append(columnsWrap);
   if (main.children.length) mega.append(main);
+  if (columnsWrap.children.length) mega.append(columnsWrap);
   if (cardsWrap.children.length) mega.append(cardsWrap);
 
   const root = document.createElement('div');

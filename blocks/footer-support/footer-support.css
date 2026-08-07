@@ -1,9 +1,15 @@
+/* Footer support — AEM .need-help-footer */
+
 .footer-support {
   width: 100%;
-  padding: 0 0 30px;
+  padding: 40px 0 0;
 }
 
 .footer-support .footer-support-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   padding: 0 25px;
 }
 
@@ -13,9 +19,31 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 900px) {
   .footer-support .footer-support-inner {
     padding: 0 80px;
+  }
+}
+
+@media (width >= 1200px) {
+  .footer-support .footer-support-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 0 80px 40px;
+    gap: 0;
+  }
+
+  .footer-support .support-actions {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 0;
+  }
+
+  .footer-support .support-actions li {
+    flex: 1 1 0;
+    max-width: 25%;
   }
 }
 
@@ -23,9 +51,28 @@
 .footer-support h3,
 .footer-support h4 {
   font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0 0 20px;
-  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  color: var(--hrb-eggshell, #f6f4e9);
+  line-height: 2;
+  flex: 0 0 auto;
+}
+
+@media (width >= 900px) {
+  .footer-support h2,
+  .footer-support h3,
+  .footer-support h4 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (width >= 1200px) {
+  .footer-support h2,
+  .footer-support h3,
+  .footer-support h4 {
+    flex: 1 1 0;
+    max-width: 25%;
+  }
 }
 
 .footer-support .support-actions {
@@ -34,32 +81,57 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 16px 28px;
+  gap: 0;
+  width: 100%;
+}
+
+.footer-support .support-actions li {
+  margin: 20px 0;
 }
 
 .footer-support .icon-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: transparent;
   border: none;
-  color: inherit;
+  color: var(--hrb-eggshell, #f6f4e9);
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: inherit;
   text-decoration: none;
-  padding: 8px 0;
+  padding: 13px 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  max-width: 100%;
+  text-align: left;
+}
+
+@media (width >= 900px) {
+  .footer-support .icon-btn {
+    font-size: 2.4rem;
+    padding: 10px 0;
+  }
 }
 
 .footer-support .icon-btn picture,
 .footer-support .icon-btn img {
   display: block;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.1em;
+  height: 1.1em;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .footer-support .icon-btn:hover,
 .footer-support .icon-btn:focus {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #e8eef1;
+}
+
+.footer-support .icon-btn:hover img,
+.footer-support .icon-btn:focus img {
+  /* keep eggshell icons on dark bg; AEM swaps circle fill on hover */
+  filter: brightness(0) invert(1);
 }

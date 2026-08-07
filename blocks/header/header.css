@@ -149,6 +149,15 @@ header .nav-brand {
   flex: 0 0 auto;
 }
 
+header nav .nav-brand-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--hrb-forest-green, #003512);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
 header nav .nav-brand img {
   width: auto;
   height: 40px;

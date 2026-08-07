@@ -3,6 +3,130 @@ import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+const defaultNavData = {
+  brand: {
+    label: 'H&R Block',
+    href: '/',
+    ariaLabel: 'H&R Block Home',
+  },
+  menu: [
+    {
+      label: 'Taxes',
+      href: '/taxes/',
+      children: [
+        { label: 'File online', href: '/online-tax-filing/' },
+        { label: 'Find an office', href: '/tax-offices/' },
+      ],
+    },
+    {
+      label: 'Financial products',
+      href: '/financial-services/',
+      children: [
+        { label: 'Spruce', href: '/financial-services/spruce/' },
+        { label: 'More products', href: '/financial-services/' },
+      ],
+    },
+    {
+      label: 'Business services',
+      href: '/tax-offices/business-services/',
+      children: [
+        { label: 'Small business tax prep', href: '/tax-offices/business-services/' },
+      ],
+    },
+    {
+      label: 'Tools and resources',
+      href: '/tax-center/',
+      children: [
+        { label: 'Tax tips and help', href: '/tax-center/' },
+      ],
+    },
+  ],
+  tools: [
+    { label: 'Find an office', href: '/tax-offices/' },
+    { label: 'Search', href: '/tax-center/' },
+  ],
+  signIn: {
+    eyebrow: 'Sign in to',
+    label: 'MyBlock',
+    href: '/account/',
+  },
+};
+
+function createLink(label, href, className, ariaLabel) {
+  const link = document.createElement('a');
+  link.href = href;
+  link.textContent = label;
+  if (className) link.className = className;
+  if (ariaLabel) link.setAttribute('aria-label', ariaLabel);
+  return link;
+}
+
+function createNavList(items, itemClassName, linkClassName, nestedListClassName) {
+  const list = document.createElement('ul');
+  items.forEach((item) => {
+    const listItem = document.createElement('li');
+    if (itemClassName) listItem.className = itemClassName;
+    const link = createLink(item.label, item.href, linkClassName);
+    listItem.append(link);
+    if (item.children?.length) {
+      const nestedList = document.createElement('ul');
+      if (nestedListClassName) nestedList.className = nestedListClassName;
+      item.children.forEach((child) => {
+        const childItem = document.createElement('li');
+        childItem.append(createLink(child.label, child.href));
+        nestedList.append(childItem);
+      });
+      listItem.append(nestedList);
+    }
+    list.append(listItem);
+  });
+  return list;
+}
+
+function buildDefaultNav() {
+  const nav = document.createElement('nav');
+  nav.id = 'nav';
+  nav.setAttribute('aria-label', 'Primary');
+
+  const brand = document.createElement('div');
+  brand.className = 'nav-brand';
+  brand.append(createLink(defaultNavData.brand.label, defaultNavData.brand.href, 'nav-brand-link', defaultNavData.brand.ariaLabel));
+  nav.append(brand);
+
+  const sections = document.createElement('div');
+  sections.className = 'nav-sections';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'default-content-wrapper';
+  wrapper.append(createNavList(defaultNavData.menu, 'nav-drop', 'nav-menu-link', 'submenu'));
+  sections.append(wrapper);
+  nav.append(sections);
+
+  const tools = document.createElement('div');
+  tools.className = 'nav-tools';
+  const utilityList = document.createElement('ul');
+  utilityList.className = 'nav-utilities';
+  defaultNavData.tools.forEach((tool) => {
+    const item = document.createElement('li');
+    item.append(createLink(tool.label, tool.href, 'nav-tool-link'));
+    utilityList.append(item);
+  });
+  tools.append(utilityList);
+
+  const signIn = createLink(defaultNavData.signIn.label, defaultNavData.signIn.href, 'nav-signin');
+  const eyebrow = document.createElement('span');
+  eyebrow.className = 'nav-signin-eyebrow';
+  eyebrow.textContent = defaultNavData.signIn.eyebrow;
+  const label = document.createElement('span');
+  label.className = 'nav-signin-label';
+  label.textContent = defaultNavData.signIn.label;
+  signIn.prepend(eyebrow);
+  signIn.append(label);
+  tools.append(signIn);
+  nav.append(tools);
+
+  return nav;
+}
+
 function closeOnEscape(e) {
   if (e.code !== 'Escape') return;
   const nav = document.getElementById('nav');
@@ -165,13 +289,21 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
-  if (!fragment) return;
 
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
   nav.setAttribute('aria-label', 'Primary');
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+
+  const hasExpectedStructure = fragment?.querySelector('.nav-brand, .nav-sections, .nav-tools')
+    || fragment?.children.length >= 3;
+
+  if (!hasExpectedStructure) {
+    const defaultNav = buildDefaultNav();
+    while (defaultNav.firstElementChild) nav.append(defaultNav.firstElementChild);
+  } else {
+    while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {

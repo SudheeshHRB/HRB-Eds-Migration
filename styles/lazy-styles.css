@@ -1,8 +1,12 @@
 /* H&R Block site footer — tokens from AEM reimagine footer.less / _variables.less */
 .section.site-footer,
 .section.green-dark-theme,
+.site-footer,
+.green-dark-theme,
 footer .section.site-footer,
-footer .section.green-dark-theme {
+footer .section.green-dark-theme,
+footer .site-footer,
+footer .green-dark-theme {
   --footer-bg: var(--hrb-dark-green, #005d1f);
   --footer-fg: var(--hrb-eggshell, #f6f4e9);
 
@@ -15,20 +19,30 @@ footer .section.green-dark-theme {
 
 .section.site-footer a,
 .section.green-dark-theme a,
+.site-footer a,
+.green-dark-theme a,
 footer .section.site-footer a,
-footer .section.green-dark-theme a {
+footer .section.green-dark-theme a,
+footer .site-footer a,
+footer .green-dark-theme a {
   color: inherit;
 }
 
 .section.site-footer a:hover,
 .section.green-dark-theme a:hover,
+.site-footer a:hover,
+.green-dark-theme a:hover,
 footer .section.site-footer a:hover,
-footer .section.green-dark-theme a:hover {
+footer .section.green-dark-theme a:hover,
+footer .site-footer a:hover,
+footer .green-dark-theme a:hover {
   color: #e8eef1;
 }
 
 .section.site-footer > div,
-.section.green-dark-theme > div {
+.section.green-dark-theme > div,
+.site-footer > div,
+.green-dark-theme > div {
   max-width: none;
   padding-left: 0;
   padding-right: 0;

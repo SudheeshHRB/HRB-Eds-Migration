@@ -163,7 +163,7 @@
           "name": "image",
           "label": "Card Image",
           "multi": false,
-          "description": "Optional image from DAM"
+          "description": "Optional DAM image shown on the left of the card (Spruce debit card, people photos, etc.). Leave empty for text-only cards."
         },
         {
           "component": "text",
@@ -193,14 +193,14 @@
           "valueType": "string",
           "name": "description",
           "label": "Description / Disclaimer",
-          "description": "Card body text. Add a second paragraph for disclaimer if needed."
+          "description": "Card body text. Add a second paragraph for disclaimer (e.g. Pathward FDIC) if needed."
         },
         {
           "component": "select",
           "valueType": "string",
           "name": "classes",
           "label": "Card Style",
-          "description": "Visual style for the promo card",
+          "description": "Visual style: green (dark), cream (eggshell), accent (eggshell + neon edge — Spruce)",
           "options": [
             { "name": "Green (dark)", "value": "green" },
             { "name": "Cream", "value": "cream" },

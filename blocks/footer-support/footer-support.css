@@ -30,20 +30,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding: 0 80px 40px;
-    gap: 0;
+    padding: 0 40px 40px;
+    gap: 24px;
   }
 
   .footer-support .support-actions {
     display: flex;
     flex: 1 1 auto;
-    gap: 0;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 12px;
+    min-width: 0;
   }
 
   .footer-support .support-actions li {
-    flex: 1 1 0;
-    max-width: 25%;
+    flex: 0 1 auto;
+    max-width: none;
+    margin: 0;
+    min-width: 0;
   }
 }
 
@@ -62,7 +68,7 @@
   .footer-support h2,
   .footer-support h3,
   .footer-support h4 {
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 1vw + 1.2rem, 2rem);
   }
 }
 
@@ -70,8 +76,9 @@
   .footer-support h2,
   .footer-support h3,
   .footer-support h4 {
-    flex: 1 1 0;
-    max-width: 25%;
+    flex: 0 0 auto;
+    max-width: none;
+    white-space: nowrap;
   }
 }
 
@@ -110,7 +117,7 @@
 
 @media (width >= 900px) {
   .footer-support .icon-btn {
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 1vw + 1.2rem, 2rem);
     padding: 10px 0;
   }
 }

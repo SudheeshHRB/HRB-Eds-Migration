@@ -539,10 +539,7 @@
                 "template": {
                   "name": "Nav Panel",
                   "model": "nav-panel",
-                  "filter": "nav-panel",
-                  "link": "/taxes/",
-                  "linkText": "Taxes",
-                  "linkTitle": "Taxes"
+                  "filter": "nav-panel"
                 }
               }
             }
@@ -557,10 +554,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Explore",
-                  "model": "mega-explore",
-                  "link": "/taxes/",
-                  "linkText": "Explore taxes",
-                  "linkTitle": "Explore taxes"
+                  "model": "mega-explore"
                 }
               }
             }
@@ -575,8 +569,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Primary Links",
-                  "model": "mega-primary",
-                  "links": "<ul><li><a href=\"/online-tax-filing/\"><strong>File online</strong></a></li><li><a href=\"/tax-offices/\"><strong>File with a pro</strong></a></li><li><a href=\"/tax-software/\"><strong>Download software</strong></a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\"><strong>Small business taxes</strong></a></li></ul>"
+                  "model": "mega-primary"
                 }
               }
             }
@@ -591,9 +584,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Column",
-                  "model": "mega-column",
-                  "heading": "More tax services",
-                  "links": "<ul><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look® Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind®</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield®</a></li></ul>"
+                  "model": "mega-column"
                 }
               }
             }
@@ -608,12 +599,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Card",
-                  "model": "mega-card",
-                  "link": "/tax-offices/",
-                  "linkText": "File with a tax pro",
-                  "linkTitle": "File with a tax pro",
-                  "description": "<p>Get expert help from a tax pro near you.</p>",
-                  "classes": "green"
+                  "model": "mega-card"
                 }
               }
             }

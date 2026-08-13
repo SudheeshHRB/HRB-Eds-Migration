@@ -1,10 +1,12 @@
 import { decorateBlock } from './aem.js';
+
 const FOOTER_BLOCKS = [
   'footer-support',
   'footer-links',
   'footer-legal',
   'footer-seals',
 ];
+
 const NAV_SEL = [
   '.nav-brand',
   '.nav-menu',
@@ -15,10 +17,12 @@ const NAV_SEL = [
   '[data-aue-model="nav-panel"]',
   '[data-aue-model="nav-tools"]',
 ].join(', ');
+
 const FOOTER_SEL = [
   ...FOOTER_BLOCKS.map((n) => `.${n}`),
   ...FOOTER_BLOCKS.map((n) => `[data-aue-model="${n}"]`),
 ].join(', ');
+
 /**
  * Ensure className starts with the block name (decorateBlock uses classList[0]).
  * @param {Element} el
@@ -29,6 +33,7 @@ function ensureBlockClass(el, name) {
   const rest = [...el.classList].filter((c) => c !== name);
   el.className = [name, ...rest].join(' ').trim();
 }
+
 /**
  * EDS only decorates `section > div > div`. Nested Site Footer (section-in-section)
  * leaves footer-* blocks undecorated so their CSS/JS never load — fix that.
@@ -44,6 +49,7 @@ export function decorateNestedFooterBlocks(root) {
     });
   });
 }
+
 /**
  * Ensure footer sections get theme classes (UE authoring + live /footer fragment).
  * Does not paint nav green when authors nest Site Footer under a shared Section.
@@ -51,10 +57,12 @@ export function decorateNestedFooterBlocks(root) {
  */
 export default function applyFooterTheme(root) {
   if (!root) return;
+
   root.querySelectorAll('[data-aue-model="hrblock-footer"]').forEach((el) => {
     el.classList.add('section', 'site-footer', 'green-dark-theme');
     if (!el.dataset.sectionStatus) el.dataset.sectionStatus = 'initialized';
   });
+
   root.querySelectorAll('.section, [data-aue-model="section"]').forEach((section) => {
     if (section.getAttribute('data-aue-model') === 'hrblock-footer') return;
     const hasFooter = section.querySelector(FOOTER_SEL);

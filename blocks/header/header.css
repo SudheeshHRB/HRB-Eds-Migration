@@ -196,8 +196,8 @@ header nav .nav-sections .default-content-wrapper > ul {
 }
 
 header nav .nav-sections .nav-menu-link,
-header nav .nav-sections .default-content-wrapper > ul > li > a,
-header nav .nav-sections .nav-menu-list > li > a {
+header nav .nav-sections .nav-menu-list > li > a,
+header nav .nav-sections .default-content-wrapper > ul > li > a {
   position: relative;
   font-weight: 600;
   font-size: 1.4rem;

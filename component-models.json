@@ -194,6 +194,7 @@
         "component": "richtext",
         "valueType": "string",
         "name": "legal",
+        "value": "<p>Copyright © 2023-2024 HRB Digital LLC. All Rights Reserved.</p><p>Bank products and services are offered by Pathward®, N.A.</p><p>All deposit accounts through Pathward® are FDIC insured.</p>",
         "label": "Legal / Copyright Text"
       }
     ]
@@ -213,11 +214,14 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "TikTok",
         "label": "Icon Alt Text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "https://www.tiktok.com/@hrblock",
         "label": "Link URL",
         "description": "Page that opens when the icon is clicked"
       },
@@ -225,12 +229,14 @@
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "TikTok",
         "label": "Accessible Name"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "TikTok",
         "label": "Link Title"
       }
     ]
@@ -241,9 +247,10 @@
       {
         "component": "richtext",
         "name": "content",
+        "value": "<h5><strong>Tax Services</strong></h5><ul><li><a href=\"/tax-offices/manage-appointment/\">Reschedule or manage appointment</a></li><li><a href=\"/online-tax-filing/\">Online tax filing</a></li><li><a href=\"/tax-offices/\">File with a tax pro</a></li></ul>",
         "label": "Column Content",
         "valueType": "string",
-        "description": "Add menu headings (H5) and link lists for this column"
+        "description": "Add menu headings (H5) and link lists for this column. Defaults are editable."
       }
     ]
   },
@@ -256,29 +263,34 @@
         "name": "image",
         "label": "Seal Image",
         "multi": false,
-        "description": "Select seal image from DAM"
+        "description": "Select seal image from DAM (optional for text-only links)"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "TRUSTe Privacy Certification",
         "label": "Image Alt Text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "https://privacy.truste.com/privacy-seal/validation",
         "label": "Link URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "TRUSTe Privacy Certification",
         "label": "Link Label"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "TRUSTe Privacy Certification",
         "label": "Link Title / Aria Label"
       }
     ]
@@ -289,14 +301,18 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "heading",
-        "label": "Heading"
+        "name": "title",
+        "value": "Need support?",
+        "label": "Heading",
+        "description": "Support row heading text"
       },
       {
         "component": "select",
-        "name": "headingType",
+        "name": "titleType",
         "label": "Heading Type",
+        "value": "h2",
         "valueType": "string",
+        "description": "Must use titleType so EDS renders a real heading tag",
         "options": [
           {
             "name": "H2",
@@ -329,23 +345,28 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "Customer help",
         "label": "Icon Alt Text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "/support/",
         "label": "Link / Action URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "Customer help",
         "label": "Label"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Customer help",
         "label": "Title / Aria Label"
       }
     ]
@@ -392,8 +413,31 @@
       {
         "component": "text",
         "name": "name",
+        "value": "Site Footer",
         "label": "Section Name",
+        "valueType": "string",
         "description": "Label shown in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "value": [
+          "site-footer",
+          "green-dark-theme"
+        ],
+        "label": "Style",
+        "valueType": "string",
+        "description": "Applies dark green footer theme. Keep both selected (editable).",
+        "options": [
+          {
+            "name": "Site Footer",
+            "value": "site-footer"
+          },
+          {
+            "name": "Green Dark Theme",
+            "value": "green-dark-theme"
+          }
+        ]
       }
     ]
   },
@@ -412,23 +456,28 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "H&R Block",
         "label": "Logo Alt Text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "/",
         "label": "Logo Link"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "H&R Block",
         "label": "Accessible Name"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "H&R Block Home",
         "label": "Link Title"
       }
     ]
@@ -518,7 +567,7 @@
         "name": "image",
         "label": "Card Image",
         "multi": false,
-        "description": "Optional image from DAM"
+        "description": "Optional DAM image shown on the left of the card (Spruce debit card, people photos, etc.). Leave empty for text-only cards."
       },
       {
         "component": "text",
@@ -548,14 +597,14 @@
         "valueType": "string",
         "name": "description",
         "label": "Description / Disclaimer",
-        "description": "Card body text. Add a second paragraph for disclaimer if needed."
+        "description": "Card body text. Add a second paragraph for disclaimer (e.g. Pathward FDIC) if needed."
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "classes",
         "label": "Card Style",
-        "description": "Visual style for the promo card",
+        "description": "Visual style: green (dark), cream (eggshell), accent (eggshell + neon edge — Spruce)",
         "options": [
           {
             "name": "Green (dark)",
@@ -588,23 +637,28 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "Find an office",
         "label": "Icon Alt Text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "/tax-offices/local/",
         "label": "Link URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "Find an office",
         "label": "Label"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Find an office",
         "label": "Link Title"
       }
     ]
@@ -624,24 +678,29 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "Sign in",
         "label": "Icon Alt Text"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "eyebrow",
+        "value": "Sign in to",
         "label": "Eyebrow Text",
         "description": "Top line text"
       },
       {
         "component": "aem-content",
+        "valueType": "string",
         "name": "link",
+        "value": "/myblock/",
         "label": "Sign In URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "MyBlock",
         "label": "Primary Label",
         "description": "Bottom line text"
       },
@@ -649,6 +708,7 @@
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Sign in to MyBlock",
         "label": "Link Title / Aria Label"
       }
     ]

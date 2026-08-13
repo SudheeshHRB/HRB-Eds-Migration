@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>HRB EDS — Nav &amp; Footer content package for Universal Editor</comment>
+  <entry key="name">hrb-nav-footer-content</entry>
+  <entry key="group">hrb</entry>
+  <entry key="version">1.0.0</entry>
+  <entry key="description">Seeds authorable /nav (header mega menu) and /footer pages for Edge Delivery Services. Install via CRX Package Manager, then open pages in Universal Editor. Replace DAM images after install.</entry>
+  <entry key="createdBy">HRB-Eds-Migration</entry>
+  <entry key="requiresRoot">false</entry>
+  <entry key="packageFormatVersion">2</entry>
+  <entry key="packageType">content</entry>
+</properties>

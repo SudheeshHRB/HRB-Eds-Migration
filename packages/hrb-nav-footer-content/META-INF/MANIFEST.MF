@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Content-Package: true
+Content-Package-Id: hrb:hrb-nav-footer-content:1.0.0
+Implementation-Title: hrb-nav-footer-content
+Implementation-Version: 1.0.0

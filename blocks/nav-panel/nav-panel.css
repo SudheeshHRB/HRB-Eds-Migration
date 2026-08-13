@@ -1,80 +1,73 @@
-/* Mega menu children — AEM spike / navlinklist / accordion tokens */
+/* Mega menu children — styles apply both before and after header assembly */
 
-.nav-panel {
-  position: static;
-}
-
-.nav-panel .nav-panel-inner {
-  display: contents;
-}
-
-.nav-panel .mega-menu {
+:is(.nav-panel, header nav) .mega-menu {
   display: none;
 }
 
-.nav-panel .mega-explore {
+:is(.nav-panel, header nav) .mega-explore {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--hrb-forest-green, #003512);
   text-decoration: none;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   line-height: 1.25;
 }
 
-.nav-panel .mega-explore::after,
-.nav-panel .mega-primary-link::after,
-.nav-panel .mega-card-title::after {
+:is(.nav-panel, header nav) .mega-explore::after,
+:is(.nav-panel, header nav) .mega-primary-link::after,
+:is(.nav-panel, header nav) .mega-card-title::after {
   content: '→';
   margin-left: 6px;
   font-weight: 700;
 }
 
-.nav-panel .mega-primary {
+:is(.nav-panel, header nav) .mega-primary {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
-.nav-panel .mega-primary-link {
+:is(.nav-panel, header nav) .mega-primary-link {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--hrb-forest-green, #003512);
   text-decoration: none;
   line-height: 1.3;
 }
 
-.nav-panel .mega-columns {
+:is(.nav-panel, header nav) .mega-columns {
   display: flex;
-  flex-wrap: wrap;
-  gap: 28px 40px;
+  flex-wrap: nowrap;
+  gap: 32px 48px;
   flex: 1 1 auto;
   align-self: flex-start;
+  min-width: 0;
 }
 
-.nav-panel .mega-column {
-  min-width: 150px;
-  flex: 1 1 150px;
-  max-width: 220px;
+:is(.nav-panel, header nav) .mega-column {
+  min-width: 160px;
+  flex: 1 1 160px;
+  max-width: 240px;
 }
 
-.nav-panel .mega-column-heading {
-  margin: 0 0 12px;
-  padding-bottom: 0;
+:is(.nav-panel, header nav) .mega-column-heading {
+  margin: 0;
+  padding: 0 0 10px;
   border-bottom: 1px solid var(--hrb-column-rule, #d6dae0);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--hrb-primary-black, #262626);
   line-height: 1.3;
   box-sizing: content-box;
 }
 
-.nav-panel .mega-column-links {
+:is(.nav-panel, header nav) .mega-column-links {
   list-style: none;
   margin: 12px 0 0;
   padding: 0;
@@ -83,7 +76,7 @@
   gap: 10px;
 }
 
-.nav-panel .mega-column-links a {
+:is(.nav-panel, header nav) .mega-column-links a {
   color: var(--hrb-forest-green, #003512);
   text-decoration: none;
   font-size: 1.4rem;
@@ -91,108 +84,137 @@
   line-height: 1.35;
 }
 
-.nav-panel .mega-cards {
+:is(.nav-panel, header nav) .mega-cards {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 260px;
-  max-width: 320px;
-  flex: 0 0 300px;
+  min-width: 280px;
+  max-width: 340px;
+  flex: 0 0 320px;
+  margin-left: auto;
 }
 
-.nav-panel .mega-card-wrap {
+:is(.nav-panel, header nav) .mega-card-wrap {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.nav-panel .mega-card {
+:is(.nav-panel, header nav) .mega-card {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   gap: 16px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  min-height: 120px;
+  min-height: 128px;
   box-sizing: border-box;
 }
 
-.nav-panel .mega-card-text {
+:is(.nav-panel, header nav) .mega-card-text {
   flex-direction: column;
+  justify-content: center;
+  padding: 24px;
 }
 
-.nav-panel .mega-card-green {
+:is(.nav-panel, header nav) .mega-card-media {
+  align-items: center;
+  padding: 12px 16px 12px 12px;
+}
+
+:is(.nav-panel, header nav) .mega-card-green {
   background-color: var(--hrb-dark-green, #005d1f);
   color: #fff;
 }
 
-.nav-panel .mega-card-cream {
+:is(.nav-panel, header nav) .mega-card-cream {
   background-color: var(--hrb-eggshell, #f6f4e9);
   color: var(--hrb-forest-green, #003512);
 }
 
-.nav-panel .mega-card-accent {
+:is(.nav-panel, header nav) .mega-card-accent {
   background-color: var(--hrb-eggshell, #f6f4e9);
   color: var(--hrb-forest-green, #003512);
   border-left: 6px solid #d2fa52;
 }
 
-.nav-panel .mega-card picture,
-.nav-panel .mega-card img {
+:is(.nav-panel, header nav) .mega-card picture,
+:is(.nav-panel, header nav) .mega-card img {
   display: block;
-  width: 96px;
-  min-width: 96px;
-  height: 96px;
+  width: 104px;
+  min-width: 104px;
+  height: 104px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
   align-self: center;
+  flex: 0 0 auto;
 }
 
-.nav-panel .mega-card-body {
+:is(.nav-panel, header nav) .mega-card-media picture,
+:is(.nav-panel, header nav) .mega-card-media img {
+  width: 112px;
+  min-width: 112px;
+  height: 104px;
+}
+
+:is(.nav-panel, header nav) .mega-card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   min-width: 0;
 }
 
-.nav-panel .mega-card-title {
+:is(.nav-panel, header nav) .mega-card-title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.3;
   color: inherit;
 }
 
-.nav-panel .mega-explore:hover,
-.nav-panel .mega-primary-link:hover,
-.nav-panel .mega-column-links a:hover,
-.nav-panel .mega-card:hover .mega-card-title {
+:is(.nav-panel, header nav) .mega-explore:hover,
+:is(.nav-panel, header nav) .mega-primary-link:hover,
+:is(.nav-panel, header nav) .mega-column-links a:hover,
+:is(.nav-panel, header nav) .mega-card:hover .mega-card-title {
   text-decoration: underline;
   color: var(--hrb-dark-green, #005d1f);
 }
 
-.nav-panel .mega-card-desc {
+:is(.nav-panel, header nav) .mega-card-green:hover .mega-card-title,
+:is(.nav-panel, header nav) .mega-card-green .mega-card-title {
+  color: #fff;
+}
+
+:is(.nav-panel, header nav) .mega-card-desc {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.4;
   font-weight: 400;
   color: inherit;
   opacity: 0.92;
 }
 
-.nav-panel .mega-card-disclaimer {
+:is(.nav-panel, header nav) .mega-card-disclaimer {
   margin: 0;
   font-size: 1.1rem;
   color: #6b6b6b;
   line-height: 1.3;
 }
 
-.nav-panel .mega-menu-main {
-  flex: 0 1 240px;
-  min-width: 200px;
-  max-width: 280px;
+:is(.nav-panel, header nav) .mega-menu-main {
+  flex: 0 0 260px;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.nav-panel {
+  position: static;
+}
+
+.nav-panel .nav-panel-inner {
+  display: contents;
 }

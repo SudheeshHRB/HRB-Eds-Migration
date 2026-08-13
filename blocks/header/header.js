@@ -1,7 +1,16 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, loadCSS } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
+
+async function ensureNavStyles() {
+  const base = window.hlx.codeBasePath || '';
+  await Promise.all([
+    loadCSS(`${base}/blocks/nav-brand/nav-brand.css`),
+    loadCSS(`${base}/blocks/nav-panel/nav-panel.css`),
+    loadCSS(`${base}/blocks/nav-tools/nav-tools.css`),
+  ]);
+}
 
 function closeOnEscape(e) {
   if (e.code !== 'Escape') return;
@@ -108,10 +117,40 @@ function assembleNavPanels(navSections) {
 
 /**
  * Wire mega-menu / dropdown toggles.
+ * Desktop: hover each top heading to open its mega menu.
+ * Mobile: click accordion.
  * @param {Element} navSections
  */
 function decorateNavDrops(navSections) {
   if (!navSections) return;
+
+  let closeTimer = null;
+  const clearCloseTimer = () => {
+    if (closeTimer) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  };
+
+  const openDrop = (navSection, trigger) => {
+    clearCloseTimer();
+    toggleAllNavSections(navSections, false);
+    navSection.setAttribute('aria-expanded', 'true');
+    trigger?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-mega-open');
+  };
+
+  const scheduleClose = (navSection, trigger) => {
+    clearCloseTimer();
+    closeTimer = window.setTimeout(() => {
+      if (navSection.matches(':hover') || navSection.contains(document.activeElement)) return;
+      navSection.setAttribute('aria-expanded', 'false');
+      trigger?.setAttribute('aria-expanded', 'false');
+      if (!navSections.querySelector('.nav-drop[aria-expanded="true"]')) {
+        document.body.classList.remove('nav-mega-open');
+      }
+    }, 120);
+  };
 
   navSections.querySelectorAll('.default-content-wrapper > ul > li').forEach((navSection) => {
     if (navSection.querySelector('ul, .mega-menu')) navSection.classList.add('nav-drop');
@@ -142,11 +181,31 @@ function decorateNavDrops(navSections) {
       e.preventDefault();
       const expanded = navSection.getAttribute('aria-expanded') === 'true';
       toggleAllNavSections(navSections, false);
-      if (!expanded) {
-        navSection.setAttribute('aria-expanded', 'true');
-        trigger?.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('nav-mega-open');
-      }
+      if (!expanded) openDrop(navSection, trigger);
+    });
+
+    navSection.addEventListener('mouseenter', () => {
+      if (!isDesktop.matches) return;
+      if (!navSection.querySelector('.mega-menu')) return;
+      openDrop(navSection, trigger);
+    });
+
+    navSection.addEventListener('mouseleave', () => {
+      if (!isDesktop.matches) return;
+      if (!navSection.querySelector('.mega-menu')) return;
+      scheduleClose(navSection, trigger);
+    });
+
+    navSection.addEventListener('focusin', () => {
+      if (!isDesktop.matches) return;
+      if (!navSection.querySelector('.mega-menu')) return;
+      openDrop(navSection, trigger);
+    });
+
+    navSection.addEventListener('focusout', (e) => {
+      if (!isDesktop.matches) return;
+      if (navSection.contains(e.relatedTarget)) return;
+      scheduleClose(navSection, trigger);
     });
   });
 
@@ -168,6 +227,8 @@ export default async function decorate(block) {
 
   block.textContent = '';
   if (!fragment) return;
+
+  await ensureNavStyles();
 
   const nav = document.createElement('nav');
   nav.id = 'nav';

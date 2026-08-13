@@ -120,12 +120,24 @@ header nav[aria-expanded='true'] .nav-tools .nav-signin-label {
 
 @media (width >= 900px) {
   .nav-tools .nav-utilities > li {
-    margin: 0 20px;
+    margin: 0 16px 0 0;
+  }
+
+  .nav-tools .nav-tools-inner {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-tools .nav-tool-link {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--hrb-forest-green, #003512);
   }
 
   .nav-tools .nav-signin {
     height: 48px;
     padding: 0 20px;
+    margin-left: 8px;
     background-color: var(--hrb-dark-green, #005d1f);
     color: #fff;
   }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+  <!--
+    IMPORTANT: Change /content/hrb-eds-migration to your AEM site root if different.
+    After install, pages must map to EDS paths /nav and /footer (via paths.json / site config).
+  -->
+  <filter root="/content/hrb-eds-migration/nav" mode="replace"/>
+  <filter root="/content/hrb-eds-migration/footer" mode="replace"/>
+</workspaceFilter>

@@ -70,23 +70,26 @@ export default function decorate(block) {
     const img = row.querySelector('img');
     const texts = plainTexts(row);
 
-    // Promo card: style from text cell or row class (UE "classes" / Card Style)
+    // Promo card: style from text cell / row class, or infer from image presence
     const classStyle = [...row.classList].find((c) => CARD_STYLES.has(c.toLowerCase()));
     const style = texts.find((t) => CARD_STYLES.has(t.toLowerCase())) || classStyle;
-    if (link && style && !list) {
+    const isCard = Boolean(link && !list && (style || img));
+    if (isCard) {
+      const cardStyle = (style || 'cream').toLowerCase();
       const paragraphs = [...row.querySelectorAll('p')]
         .map((p) => p.textContent.trim())
         .filter((t) => t && t !== link.textContent.trim()
-          && t.toLowerCase() !== style?.toLowerCase());
+          && t.toLowerCase() !== cardStyle);
       const [description, disclaimer] = paragraphs.length
         ? paragraphs
-        : texts.filter((t) => t.toLowerCase() !== style?.toLowerCase()
+        : texts.filter((t) => t.toLowerCase() !== cardStyle
           && t !== link.textContent.trim());
 
       const card = document.createElement('a');
       card.href = link.href;
-      card.className = `mega-card mega-card-${(style || 'cream').toLowerCase()}`;
+      card.className = `mega-card mega-card-${cardStyle}`;
       if (!img) card.classList.add('mega-card-text');
+      else card.classList.add('mega-card-media');
       card.setAttribute(
         'aria-label',
         (link.getAttribute('title') || link.textContent || '').trim(),
@@ -94,7 +97,23 @@ export default function decorate(block) {
       if (link.target) card.target = link.target;
       moveInstrumentation(row, card);
 
-      if (img) card.append(pictureFrom(img, img.alt || link.textContent.trim()));
+      if (img) {
+        // Keep SVG / external placeholders as authored; optimize DAM rasters
+        try {
+          const url = new URL(img.src, window.location.href);
+          const isSvg = url.pathname.toLowerCase().endsWith('.svg');
+          if (url.origin === window.location.origin && !isSvg) {
+            card.append(pictureFrom(img, img.alt || link.textContent.trim()));
+          } else {
+            const picture = img.closest('picture');
+            img.alt = img.alt || link.textContent.trim();
+            img.loading = 'lazy';
+            card.append(picture || img);
+          }
+        } catch {
+          card.append(img);
+        }
+      }
 
       const body = document.createElement('div');
       body.className = 'mega-card-body';

@@ -178,14 +178,21 @@
 
 :is(.nav-panel, header nav) .mega-explore:hover,
 :is(.nav-panel, header nav) .mega-primary-link:hover,
-:is(.nav-panel, header nav) .mega-column-links a:hover,
+:is(.nav-panel, header nav) .mega-column-links a:hover {
+  text-decoration: underline;
+  color: var(--hrb-dark-green, #005d1f);
+}
+
+:is(.nav-panel, header nav) .mega-card-green .mega-card-title {
+  color: #fff;
+}
+
 :is(.nav-panel, header nav) .mega-card:hover .mega-card-title {
   text-decoration: underline;
   color: var(--hrb-dark-green, #005d1f);
 }
 
-:is(.nav-panel, header nav) .mega-card-green:hover .mega-card-title,
-:is(.nav-panel, header nav) .mega-card-green .mega-card-title {
+:is(.nav-panel, header nav) .mega-card-green:hover .mega-card-title {
   color: #fff;
 }
 

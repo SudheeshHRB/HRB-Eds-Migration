@@ -61,15 +61,23 @@
   padding: 0 0 8px;
   line-height: 1.35;
   font-size: 1.4rem;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
 }
 
 .footer-links ul li a {
   display: inline;
+  box-sizing: inherit;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--hrb-eggshell, #f6f4e9);
   text-decoration: none;
   text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.06em;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
 }
 
 .footer-links ul li a:hover,

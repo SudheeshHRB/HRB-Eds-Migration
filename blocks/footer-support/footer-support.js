@@ -33,6 +33,20 @@ function wrapIconImage(img, alt, width = '48') {
 }
 
 /**
+ * Place Footer Disclosures inside .footer-support-wrapper (above Need support?).
+ * @param {Element} block
+ */
+function nestDisclosures(block) {
+  const supportWrap = block.closest('.footer-support-wrapper') || block.parentElement;
+  if (!supportWrap) return;
+  const scope = supportWrap.parentElement || block.closest('.section') || document;
+  const disclosures = scope.querySelector('.footer-disclosures');
+  if (!disclosures || supportWrap.contains(disclosures)) return;
+  const discUnit = disclosures.closest('.footer-disclosures-wrapper') || disclosures;
+  supportWrap.prepend(discUnit);
+}
+
+/**
  * Footer Support — heading + authorable support actions with DAM icons.
  * Model fields: title + titleType (EDS collapses into h2/h3/h4).
  * @param {Element} block
@@ -102,18 +116,4 @@ export default function decorate(block) {
   block.replaceChildren(container);
   block.classList.add('need-help-footer');
   nestDisclosures(block);
-}
-
-/**
- * Place Footer Disclosures inside .footer-support-wrapper (above Need support?).
- * @param {Element} block
- */
-function nestDisclosures(block) {
-  const supportWrap = block.closest('.footer-support-wrapper') || block.parentElement;
-  if (!supportWrap) return;
-  const scope = supportWrap.parentElement || block.closest('.section') || document;
-  const disclosures = scope.querySelector('.footer-disclosures');
-  if (!disclosures || supportWrap.contains(disclosures)) return;
-  const discUnit = disclosures.closest('.footer-disclosures-wrapper') || disclosures;
-  supportWrap.prepend(discUnit);
 }

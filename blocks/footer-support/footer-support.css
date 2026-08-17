@@ -1,99 +1,69 @@
-/* Footer support — AEM .need-help-footer */
+/* Footer support — 4-column row aligned with footer-links */
 
-.footer-support {
+.footer-support-wrapper {
+  display: block;
   width: 100%;
-  padding: 40px 0 0;
+}
+
+.footer-support-wrapper .footer-disclosures-wrapper,
+.footer-support-wrapper .footer-disclosures {
+  display: block;
+  width: 100%;
 }
 
 .footer-support .footer-support-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-  padding: 0 25px;
+  padding: 32px 25px 8px;
 }
 
 @media (width >= 768px) {
   .footer-support .footer-support-inner {
-    padding: 0 40px;
+    padding: 40px 40px 8px;
   }
 }
 
 @media (width >= 900px) {
   .footer-support .footer-support-inner {
-    padding: 0 80px;
-  }
-}
-
-@media (width >= 1200px) {
-  .footer-support .footer-support-inner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 40px 40px;
-    gap: 24px;
-  }
-
-  .footer-support .support-actions {
-    display: flex;
-    flex: 1 1 auto;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    gap: 12px;
-    min-width: 0;
-  }
-
-  .footer-support .support-actions li {
-    flex: 0 1 auto;
-    max-width: none;
-    margin: 0;
-    min-width: 0;
-  }
-}
-
-.footer-support h2,
-.footer-support h3,
-.footer-support h4 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0;
-  color: var(--hrb-eggshell, #f6f4e9);
-  line-height: 2;
-  flex: 0 0 auto;
-}
-
-@media (width >= 900px) {
-  .footer-support h2,
-  .footer-support h3,
-  .footer-support h4 {
-    font-size: clamp(1.6rem, 1vw + 1.2rem, 2rem);
-  }
-}
-
-@media (width >= 1200px) {
-  .footer-support h2,
-  .footer-support h3,
-  .footer-support h4 {
-    flex: 0 0 auto;
-    max-width: none;
-    white-space: nowrap;
+    padding: 40px 80px 20px;
   }
 }
 
 .footer-support .support-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 24px;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0;
   width: 100%;
 }
 
+@media (width >= 768px) {
+  .footer-support .support-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .footer-support .support-actions {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 24px;
+  }
+}
+
 .footer-support .support-actions li {
-  margin: 20px 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.footer-support .support-heading h2,
+.footer-support .support-heading h3,
+.footer-support .support-heading h4 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--hrb-eggshell, #f6f4e9);
 }
 
 .footer-support .icon-btn {
@@ -104,22 +74,15 @@
   border: none;
   color: var(--hrb-eggshell, #f6f4e9);
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   font-family: inherit;
   text-decoration: none;
-  padding: 13px 0;
+  padding: 0;
   line-height: 1.2;
   white-space: nowrap;
   max-width: 100%;
   text-align: left;
-}
-
-@media (width >= 900px) {
-  .footer-support .icon-btn {
-    font-size: clamp(1.6rem, 1vw + 1.2rem, 2rem);
-    padding: 10px 0;
-  }
 }
 
 .footer-support .icon-btn picture,
@@ -139,6 +102,5 @@
 
 .footer-support .icon-btn:hover img,
 .footer-support .icon-btn:focus img {
-  /* keep eggshell icons on dark bg; AEM swaps circle fill on hover */
   filter: brightness(0) invert(1);
 }

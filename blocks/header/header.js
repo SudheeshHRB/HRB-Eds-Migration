@@ -9,6 +9,7 @@ async function ensureNavStyles() {
     loadCSS(`${base}/blocks/nav-brand/nav-brand.css`),
     loadCSS(`${base}/blocks/nav-panel/nav-panel.css`),
     loadCSS(`${base}/blocks/nav-tools/nav-tools.css`),
+    loadCSS(`${base}/blocks/nav-secondary/nav-secondary.css`),
   ]);
 }
 
@@ -236,7 +237,7 @@ export default async function decorate(block) {
 
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['brand', 'sections', 'tools', 'secondary'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
@@ -255,6 +256,8 @@ export default async function decorate(block) {
   assembleNavPanels(navSections);
   decorateNavDrops(navSections);
 
+  const navSecondary = nav.querySelector(':scope > .nav-secondary');
+
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
@@ -269,5 +272,6 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  if (navSecondary) navWrapper.append(navSecondary);
   block.append(navWrapper);
 }

@@ -8,6 +8,19 @@ header .nav-wrapper {
   box-shadow: none;
 }
 
+header .nav-wrapper > .nav-secondary {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header .nav-wrapper > .nav-secondary > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
@@ -34,9 +47,17 @@ header nav[aria-expanded='true'] {
   align-items: start;
 }
 
+header nav[aria-expanded='true'] ~ .nav-secondary {
+  display: none;
+}
+
 @media (width >= 900px) {
   header .nav-wrapper {
     position: relative;
+  }
+
+  header nav[aria-expanded='true'] ~ .nav-secondary {
+    display: block;
   }
 
   header nav {

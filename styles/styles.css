@@ -97,6 +97,11 @@ header {
   height: var(--nav-height);
 }
 
+header:has(.nav-secondary) {
+  height: auto;
+  min-height: var(--nav-height);
+}
+
 header .header,
 footer .footer {
   visibility: hidden;

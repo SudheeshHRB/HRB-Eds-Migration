@@ -188,6 +188,73 @@
     ]
   },
   {
+    "id": "footer-disclosures",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "Offer details and disclosures",
+        "label": "Heading",
+        "description": "Accordion heading text"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Heading Type",
+        "value": "h2",
+        "valueType": "string",
+        "description": "Must use titleType so EDS renders a real heading tag",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "disclosure-group",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "value": "Full Site Disclaimers",
+        "label": "Group Heading"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Disclaimer Links",
+        "description": "List of disclaimer / offer links"
+      }
+    ]
+  },
+  {
+    "id": "disclosure-notes",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "notes",
+        "value": "<p>3. Additional fees apply for tax expert support.</p>",
+        "label": "Notes / Footnotes",
+        "description": "Numbered offer notes shown beside the disclaimer links"
+      }
+    ]
+  },
+  {
     "id": "footer-legal",
     "fields": [
       {
@@ -619,6 +686,80 @@
             "value": "accent"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "nav-secondary-explore",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false,
+        "description": "Grid / topics icon from DAM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "Explore All Topics",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "value": "/tax-center/",
+        "label": "Fallback Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "Explore All Topics",
+        "label": "Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "value": "Explore All Topics",
+        "label": "Link Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "topics",
+        "label": "All Topics List",
+        "description": "Optional dropdown of topic links"
+      }
+    ]
+  },
+  {
+    "id": "nav-secondary-link",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "value": "/tax-center/life-stages/",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "Life Stages",
+        "label": "Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "value": "Life Stages",
+        "label": "Link Title"
       }
     ]
   },

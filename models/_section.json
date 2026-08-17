@@ -63,11 +63,13 @@
         "footer-links",
         "footer-legal",
         "footer-seals",
+        "footer-disclosures",
         "hrblock-footer",
         "nav-brand",
         "nav-menu",
         "nav-panel",
-        "nav-tools"
+        "nav-tools",
+        "nav-secondary"
       ]
     }
   ]

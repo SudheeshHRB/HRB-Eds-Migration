@@ -41,12 +41,15 @@ export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
 
+  const container = document.createElement('div');
+  container.className = 'footer-support-inner';
+
   const headingRow = rows.find((row) => row.querySelector('h1, h2, h3, h4, h5, h6'))
     || rows.find((row) => !row.querySelector('a, picture, img'));
   const actionRows = rows.filter((row) => row !== headingRow);
 
-  const container = document.createElement('div');
-  container.className = 'footer-support-inner';
+  const list = document.createElement('ul');
+  list.className = 'support-actions';
 
   if (headingRow) {
     let heading = headingRow.querySelector('h1, h2, h3, h4, h5, h6');
@@ -58,13 +61,13 @@ export default function decorate(block) {
       }
     }
     if (heading) {
-      moveInstrumentation(headingRow, heading);
-      container.append(heading);
+      const li = document.createElement('li');
+      li.className = 'support-heading';
+      moveInstrumentation(headingRow, li);
+      li.append(heading);
+      list.append(li);
     }
   }
-
-  const list = document.createElement('ul');
-  list.className = 'support-actions';
 
   actionRows.forEach((row) => {
     const link = row.querySelector('a');
@@ -98,4 +101,19 @@ export default function decorate(block) {
   if (list.children.length) container.append(list);
   block.replaceChildren(container);
   block.classList.add('need-help-footer');
+  nestDisclosures(block);
+}
+
+/**
+ * Place Footer Disclosures inside .footer-support-wrapper (above Need support?).
+ * @param {Element} block
+ */
+function nestDisclosures(block) {
+  const supportWrap = block.closest('.footer-support-wrapper') || block.parentElement;
+  if (!supportWrap) return;
+  const scope = supportWrap.parentElement || block.closest('.section') || document;
+  const disclosures = scope.querySelector('.footer-disclosures');
+  if (!disclosures || supportWrap.contains(disclosures)) return;
+  const discUnit = disclosures.closest('.footer-disclosures-wrapper') || disclosures;
+  supportWrap.prepend(discUnit);
 }

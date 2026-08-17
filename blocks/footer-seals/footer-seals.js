@@ -10,7 +10,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 function wrapSealImage(img, alt) {
   try {
     const url = new URL(img.src, window.location.href);
-    if (url.origin === window.location.origin) {
+    if (url.origin === window.location.origin && !url.pathname.toLowerCase().endsWith('.svg')) {
       const optimized = createOptimizedPicture(img.src, alt, false, [{ width: '126' }]);
       moveInstrumentation(img, optimized.querySelector('img'));
       return optimized;

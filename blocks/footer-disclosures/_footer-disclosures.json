@@ -1,0 +1,124 @@
+{
+  "definitions": [
+    {
+      "title": "Footer Disclosures",
+      "id": "footer-disclosures",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Footer Disclosures",
+              "model": "footer-disclosures",
+              "filter": "footer-disclosures",
+              "title": "Offer details and disclosures",
+              "titleType": "h2"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Disclosure Group",
+      "id": "disclosure-group",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Disclosure Group",
+              "model": "disclosure-group",
+              "heading": "Full Site Disclaimers",
+              "links": "<ul><li><a href=\"/online-tax-filing/\">File Online</a></li><li><a href=\"/tax-software/\">Tax Software</a></li><li><a href=\"/tax-offices/\">Retail</a></li><li><a href=\"/financial-services/\">Financial Services</a></li><li><a href=\"/income-tax-course/\">Income Tax Course</a></li></ul>"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Disclosure Notes",
+      "id": "disclosure-notes",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Disclosure Notes",
+              "model": "disclosure-notes",
+              "notes": "<p>3. Additional fees apply for tax expert support.</p>"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "footer-disclosures",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "Offer details and disclosures",
+          "label": "Heading",
+          "description": "Accordion heading text"
+        },
+        {
+          "component": "select",
+          "name": "titleType",
+          "label": "Heading Type",
+          "value": "h2",
+          "valueType": "string",
+          "description": "Must use titleType so EDS renders a real heading tag",
+          "options": [
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" },
+            { "name": "H4", "value": "h4" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disclosure-group",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "value": "Full Site Disclaimers",
+          "label": "Group Heading"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "links",
+          "label": "Disclaimer Links",
+          "description": "List of disclaimer / offer links"
+        }
+      ]
+    },
+    {
+      "id": "disclosure-notes",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "notes",
+          "value": "<p>3. Additional fees apply for tax expert support.</p>",
+          "label": "Notes / Footnotes",
+          "description": "Numbered offer notes shown beside the disclaimer links"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "footer-disclosures",
+      "components": [
+        "disclosure-group",
+        "disclosure-notes"
+      ]
+    }
+  ]
+}

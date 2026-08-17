@@ -1,0 +1,145 @@
+/* Footer disclosures — always visible above Need support? */
+
+.footer-disclosures-wrapper,
+.footer-disclosures {
+  display: block;
+  width: 100%;
+  visibility: visible;
+}
+
+.footer-disclosures {
+  padding: 24px 0 0;
+  border-bottom: 1px solid rgb(246 244 233 / 20%);
+}
+
+.footer-disclosures .footer-disclosures-inner {
+  padding: 0 25px 20px;
+}
+
+@media (width >= 768px) {
+  .footer-disclosures .footer-disclosures-inner {
+    padding: 0 40px 20px;
+  }
+}
+
+@media (width >= 900px) {
+  .footer-disclosures .footer-disclosures-inner {
+    padding: 0 80px 24px;
+  }
+}
+
+.footer-disclosures .footer-disclosures-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--hrb-eggshell, #f6f4e9);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.footer-disclosures .footer-disclosures-toggle h2,
+.footer-disclosures .footer-disclosures-toggle h3,
+.footer-disclosures .footer-disclosures-toggle h4 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.footer-disclosures .footer-disclosures-toggle::after {
+  content: '−';
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.footer-disclosures .footer-disclosures-toggle[aria-expanded='false']::after {
+  content: '+';
+}
+
+.footer-disclosures .footer-disclosures-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 0 0;
+}
+
+.footer-disclosures .footer-disclosures-body[hidden] {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .footer-disclosures .footer-disclosures-body {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 64px;
+  }
+}
+
+.footer-disclosures .footer-disclosures-groups {
+  flex: 0 1 280px;
+}
+
+.footer-disclosures .disclosure-group {
+  margin: 0;
+}
+
+.footer-disclosures .disclosure-group-heading {
+  margin: 0 0 8px;
+  color: var(--hrb-eggshell, #f6f4e9);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.footer-disclosures .disclosure-group-heading::before {
+  content: '+';
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.footer-disclosures .disclosure-group-links {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.15em;
+}
+
+.footer-disclosures .disclosure-group-links li {
+  margin: 4px 0;
+}
+
+.footer-disclosures .disclosure-group-links a {
+  color: var(--hrb-eggshell, #f6f4e9);
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer-disclosures .disclosure-group-links a:hover,
+.footer-disclosures .disclosure-group-links a:focus {
+  text-decoration: underline;
+}
+
+.footer-disclosures .footer-disclosures-notes {
+  flex: 1 1 360px;
+  color: rgb(246 244 233 / 80%);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+
+.footer-disclosures .footer-disclosures-notes p {
+  margin: 0 0 8px;
+}
+
+.footer-disclosures .footer-disclosures-notes sup {
+  font-size: 0.75em;
+  margin-right: 2px;
+}

@@ -2,26 +2,26 @@
 
 .footer-seals {
   width: 100%;
-  padding: 20px 0;
+  padding: 16px 0 8px;
 }
 
 .footer-seals .seals-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0;
-  padding: 0 25px;
+  gap: 16px 24px;
+  padding: 0 25px 8px;
 }
 
 @media (width >= 768px) {
   .footer-seals .seals-inner {
-    padding: 0 40px;
+    padding: 0 40px 8px;
   }
 }
 
 @media (width >= 900px) {
   .footer-seals .seals-inner {
-    padding: 0 80px;
+    padding: 0 80px 8px;
   }
 }
 
@@ -34,6 +34,8 @@
   display: block;
   max-width: 126px;
   height: auto;
+  background: #fff;
+  border-radius: 2px;
 }
 
 .footer-seals .privacy-choices {

@@ -21,11 +21,13 @@
       "footer-links",
       "footer-legal",
       "footer-seals",
+      "footer-disclosures",
       "hrblock-footer",
       "nav-brand",
       "nav-menu",
       "nav-panel",
-      "nav-tools"
+      "nav-tools",
+      "nav-secondary"
     ]
   },
   {
@@ -47,6 +49,13 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "footer-disclosures",
+    "components": [
+      "disclosure-group",
+      "disclosure-notes"
     ]
   },
   {
@@ -110,6 +119,13 @@
       "mega-primary",
       "mega-column",
       "mega-card"
+    ]
+  },
+  {
+    "id": "nav-secondary",
+    "components": [
+      "nav-secondary-explore",
+      "nav-secondary-link"
     ]
   },
   {

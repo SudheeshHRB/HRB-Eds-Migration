@@ -7,10 +7,11 @@ All labels, links, icons, and images below are authorable. Styling stays in code
 
 ## `/nav` (Header)
 
-### Structure (3 sections, in order)
+### Structure (3 sections, plus optional Tax Center bar)
 1. **Brand** → one **Nav Brand**
 2. **Mega menus** → one **Nav Panel** per top heading
 3. **Tools** → one **Nav Tools** block
+4. **Secondary** (optional) → one **Nav Secondary** topic bar
 
 ### Section 1 — Nav Brand
 - [ ] Logo Image (DAM)
@@ -47,6 +48,10 @@ All labels, links, icons, and images below are authorable. Styling stays in code
 - [ ] **Nav Tool** — Search (icon + label + URL)
 - [ ] **Nav Sign In** — icon, Eyebrow (`Sign in to`), Primary Label (`MyBlock`), URL
 
+### Section 4 — Nav Secondary (optional, Tax Center)
+- [ ] **Nav Secondary Explore** — Explore All Topics (grid icon + optional topics list)
+- [ ] **Nav Secondary Link** — Life Stages, Work, Taxes 101, Tax Breaks and Money, What's New
+
 ### QA — Nav
 - [ ] Desktop: hover each top heading → correct mega menu opens
 - [ ] Mobile: hamburger + accordion works
@@ -59,7 +64,16 @@ All labels, links, icons, and images below are authorable. Styling stays in code
 
 ### Structure
 1. Add **H&R Block Footer** section (styles: Site Footer + Green Dark Theme)  
-   **or** normal Section with those two styles selected
+   **or** normal Section with those two styles selected  
+2. Insert blocks in this order: **Footer Disclosures** → **Footer Support** → **Footer Links** → **Footer Legal** → **Footer Seals**  
+
+Footer Disclosures is authored as its own block (do not nest it under Footer Support in UE). After publish, it renders **inside** the Footer Support wrapper, above “Need support?”.
+
+### Footer Disclosures
+- [ ] Place this block **first** in the footer section (before Footer Support)
+- [ ] Heading (e.g. Offer details and disclosures)
+- [ ] Disclosure Group — Full Site Disclaimers + links
+- [ ] Disclosure Notes — numbered footnotes
 
 ### Footer Support
 - [ ] Heading (e.g. Need support?)
@@ -78,6 +92,7 @@ All labels, links, icons, and images below are authorable. Styling stays in code
 - [ ] Seal items — image seal and/or text-only link (e.g. TRUSTe, Your Privacy Choices)
 
 ### QA — Footer
+- [ ] Disclosures accordion appears inside the support region, above “Need support?”
 - [ ] Support row is one line on desktop (“Need support?” does not wrap badly)
 - [ ] Long footer links wrap cleanly
 - [ ] Social icons and seals open correct URLs

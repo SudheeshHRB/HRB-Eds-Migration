@@ -156,7 +156,7 @@
                   "name": "Disclosure Group",
                   "model": "disclosure-group",
                   "heading": "Full Site Disclaimers",
-                  "links": "<ul><li><a href=\"/online-tax-filing/\">File Online</a></li><li><a href=\"/tax-software/\">Tax Software</a></li><li><a href=\"/tax-offices/\">Retail</a></li><li><a href=\"/financial-services/\">Financial Services</a></li><li><a href=\"/income-tax-course/\">Income Tax Course</a></li></ul>"
+                  "links": "<ol start=\"3\"><li value=\"3\">Additional fees apply for tax expert support.</li></ol>"
                 }
               }
             }

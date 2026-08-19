@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/libs/core/franklin/templates/page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="core/franklin/components/page/v1/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/franklin/components/root/v1/root">
+
+            <section_footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/franklin/components/section/v1/section"
+                model="hrblock-footer"
+                filter="hrblock-footer"
+                name="Site Footer"
+                style="[site-footer,green-dark-theme]">
+
+                <footer_disclosures
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/franklin/components/block/v1/block"
+                    name="Footer Disclosures"
+                    model="footer-disclosures"
+                    filter="footer-disclosures"
+                    title="Offer details and disclosures"
+                    titleType="h2">
+                    <item_0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="Full Site Disclaimers"
+                        links="&lt;ol start=&quot;3&quot;&gt;&lt;li value=&quot;3&quot;&gt;Additional fees apply for tax expert support.&lt;/li&gt;&lt;/ol&gt;"/>
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="File Online"
+                        links="&lt;ol start=&quot;22&quot;&gt;&lt;li value=&quot;22&quot;&gt;H&amp;amp;R Block Free Online is for simple returns only. Not everyone qualifies.&lt;/li&gt;&lt;li value=&quot;26&quot;&gt;Enrolled Agents do not provide legal representation; signed Power of Attorney required.&lt;/li&gt;&lt;/ol&gt;"/>
+                    <item_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="Tax Software"
+                        links="&lt;ol start=&quot;41&quot;&gt;&lt;li value=&quot;41&quot;&gt;Personal state programs are $39.95 each (state e-file available for $19.95).&lt;/li&gt;&lt;/ol&gt;"/>
+                    <item_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="Retail"
+                        links="&lt;ol start=&quot;87&quot;&gt;&lt;li value=&quot;87&quot;&gt;Comparison based on starting price for H&amp;amp;R Block file with a tax pro. Prices may vary by office.&lt;/li&gt;&lt;/ol&gt;"/>
+                    <item_4
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="Financial Services"
+                        links="&lt;ol start=&quot;109&quot;&gt;&lt;li value=&quot;109&quot;&gt;This is an optional tax refund-related loan from Pathward, N.A.; it is not your tax refund.&lt;/li&gt;&lt;/ol&gt;"/>
+                    <item_5
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Disclosure Group"
+                        model="disclosure-group"
+                        heading="Income Tax Course"
+                        links="&lt;ol start=&quot;160&quot;&gt;&lt;li value=&quot;160&quot;&gt;Enrollment in, or completion of, the H&amp;amp;R Block Income Tax Course is neither an offer nor a guarantee of employment.&lt;/li&gt;&lt;/ol&gt;"/>
+                </footer_disclosures>
+
+                <footer_support
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/franklin/components/block/v1/block"
+                    name="Footer Support"
+                    model="footer-support"
+                    filter="footer-support"
+                    title="Need support?"
+                    titleType="h2">
+                    <item_0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Support Action"
+                        model="support-action"
+                        imageAlt="Customer help"
+                        link="/support/"
+                        linkText="Customer help"
+                        linkTitle="Customer help"/>
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Support Action"
+                        model="support-action"
+                        imageAlt="Find an office"
+                        link="/tax-offices/local/"
+                        linkText="Find an office"
+                        linkTitle="Find an office"/>
+                    <item_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Support Action"
+                        model="support-action"
+                        imageAlt="Search"
+                        link="#site-search"
+                        linkText="Search"
+                        linkTitle="Search"/>
+                </footer_support>
+
+                <footer_links
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/franklin/components/block/v1/block"
+                    name="Footer Links"
+                    filter="footer-links">
+                    <item_0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Column"
+                        model="footer-column"
+                        content="&lt;h5&gt;&lt;strong&gt;Tax Services&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/manage-appointment/&quot;&gt;Reschedule or manage appointment&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/online-tax-filing/&quot;&gt;Online tax filing&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/&quot;&gt;File with a tax pro&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/online-tax-filing/free-online-tax-filing/&quot;&gt;Free online tax filing&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-software/&quot;&gt;Tax software&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/extended-tax-services/past-taxes/&quot;&gt;Second Look Review&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/tax-prep/extended-service/&quot;&gt;Peace of Mind&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/product-services/tax-identity-shield/&quot;&gt;Tax Identity Shield&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/guarantees/&quot;&gt;Audit &amp;amp; Tax Notice Support&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/extended-tax-services/expat/&quot;&gt;Expat tax services&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h5&gt;&lt;strong&gt;Small Business Services&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://www.blockadvisors.com/&quot;&gt;Block Advisors&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/business-services/small-business-tax/&quot;&gt;Small business taxes&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/business-services/small-business-bookkeeping-services/&quot;&gt;Small business bookkeeping&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/business-services/small-business-payroll-services/&quot;&gt;Small business payroll&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/business-services/&quot;&gt;Business formation services&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.waveapps.com/&quot;&gt;Wave Financial&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Column"
+                        model="footer-column"
+                        content="&lt;h5&gt;&lt;strong&gt;Tax Tools&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/myblock-benefits/&quot;&gt;MyBlock&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/mobile/&quot;&gt;Mobile apps&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-calculator/&quot;&gt;Tax calculator&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-prep-checklist/&quot;&gt;Tax prep checklist&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-appointment-preparation/&quot;&gt;Appointment Prep Guide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/tax-refund-payment/&quot;&gt;Refund &amp;amp; payment options&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-payment-center/&quot;&gt;Tax payment center&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/wheres-my-refund/&quot;&gt;Where's my refund?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/w-4-calculator/&quot;&gt;W-4 calculator&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h5&gt;&lt;strong&gt;Legal&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/universal/terms/&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/universal/digital-online-mobile-privacy-principles/&quot;&gt;Privacy notice&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.pathward.com/privacy/&quot;&gt;Pathward privacy notice&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+                    <item_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Column"
+                        model="footer-column"
+                        content="&lt;h5&gt;&lt;strong&gt;Financial Services&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/emerald-advance-loan-vs-refund-advance/&quot;&gt;Explore loans&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/spruce/&quot;&gt;Spruce&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/emerald-card-services/&quot;&gt;Emerald Card&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/tax-refund-payment/&quot;&gt;Refund Transfer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/financial-services/emerald-advance/&quot;&gt;Emerald Advance Loan&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/offers/refund-advance/&quot;&gt;Refund Advance&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h5&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/support/&quot;&gt;Customer help &amp;amp; support&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-questions/&quot;&gt;Tax questions&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/local/&quot;&gt;Office locations&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-offices/international/&quot;&gt;International locations&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/taxes-site-index/&quot;&gt;Sitemap&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+                    <item_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Column"
+                        model="footer-column"
+                        content="&lt;h5&gt;&lt;strong&gt;About H&amp;amp;R Block&lt;/strong&gt;&lt;/h5&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/corporate/&quot;&gt;About us&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/corporate/make-every-block-better/&quot;&gt;Make Every Block Better&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://careers.hrblock.com&quot;&gt;Careers&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/corporate/franchise/&quot;&gt;Buy or sell an office&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/income-tax-course/&quot;&gt;Income tax course&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/newsroom/&quot;&gt;News Center&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://investors.hrblock.com/&quot;&gt;Investor relations&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/tax-center/irs/&quot;&gt;The Tax Institute&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/guarantees/&quot;&gt;Guarantees&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+                </footer_links>
+
+                <footer_legal
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/franklin/components/block/v1/block"
+                    name="Footer Legal"
+                    model="footer-legal"
+                    filter="footer-legal"
+                    legal="&lt;p&gt;Copyright © 2000-2024 HRB Digital LLC. All Rights Reserved.&lt;/p&gt;&lt;p&gt;Bank products and services are offered by Pathward®, N.A.&lt;/p&gt;&lt;p&gt;All deposit accounts through Pathward® are FDIC insured.&lt;/p&gt;">
+                    <item_0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="TikTok"
+                        link="https://www.tiktok.com/@hrblock"
+                        linkText="TikTok"
+                        linkTitle="TikTok"/>
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="Facebook"
+                        link="https://www.facebook.com/hrblock"
+                        linkText="Facebook"
+                        linkTitle="Facebook"/>
+                    <item_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="Instagram"
+                        link="https://www.instagram.com/hrblock/"
+                        linkText="Instagram"
+                        linkTitle="Instagram"/>
+                    <item_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="YouTube"
+                        link="https://www.youtube.com/hrblock"
+                        linkText="YouTube"
+                        linkTitle="YouTube"/>
+                    <item_4
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="X"
+                        link="https://twitter.com/hrblock"
+                        linkText="X"
+                        linkTitle="X"/>
+                    <item_5
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Social Link"
+                        model="social-link"
+                        imageAlt="LinkedIn"
+                        link="https://www.linkedin.com/company/h%26r-block"
+                        linkText="LinkedIn"
+                        linkTitle="LinkedIn"/>
+                </footer_legal>
+
+                <footer_seals
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/franklin/components/block/v1/block"
+                    name="Footer Seals"
+                    filter="footer-seals">
+                    <item_0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Seal"
+                        model="footer-seal"
+                        imageAlt="TRUSTe Privacy Certification"
+                        link="https://privacy.truste.com/privacy-seal/validation?rid=d3f53dd3-a8a0-4f4e-84aa-56378ed8565d"
+                        linkText="TRUSTe Privacy Certification"
+                        linkTitle="TRUSTe Privacy Certification"/>
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/franklin/components/block/v1/block/item"
+                        name="Footer Seal"
+                        model="footer-seal"
+                        link="https://submit-irm.trustarc.com/services/validation/aa9303a8-87ee-42b9-b4db-84819fdef107"
+                        linkText="Your Privacy Choices"
+                        linkTitle="Your Privacy Choices"/>
+                </footer_seals>
+
+            </section_footer>
+        </root>
+    </jcr:content>
+</jcr:root>

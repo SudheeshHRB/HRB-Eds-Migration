@@ -55,6 +55,7 @@
     {
       "id": "hrblock-footer",
       "components": [
+        "footer-disclosures",
         "footer-support",
         "footer-links",
         "footer-legal",

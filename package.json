@@ -13,6 +13,8 @@
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
     "package:nav-footer": "node scripts/build-nav-footer-package.mjs",
+    "package:nav": "node scripts/build-nav-footer-package.mjs",
+    "package:footer": "node scripts/build-nav-footer-package.mjs",
     "prepare": "husky"
   },
   "repository": {

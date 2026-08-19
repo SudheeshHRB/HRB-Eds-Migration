@@ -3,10 +3,10 @@
 Authors control **all** nav and footer copy, links, icons, and cards in Universal Editor.  
 Block JavaScript only decorates markup — **nothing is hardcoded**.
 
-| Surface | Authored page / XF | Loaded by | Default path |
-|---------|-------------------|-----------|--------------|
-| Header / mega menu | Nav Experience Fragment | `header` block | `/nav` |
-| Footer | Footer Experience Fragment | `footer` block | `/footer` |
+| Surface | Authored page / XF | Loaded by | Default path | AEM (NewHRBEds) |
+|---------|-------------------|-----------|--------------|-----------------|
+| Header / mega menu | Header page (`nav`) | `header` block | `/nav` | `/content/NewHRBEds/nav` |
+| Footer | Footer page (`footer`) | `footer` block | `/footer` | `/content/NewHRBEds/footer` |
 
 Optional page metadata overrides:
 
@@ -46,36 +46,61 @@ flowchart TD
 
 ---
 
-## 2. Nav content tree (Universal Editor)
+## 2. Nav content tree (Universal Editor + CRXDE)
 
-Create or open the **Nav** page / Experience Fragment that publishes to `/nav`.
-
-Build **3 sections** (plus optional section 4 for Tax Center), in this order (section order = layout regions):
+Page: **Header** (`/content/NewHRBEds/nav` → EDS `/nav`).
 
 ```
-/nav
-├── Section 1 — Brand          ← becomes .nav-brand
-│   └── Nav Brand
-├── Section 2 — Mega menus     ← becomes .nav-sections
-│   ├── Nav Panel (Taxes)
-│   │   ├── Mega Explore
-│   │   ├── Mega Primary Links
-│   │   ├── Mega Column × n
-│   │   └── Mega Card × n
-│   ├── Nav Panel (Financial products)
-│   │   └── … same children as needed …
-│   ├── Nav Panel (Business services)
-│   └── Nav Panel (Tools and resources)
-├── Section 3 — Tools          ← becomes .nav-tools
-│   └── Nav Tools
-│       ├── Nav Tool (Find an office)
-│       ├── Nav Tool (Search)
-│       └── Nav Sign In
-└── Section 4 — Secondary      ← optional Tax Center topic bar
-    └── Nav Secondary
-        ├── Nav Secondary Explore (Explore All Topics)
-        └── Nav Secondary Link × n (Life Stages, Work, …)
+nav / jcr:content / root
+├── section_brand
+│   └── nav_brand                         Nav Brand  (logo + /)
+├── section_mega
+│   ├── nav_panel_taxes                   Taxes
+│   │   ├── item_0  mega-explore          Explore taxes
+│   │   ├── item_1  mega-primary          File online, File with a pro, Download software, Small business taxes
+│   │   ├── item_2  mega-column           More tax services (Second Look, Peace of Mind, Tax Identity Shield, Tax Notice, ITIN)
+│   │   ├── item_3  mega-column           Your tax appointment (prep, manage, Español)
+│   │   ├── item_4  mega-column           International (Expat, International offices)
+│   │   ├── item_5  mega-card green       File with a tax pro
+│   │   └── item_6  mega-card cream       File online
+│   ├── nav_panel_financial               Financial products
+│   │   ├── item_0  mega-explore          Explore financial products
+│   │   ├── item_1  mega-primary          Refund Transfer, Spruce, Emerald Card®
+│   │   ├── item_2  mega-column           Loans
+│   │   ├── item_3  mega-column           Spruce (Explore, Features, Sign up, Log in)
+│   │   └── item_4  mega-card accent      Make the most of every dollar with Spruce
+│   ├── nav_panel_business                Business services
+│   │   ├── item_0  mega-primary          Small business taxes, Bookkeeping, Payroll, Business formation
+│   │   ├── item_1  mega-column           Small business taxes (Self-Employed, S/C corps, Partnerships)
+│   │   ├── item_2  mega-column           Form your business
+│   │   ├── item_3  mega-card green       File my business taxes
+│   │   └── item_4  mega-card cream       The Creator Suite
+│   └── nav_panel_tools                   Tools and resources
+│       ├── item_0  mega-explore          Visit the Resource Center
+│       ├── item_1  mega-primary          Tax calculator, checklist, W-4, refund, tax questions
+│       ├── item_2  mega-column           Tax articles
+│       ├── item_3  mega-column           Help center
+│       ├── item_4  mega-column           Our mobile apps
+│       ├── item_5  mega-card green       Estimate my taxes
+│       └── item_6  mega-card cream       Big Beautiful Bill tax changes
+├── section_tools
+│   └── nav_tools
+│       ├── item_0  nav-tool              Find an office
+│       ├── item_1  nav-tool              Search
+│       └── item_2  nav-signin            Sign in to MyBlock
+└── section_secondary
+    └── nav_secondary
+        ├── item_0  nav-secondary-explore Explore All Topics (+ topics dropdown)
+        ├── item_1  nav-secondary-link    Life Stages
+        ├── item_2  nav-secondary-link    Work
+        ├── item_3  nav-secondary-link    Taxes 101
+        ├── item_4  nav-secondary-link    Tax Breaks and Money
+        └── item_5  nav-secondary-link    What's New
 ```
+
+CRXDE annotated tree with every link: [packages/README.md](../packages/README.md)
+
+Build **4 sections** in this order:
 
 ### 2.1 Nav Brand
 
@@ -132,9 +157,9 @@ Add as **Section 4** of `/nav` (or a page-specific nav XF). Omit this section on
 
 ---
 
-## 3. Footer content tree (Universal Editor)
+## 3. Footer content tree (Universal Editor + CRXDE)
 
-Create or open the **Footer** page / XF that publishes to `/footer`.
+Page: **Footer** (`/content/NewHRBEds/footer` → EDS `/footer`).
 
 **Preferred:** add one **H&R Block Footer** section (auto styles: `site-footer` + `green-dark-theme`).
 
@@ -143,33 +168,35 @@ Create or open the **Footer** page / XF that publishes to `/footer`.
 Authors still insert **Footer Disclosures** as a sibling of **Footer Support** (EDS cannot nest blocks in UE). After decorate, the footer moves Disclosures **inside** `.footer-support-wrapper` so it sits above “Need support?” in the same support region.
 
 ```
-/footer
-└── H&R Block Footer   (or Section + site-footer + green-dark-theme)
-    ├── Footer Disclosures     ← authored as sibling; rendered inside Footer Support wrapper
-    │   ├── heading: Offer details and disclosures
-    │   ├── Disclosure Group — Full Site Disclaimers + links
-    │   └── Disclosure Notes — numbered offer footnotes
-    ├── Footer Support
-    │   ├── heading: Need support?
-    │   ├── Support Action — Customer help
-    │   ├── Support Action — Find an office
-    │   └── Support Action — Search
-    ├── Footer Links
-    │   ├── Footer Column — Tax Services + Small Business…
-    │   ├── Footer Column — Tax Tools + Legal…
-    │   ├── Footer Column — Financial Services + Resources…
-    │   └── Footer Column — About H&R Block…
-    ├── Footer Legal
-    │   ├── Legal / Copyright richtext
-    │   ├── Social Link — TikTok
-    │   ├── Social Link — Facebook
-    │   ├── Social Link — Instagram
-    │   ├── Social Link — YouTube
-    │   └── Social Link — X / LinkedIn
-    └── Footer Seals
-        ├── Footer Seal — TRUSTe (DAM image + link)
-        └── Footer Seal — Your Privacy Choices (link label only)
+footer / jcr:content / root
+└── section_footer                    model=hrblock-footer  style=[site-footer, green-dark-theme]
+    ├── footer_disclosures            model=footer-disclosures
+    │   ├── item_0  disclosure-group  Full Site Disclaimers
+    │   │                             File Online, Tax Software, Retail,
+    │   │                             Financial Services, Income Tax Course
+    │   └── item_1  disclosure-notes  1. Additional fees apply for tax expert support.
+    ├── footer_support                model=footer-support  Need support?
+    │   ├── item_0  support-action    Customer help
+    │   ├── item_1  support-action    Find an office
+    │   └── item_2  support-action    Search
+    ├── footer_links                  filter=footer-links
+    │   ├── item_0  footer-column     Tax Services + Small Business Services
+    │   ├── item_1  footer-column     Tax Tools + Legal
+    │   ├── item_2  footer-column     Financial Services + Resources
+    │   └── item_3  footer-column     About H&R Block
+    ├── footer_legal                  model=footer-legal
+    │   ├── item_0  social-link       TikTok
+    │   ├── item_1  social-link       Facebook
+    │   ├── item_2  social-link       Instagram
+    │   ├── item_3  social-link       YouTube
+    │   ├── item_4  social-link       X
+    │   └── item_5  social-link       LinkedIn
+    └── footer_seals                  filter=footer-seals
+        ├── item_0  footer-seal       TRUSTe Privacy Certification
+        └── item_1  footer-seal       Your Privacy Choices
 ```
+
+CRXDE annotated tree with every column link: [packages/README.md](../packages/README.md)
 
 ### 3.1 Footer Disclosures
 

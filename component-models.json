@@ -236,8 +236,8 @@
         "component": "richtext",
         "valueType": "string",
         "name": "links",
-        "label": "Disclaimer Links",
-        "description": "List of disclaimer / offer links"
+        "label": "Disclaimer notes",
+        "description": "Numbered list (ol) of legal notes for this accordion group — not navigation links"
       }
     ]
   },
@@ -250,7 +250,7 @@
         "name": "notes",
         "value": "<p>3. Additional fees apply for tax expert support.</p>",
         "label": "Notes / Footnotes",
-        "description": "Numbered offer notes shown beside the disclaimer links"
+        "description": "Optional extra notes group if not authored as a Disclosure Group"
       }
     ]
   },

@@ -23,9 +23,16 @@ export default function decorate(block) {
   anchor.textContent = '';
 
   if (img) {
-    const picture = createOptimizedPicture(img.src, img.alt || label, true, [{ width: '256' }]);
-    moveInstrumentation(img, picture.querySelector('img'));
-    anchor.append(picture);
+    const src = img.getAttribute('src') || '';
+    if (src.toLowerCase().includes('.svg')) {
+      img.alt = img.alt || label;
+      img.loading = 'eager';
+      anchor.append(img.closest('picture') || img);
+    } else {
+      const picture = createOptimizedPicture(img.src, img.alt || label, true, [{ width: '256' }]);
+      moveInstrumentation(img, picture.querySelector('img'));
+      anchor.append(picture);
+    }
   } else {
     anchor.textContent = label;
   }

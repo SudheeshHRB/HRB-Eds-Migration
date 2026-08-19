@@ -1,8 +1,7 @@
-/* Tax Center secondary / topic bar — sits under the primary header */
-
 .nav-secondary {
+  display: block;
   width: 100%;
-  background-color: var(--hrb-eggshell, #f6f4e9);
+  background-color: #fff;
   border-top: 1px solid var(--hrb-mega-border, #e8eef1);
 }
 
@@ -10,13 +9,14 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
+  padding: 0 25px;
   overflow-x: auto;
+  box-sizing: border-box;
 }
 
 @media (width >= 900px) {
   .nav-secondary .nav-secondary-inner {
-    padding: 0 16px;
+    padding: 0 24px;
     overflow: visible;
   }
 }
@@ -28,7 +28,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  min-height: 48px;
+  min-height: var(--nav-secondary-height, 48px);
   white-space: nowrap;
 }
 
@@ -43,8 +43,8 @@
   background: transparent;
   color: var(--hrb-primary-black, #262626);
   font-family: inherit;
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
@@ -53,6 +53,8 @@
 
 .nav-secondary .nav-secondary-explore-btn {
   font-weight: 600;
+  padding-left: 0;
+  color: var(--hrb-forest-green, #003512);
 }
 
 .nav-secondary .nav-secondary-link:hover,
@@ -106,8 +108,8 @@
   display: block;
   padding: 8px 20px;
   color: var(--hrb-primary-black, #262626);
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
 }
 

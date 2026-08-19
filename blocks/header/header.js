@@ -7,6 +7,7 @@ async function ensureNavStyles() {
   const base = window.hlx.codeBasePath || '';
   await Promise.all([
     loadCSS(`${base}/blocks/nav-brand/nav-brand.css`),
+    loadCSS(`${base}/blocks/nav-menu/nav-menu.css`),
     loadCSS(`${base}/blocks/nav-panel/nav-panel.css`),
     loadCSS(`${base}/blocks/nav-tools/nav-tools.css`),
     loadCSS(`${base}/blocks/nav-secondary/nav-secondary.css`),
@@ -237,10 +238,11 @@ export default async function decorate(block) {
 
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  /* Checklist: Brand | Mega menus | Tools | optional Secondary */
   const classes = ['brand', 'sections', 'tools', 'secondary'];
-  classes.forEach((c, i) => {
+  classes.forEach((name, i) => {
     const section = nav.children[i];
-    if (section) section.classList.add(`nav-${c}`);
+    if (section) section.classList.add(`nav-${name}`);
   });
 
   const navBrand = nav.querySelector('.nav-brand');
@@ -256,8 +258,6 @@ export default async function decorate(block) {
   assembleNavPanels(navSections);
   decorateNavDrops(navSections);
 
-  const navSecondary = nav.querySelector(':scope > .nav-secondary');
-
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
@@ -272,6 +272,20 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
-  if (navSecondary) navWrapper.append(navSecondary);
+
+  const secondaryBlock = nav.querySelector('.nav-secondary[data-block-name="nav-secondary"]')
+    || nav.querySelector('[data-block-name="nav-secondary"]')
+    || nav.querySelector('.nav-secondary.block');
+  if (secondaryBlock) {
+    const navSecondary = secondaryBlock.closest('.section')
+      || secondaryBlock.closest('.nav-secondary-wrapper')
+      || secondaryBlock;
+    navSecondary.style.removeProperty('display');
+    navSecondary.removeAttribute('hidden');
+    navSecondary.classList.add('nav-secondary');
+    navWrapper.classList.add('nav-secondary-container');
+    navWrapper.append(navSecondary);
+  }
+
   block.append(navWrapper);
 }

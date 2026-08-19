@@ -1,12 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
-/**
- * Use EDS image optimization for same-origin/DAM assets; keep external seals as-is.
- * @param {HTMLImageElement} img
- * @param {string} alt
- * @returns {Element}
- */
 function wrapSealImage(img, alt) {
   try {
     const url = new URL(img.src, window.location.href);
@@ -30,15 +24,15 @@ function wrapSealImage(img, alt) {
 }
 
 /**
- * Footer Seals — authorable certification seals and privacy links.
+ * Footer Seals — image seals and/or text privacy link (doc §3.5)
  * @param {Element} block
  */
 export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
 
-  const container = document.createElement('div');
-  container.className = 'seals-inner';
+  const inner = document.createElement('div');
+  inner.className = 'seals-inner';
 
   rows.forEach((row) => {
     const link = row.querySelector('a');
@@ -56,25 +50,23 @@ export default function decorate(block) {
       link.setAttribute('data-track', JSON.stringify({ loc: 'f', nm: trackName }));
 
       if (img) {
-        link.classList.add('seal-link');
+        link.className = 'seal-link';
         const alt = link.getAttribute('title') || img.alt || link.textContent.trim();
         link.textContent = '';
         link.append(wrapSealImage(img, alt));
         if (alt) link.setAttribute('aria-label', alt);
       } else {
-        link.classList.add('privacy-choices');
+        link.className = 'privacy-choices';
         const label = link.getAttribute('title') || link.textContent.trim();
         if (label) link.setAttribute('aria-label', label);
       }
-
       item.append(link);
     } else if (img) {
       item.append(wrapSealImage(img, img.alt));
     }
 
-    container.append(item);
+    inner.append(item);
   });
 
-  block.replaceChildren(container);
-  block.classList.add('seals-footer');
+  block.replaceChildren(inner);
 }

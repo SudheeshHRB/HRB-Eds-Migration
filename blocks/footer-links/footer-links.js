@@ -1,22 +1,22 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
- * Footer Links — authorable link columns (menus + links).
+ * Footer Links — authorable columns (doc §3.3)
  * @param {Element} block
  */
 export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
 
-  const container = document.createElement('div');
-  container.className = 'footer-links-inner';
+  const inner = document.createElement('div');
+  inner.className = 'footer-links-inner';
 
-  const columnContainer = document.createElement('div');
-  columnContainer.className = 'column-container';
+  const columns = document.createElement('div');
+  columns.className = 'footer-links-columns';
 
   rows.forEach((row) => {
     const columnEl = document.createElement('div');
-    columnEl.className = 'column';
+    columnEl.className = 'footer-links-column';
     moveInstrumentation(row, columnEl);
 
     const contentCell = row.querySelector(':scope > div') || row;
@@ -31,10 +31,9 @@ export default function decorate(block) {
       }
     });
 
-    columnContainer.append(columnEl);
+    columns.append(columnEl);
   });
 
-  container.append(columnContainer);
-  block.replaceChildren(container);
-  block.classList.add('links-footer');
+  inner.append(columns);
+  block.replaceChildren(inner);
 }

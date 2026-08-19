@@ -1,15 +1,7 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
- * @param {Element} row
- * @returns {boolean}
- */
-function isNotesRow(row) {
-  return Boolean(row.textContent.trim()) && !row.querySelector('ul');
-}
-
-/**
- * Footer Disclosures — always-visible accordion (no native details, which can fail to paint).
+ * Footer Disclosures — EDS accordion: heading, disclosure groups, notes.
  * @param {Element} block
  */
 export default function decorate(block) {
@@ -18,8 +10,8 @@ export default function decorate(block) {
     || rows.find((row) => !row.querySelector('a, ul') && row.textContent.trim());
   const contentRows = rows.filter((row) => row !== headingRow);
 
-  const root = document.createElement('div');
-  root.className = 'footer-disclosures-inner';
+  const inner = document.createElement('div');
+  inner.className = 'footer-disclosures-inner';
 
   const toggle = document.createElement('button');
   toggle.type = 'button';
@@ -29,16 +21,14 @@ export default function decorate(block) {
   let heading = headingRow?.querySelector('h1, h2, h3, h4, h5, h6');
   if (!heading) {
     heading = document.createElement('h2');
-    heading.textContent = (headingRow?.textContent || 'Offer details and disclosures').trim()
-      || 'Offer details and disclosures';
+    heading.textContent = (headingRow?.textContent || 'Offer details and disclosures').trim();
   }
   if (headingRow) moveInstrumentation(headingRow, heading);
   toggle.append(heading);
-  root.append(toggle);
+  inner.append(toggle);
 
   const body = document.createElement('div');
   body.className = 'footer-disclosures-body';
-  body.hidden = false;
 
   const groups = document.createElement('div');
   groups.className = 'footer-disclosures-groups';
@@ -48,7 +38,8 @@ export default function decorate(block) {
 
   contentRows.forEach((row) => {
     const list = row.querySelector('ul');
-    if (list && !isNotesRow(row)) {
+    const isNotes = Boolean(row.textContent.trim()) && !list;
+    if (list && !isNotes) {
       const group = document.createElement('div');
       group.className = 'disclosure-group';
       moveInstrumentation(row, group);
@@ -74,17 +65,9 @@ export default function decorate(block) {
     while (cell.firstChild) notes.append(cell.firstChild);
   });
 
-  notes.querySelectorAll('p').forEach((p) => {
-    if (p.querySelector('sup')) return;
-    const sup = document.createElement('sup');
-    sup.textContent = 'A';
-    p.insertBefore(sup, p.firstChild);
-    sup.after(document.createTextNode(' '));
-  });
-
   if (groups.children.length) body.append(groups);
   if (notes.childNodes.length) body.append(notes);
-  root.append(body);
+  inner.append(body);
 
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -92,6 +75,5 @@ export default function decorate(block) {
     body.hidden = expanded;
   });
 
-  block.replaceChildren(root);
-  block.classList.add('offer-disclosures');
+  block.replaceChildren(inner);
 }

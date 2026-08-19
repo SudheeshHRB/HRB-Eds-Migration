@@ -7,7 +7,17 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
  * @returns {Element}
  */
 function buildIcon(img, alt) {
-  const picture = createOptimizedPicture(img.src, alt || img.alt || '', false, [{ width: '48' }]);
+  const label = alt || img.alt || '';
+  try {
+    const url = new URL(img.src, window.location.href);
+    if (url.pathname.toLowerCase().endsWith('.svg')) {
+      img.alt = label;
+      return img.closest('picture') || img;
+    }
+  } catch {
+    // fall through
+  }
+  const picture = createOptimizedPicture(img.src, label, false, [{ width: '48' }]);
   moveInstrumentation(img, picture.querySelector('img'));
   return picture;
 }

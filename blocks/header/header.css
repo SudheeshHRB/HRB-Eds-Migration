@@ -1,27 +1,38 @@
 /* H&R Block header — aligned to AEM reimagine header.less */
 
 header .nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background-color: #fff;
   width: 100%;
   z-index: 100;
-  position: fixed;
+  position: relative;
   box-shadow: none;
 }
 
-header .nav-wrapper > .nav-secondary {
+header .nav-wrapper > .nav-secondary,
+header .nav-wrapper > .nav-secondary-wrapper,
+header .nav-wrapper > .section.nav-secondary {
   display: block;
+  order: 2;
+  flex: 0 0 auto;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-header .nav-wrapper > .nav-secondary > div {
+header .nav-wrapper > .nav-secondary > div,
+header .nav-wrapper > .nav-secondary-wrapper > div,
+header .nav-wrapper > .section.nav-secondary > div {
   max-width: none;
   margin: 0;
   padding: 0;
 }
 
 header nav {
+  order: 1;
+  width: 100%;
   box-sizing: border-box;
   display: grid;
   grid-template:
@@ -47,8 +58,12 @@ header nav[aria-expanded='true'] {
   align-items: start;
 }
 
-header nav[aria-expanded='true'] ~ .nav-secondary {
-  display: none;
+@media (width < 900px) {
+  header nav[aria-expanded='true'] ~ .nav-secondary,
+  header nav[aria-expanded='true'] ~ .nav-secondary-wrapper,
+  header nav[aria-expanded='true'] ~ .section.nav-secondary {
+    display: none;
+  }
 }
 
 @media (width >= 900px) {
@@ -56,17 +71,14 @@ header nav[aria-expanded='true'] ~ .nav-secondary {
     position: relative;
   }
 
-  header nav[aria-expanded='true'] ~ .nav-secondary {
-    display: block;
-  }
-
   header nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
     height: var(--nav-height);
-    padding: 8px 16px;
+    padding: 8px 24px;
   }
 
   header nav[aria-expanded='true'] {
@@ -221,7 +233,7 @@ header nav .nav-sections .nav-menu-list > li > a,
 header nav .nav-sections .default-content-wrapper > ul > li > a {
   position: relative;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 14px;
   line-height: 1.2;
   text-decoration: none;
   color: var(--hrb-forest-green, #003512);
@@ -251,12 +263,12 @@ header nav .nav-sections .nav-menu-link:focus {
     flex-direction: row;
     align-items: center;
     gap: 0;
-    margin: 0 8px;
+    margin: 0 4px;
   }
 
   header nav .nav-sections .nav-drop {
     position: static;
-    padding: 0 14px;
+    padding: 0 16px;
     cursor: pointer;
   }
 
@@ -350,6 +362,10 @@ header nav .nav-sections .nav-menu-link:focus {
     background: rgb(0 0 0 / 50%);
     z-index: 90;
     pointer-events: none;
+  }
+
+  body.nav-mega-open:has(.nav-secondary)::after {
+    top: calc(var(--nav-height) + var(--nav-secondary-height));
   }
 }
 

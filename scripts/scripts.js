@@ -46,6 +46,62 @@ export function moveInstrumentation(from, to) {
 }
 
 /**
+ * Normalize a content path for fragment-page comparisons.
+ * @param {string} path
+ * @returns {string}
+ */
+export function normalizeContentPath(path) {
+  try {
+    return new URL(path, window.location.href).pathname
+      .replace(/(\.plain)?\.html$/i, '')
+      .replace(/\/+$/, '') || '/';
+  } catch {
+    return '/';
+  }
+}
+
+/**
+ * True when the current page is the Header / nav fragment being authored.
+ * @returns {boolean}
+ */
+export function isHeaderAuthorPage() {
+  const name = normalizeContentPath(window.location.pathname).split('/').pop();
+  return name === 'nav' || name === 'header';
+}
+
+/**
+ * True when the current page is the Footer fragment being authored.
+ * @returns {boolean}
+ */
+export function isFooterAuthorPage() {
+  return normalizeContentPath(window.location.pathname).split('/').pop() === 'footer';
+}
+
+/**
+ * True when this document is the given fragment (avoids loading /nav or /footer into itself).
+ * @param {string} fragmentPath
+ * @returns {boolean}
+ */
+export function isCurrentFragmentPath(fragmentPath) {
+  return normalizeContentPath(window.location.pathname)
+    === normalizeContentPath(fragmentPath);
+}
+
+/**
+ * Universal Editor re-syncs authored item nodes onto the block. Rebuilding
+ * (replaceChildren / clones) leaves the decorated copy and UE appends the
+ * original items again underneath.
+ * @param {Element} block
+ * @returns {boolean}
+ */
+export function keepAuthoredDom(block) {
+  return Boolean(
+    block?.hasAttribute?.('data-aue-resource')
+    || block?.querySelector?.(':scope [data-aue-resource], :scope [data-richtext-prop]'),
+  );
+}
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
@@ -152,7 +208,12 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+  const headerEl = doc.querySelector('header');
+  if (headerEl && !isHeaderAuthorPage()) {
+    loadHeader(headerEl);
+  } else if (headerEl) {
+    headerEl.hidden = true;
+  }
 
   const main = doc.querySelector('main');
   await loadSections(main);
@@ -161,7 +222,12 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('footer'));
+  const footerEl = doc.querySelector('footer');
+  if (footerEl && !isFooterAuthorPage()) {
+    loadFooter(footerEl);
+  } else if (footerEl) {
+    footerEl.hidden = true;
+  }
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();

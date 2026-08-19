@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 function isSocialRow(row) {
   const img = row.querySelector('img');
@@ -45,6 +45,9 @@ function buildIconPicture(img, alt) {
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .footer-legal-inner')) return;
+  if (keepAuthoredDom(block)) return;
+
   const rows = [...block.children];
   if (!rows.length) return;
 

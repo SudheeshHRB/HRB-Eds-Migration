@@ -1,14 +1,25 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
  * Nav Brand — DAM logo + home link.
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .nav-brand-inner')) return;
+
   const link = block.querySelector('a');
   const img = block.querySelector('img');
   if (!link && !img) return;
+
+  if (keepAuthoredDom(block)) {
+    if (link) {
+      link.classList.add('nav-brand-link');
+      const label = (link.getAttribute('title') || link.textContent || img?.alt || 'Home').trim();
+      link.setAttribute('aria-label', label);
+    }
+    return;
+  }
 
   const brand = document.createElement('div');
   brand.className = 'nav-brand-inner';

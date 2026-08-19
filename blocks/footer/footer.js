@@ -1,4 +1,5 @@
 import { getMetadata, loadCSS } from '../../scripts/aem.js';
+import { isCurrentFragmentPath } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 async function ensureFooterStyles() {
@@ -53,6 +54,7 @@ function layoutFooter(block) {
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  if (isCurrentFragmentPath(footerPath)) return;
   const fragment = await loadFragment(footerPath);
 
   block.textContent = '';

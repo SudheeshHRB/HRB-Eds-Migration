@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 let topicPanelCount = 0;
 
@@ -56,6 +56,12 @@ function markCurrent(list) {
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .nav-secondary-inner')) return;
+  if (keepAuthoredDom(block)) {
+    block.querySelectorAll('a').forEach((link) => link.classList.add('nav-secondary-link'));
+    return;
+  }
+
   const rows = [...block.children];
   if (!rows.length) return;
 

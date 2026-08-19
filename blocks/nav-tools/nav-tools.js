@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
  * @param {HTMLImageElement} img
@@ -39,6 +39,14 @@ function getEyebrow(row, link) {
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .nav-tools-inner')) return;
+  if (keepAuthoredDom(block)) {
+    block.querySelectorAll('a').forEach((link) => {
+      if (!link.classList.contains('nav-signin')) link.classList.add('nav-tool-link');
+    });
+    return;
+  }
+
   const rows = [...block.children];
   if (!rows.length) return;
 

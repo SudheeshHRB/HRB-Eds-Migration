@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 const CARD_STYLES = new Set(['green', 'cream', 'accent']);
 
@@ -29,6 +29,13 @@ function plainTexts(row) {
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .nav-panel-inner')) return;
+  if (keepAuthoredDom(block)) {
+    const trigger = block.querySelector('a');
+    if (trigger) trigger.classList.add('nav-menu-link');
+    return;
+  }
+
   const rows = [...block.children];
   if (!rows.length) return;
 

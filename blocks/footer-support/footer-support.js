@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { keepAuthoredDom, moveInstrumentation } from '../../scripts/scripts.js';
 
 function wrapIconImage(img, alt, width = '48') {
   const label = alt || img.alt || '';
@@ -30,6 +30,9 @@ function wrapIconImage(img, alt, width = '48') {
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .footer-support-inner')) return;
+  if (keepAuthoredDom(block)) return;
+
   const rows = [...block.children];
   if (!rows.length) return;
 

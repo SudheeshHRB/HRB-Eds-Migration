@@ -3,23 +3,35 @@
   font-family: var(--hrb-font-family);
 }
 
+/* Authoring: keep UE item rows; still lay out as columns */
+.footer-links:not(:has(.footer-links-inner)) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 24px 24px 8px;
+  box-sizing: border-box;
+}
+
 .footer-links .footer-links-inner {
   padding: 24px 24px 8px;
 }
 
 @media (width >= 600px) {
+  .footer-links:not(:has(.footer-links-inner)),
   .footer-links .footer-links-inner {
     padding: 24px 40px 8px;
   }
 }
 
 @media (width >= 900px) {
+  .footer-links:not(:has(.footer-links-inner)),
   .footer-links .footer-links-inner {
     padding: 24px 32px 8px;
   }
 }
 
 @media (width >= 1200px) {
+  .footer-links:not(:has(.footer-links-inner)),
   .footer-links .footer-links-inner {
     padding: 24px 80px 8px;
   }

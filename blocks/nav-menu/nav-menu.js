@@ -1,9 +1,14 @@
+import { keepAuthoredDom } from '../../scripts/scripts.js';
+
 /**
  * Nav Menu — wraps nav-panel blocks into the top-level menu list.
  * Nested nav-panel blocks are decorated first by EDS; this organizes them.
  * @param {Element} block
  */
 export default function decorate(block) {
+  if (block.querySelector(':scope > .nav-menu-list')) return;
+  if (keepAuthoredDom(block)) return;
+
   const panels = [...block.querySelectorAll(':scope .nav-panel, :scope > div > .nav-panel')];
   // If panels are direct section siblings, header.js assembles them.
   // When nested under nav-menu, wrap here.

@@ -1,4 +1,5 @@
 import { getMetadata, loadCSS } from '../../scripts/aem.js';
+import { isCurrentFragmentPath } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -225,6 +226,7 @@ function decorateNavDrops(navSections) {
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  if (isCurrentFragmentPath(navPath)) return;
   const fragment = await loadFragment(navPath);
 
   block.textContent = '';

@@ -11,6 +11,19 @@ header .nav-wrapper {
   box-shadow: none;
 }
 
+/* Tier 1 — family brands (dark green bar) */
+header .nav-wrapper > .nav-family,
+header .nav-wrapper > .nav-family-wrapper,
+header .nav-wrapper > .section.nav-family {
+  display: block;
+  order: 0;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--hrb-forest-green, #003512);
+}
+
 header .nav-wrapper > .nav-secondary,
 header .nav-wrapper > .nav-secondary-wrapper,
 header .nav-wrapper > .section.nav-secondary {
@@ -22,8 +35,11 @@ header .nav-wrapper > .section.nav-secondary {
   padding: 0;
 }
 
+header .nav-wrapper > .nav-family > div,
+header .nav-wrapper > .nav-family-wrapper > div,
 header .nav-wrapper > .nav-secondary > div,
 header .nav-wrapper > .nav-secondary-wrapper > div,
+header .nav-wrapper > .section.nav-family > div,
 header .nav-wrapper > .section.nav-secondary > div {
   max-width: none;
   margin: 0;
@@ -364,8 +380,16 @@ header nav .nav-sections .nav-menu-link:focus {
     pointer-events: none;
   }
 
+  body.nav-mega-open:has(.nav-family)::after {
+    top: calc(var(--nav-height) + var(--nav-family-height));
+  }
+
   body.nav-mega-open:has(.nav-secondary)::after {
     top: calc(var(--nav-height) + var(--nav-secondary-height));
+  }
+
+  body.nav-mega-open:has(.nav-family):has(.nav-secondary)::after {
+    top: calc(var(--nav-height) + var(--nav-family-height) + var(--nav-secondary-height));
   }
 }
 

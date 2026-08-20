@@ -8,10 +8,12 @@ const FOOTER_BLOCKS = [
 ];
 
 const NAV_SEL = [
+  '.nav-family',
   '.nav-brand',
   '.nav-menu',
   '.nav-panel',
   '.nav-tools',
+  '[data-aue-model="nav-family"]',
   '[data-aue-model="nav-brand"]',
   '[data-aue-model="nav-menu"]',
   '[data-aue-model="nav-panel"]',

@@ -13,19 +13,21 @@ description: H&R Block primary navigation + mega menus for Edge Delivery Service
 
 ```
 /content/NewHRBEds/nav     (UE title: Header)
-├── Section 1 — Brand
+├── Section 1 — Family brands
+│   └── Nav Family — H&R Block / Block Advisors / Spruce
+├── Section 2 — Brand
 │   └── Nav Brand — DAM logo + home link
-├── Section 2 — Mega menus
+├── Section 3 — Mega menus
 │   └── Nav Panel × n (Taxes, Financial products, Business services, Tools…)
 │       ├── Mega Explore
 │       ├── Mega Primary Links
 │       ├── Mega Column × n
 │       └── Mega Card × n (style: green | cream | accent)
-├── Section 3 — Tools
+├── Section 4 — Tools
 │   └── Nav Tools
 │       ├── Nav Tool × n
 │       └── Nav Sign In
-└── Section 4 — Secondary
+└── Section 5 — Secondary
     └── Nav Secondary — Explore All Topics + topic links
 ```
 

@@ -483,6 +483,19 @@
     ]
   },
   {
+    "id": "header",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "value": "Header Section",
+        "label": "Section Name",
+        "valueType": "string",
+        "description": "Label shown in the Content Tree"
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
@@ -546,6 +559,64 @@
         "name": "linkTitle",
         "value": "H&R Block Home",
         "label": "Link Title"
+      }
+    ]
+  },
+  {
+    "id": "family-brand",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Brand Icon / Logo",
+        "multi": false,
+        "description": "Optional DAM image shown before the label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "Brand",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "value": "/",
+        "label": "Brand Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "H&R Block",
+        "label": "Brand Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "value": "H&R Block",
+        "label": "Link Title / Aria Label"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Active (white pill)",
+            "value": "active"
+          }
+        ]
       }
     ]
   },

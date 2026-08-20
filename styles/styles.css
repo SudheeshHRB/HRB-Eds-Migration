@@ -45,8 +45,9 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* Primary bar 64px; Tax Center topic bar 48px */
+  /* Primary bar 64px; family switcher 36px; Tax Center topic bar 48px */
   --nav-height: 64px;
+  --nav-family-height: 36px;
   --nav-secondary-height: 48px;
 }
 
@@ -100,9 +101,19 @@ header {
   overflow: visible;
 }
 
+header:has(.nav-family-list),
+header:has(.nav-family-container) {
+  min-height: calc(var(--nav-height) + var(--nav-family-height));
+}
+
 header:has(.nav-secondary-list),
 header:has(.nav-secondary-container) {
   min-height: calc(var(--nav-height) + var(--nav-secondary-height));
+}
+
+header:has(.nav-family-list):has(.nav-secondary-list),
+header:has(.nav-family-container):has(.nav-secondary-container) {
+  min-height: calc(var(--nav-height) + var(--nav-family-height) + var(--nav-secondary-height));
 }
 
 header .header,

@@ -58,18 +58,7 @@
         "hero",
         "cards",
         "columns",
-        "fragment",
-        "footer-support",
-        "footer-links",
-        "footer-legal",
-        "footer-seals",
-        "footer-disclosures",
-        "nav-family",
-        "nav-brand",
-        "nav-menu",
-        "nav-panel",
-        "nav-tools",
-        "nav-secondary"
+        "fragment"
       ]
     }
   ]

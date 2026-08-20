@@ -1,7 +1,7 @@
 .nav-secondary {
   display: block;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--hrb-eggshell, #f6f4e9);
   border-top: 1px solid var(--hrb-mega-border, #e8eef1);
 }
 

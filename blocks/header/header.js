@@ -7,6 +7,7 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
 async function ensureNavStyles() {
   const base = window.hlx.codeBasePath || '';
   await Promise.all([
+    loadCSS(`${base}/blocks/nav-family/nav-family.css`),
     loadCSS(`${base}/blocks/nav-brand/nav-brand.css`),
     loadCSS(`${base}/blocks/nav-menu/nav-menu.css`),
     loadCSS(`${base}/blocks/nav-panel/nav-panel.css`),
@@ -240,11 +241,19 @@ export default async function decorate(block) {
 
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  /* Checklist: Brand | Mega menus | Tools | optional Secondary */
-  const classes = ['brand', 'sections', 'tools', 'secondary'];
-  classes.forEach((name, i) => {
-    const section = nav.children[i];
-    if (section) section.classList.add(`nav-${name}`);
+  /* Classify by authored blocks so Family section can be optional */
+  [...nav.children].forEach((section) => {
+    if (section.querySelector('.nav-family, [data-block-name="nav-family"]')) {
+      section.classList.add('nav-family');
+    } else if (section.querySelector('.nav-brand, [data-block-name="nav-brand"]')) {
+      section.classList.add('nav-brand');
+    } else if (section.querySelector('.nav-panel, .nav-menu, [data-block-name="nav-panel"], [data-block-name="nav-menu"]')) {
+      section.classList.add('nav-sections');
+    } else if (section.querySelector('.nav-tools, [data-block-name="nav-tools"]')) {
+      section.classList.add('nav-tools');
+    } else if (section.querySelector('.nav-secondary, [data-block-name="nav-secondary"]')) {
+      section.classList.add('nav-secondary');
+    }
   });
 
   const navBrand = nav.querySelector('.nav-brand');
@@ -273,6 +282,21 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+
+  const familyBlock = nav.querySelector('.nav-family[data-block-name="nav-family"]')
+    || nav.querySelector('[data-block-name="nav-family"]')
+    || nav.querySelector('.nav-family.block');
+  if (familyBlock) {
+    const navFamily = familyBlock.closest('.section')
+      || familyBlock.closest('.nav-family-wrapper')
+      || familyBlock;
+    navFamily.style.removeProperty('display');
+    navFamily.removeAttribute('hidden');
+    navFamily.classList.add('nav-family');
+    navWrapper.classList.add('nav-family-container');
+    navWrapper.append(navFamily);
+  }
+
   navWrapper.append(nav);
 
   const secondaryBlock = nav.querySelector('.nav-secondary[data-block-name="nav-secondary"]')

@@ -208,8 +208,11 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  const onHeaderPage = isHeaderAuthorPage();
+  const onFooterPage = isFooterAuthorPage();
+
   const headerEl = doc.querySelector('header');
-  if (headerEl && !isHeaderAuthorPage()) {
+  if (headerEl && !onFooterPage) {
     loadHeader(headerEl);
   } else if (headerEl) {
     headerEl.hidden = true;
@@ -223,7 +226,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   const footerEl = doc.querySelector('footer');
-  if (footerEl && !isFooterAuthorPage()) {
+  if (footerEl && !onHeaderPage) {
     loadFooter(footerEl);
   } else if (footerEl) {
     footerEl.hidden = true;

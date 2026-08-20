@@ -58,13 +58,14 @@ export function decorateNestedFooterBlocks(root) {
 export default function applyFooterTheme(root) {
   if (!root) return;
 
-  root.querySelectorAll('[data-aue-model="hrblock-footer"]').forEach((el) => {
+  root.querySelectorAll('[data-aue-model="footer"], [data-aue-model="hrblock-footer"]').forEach((el) => {
     el.classList.add('section', 'site-footer', 'green-dark-theme');
     if (!el.dataset.sectionStatus) el.dataset.sectionStatus = 'initialized';
   });
 
   root.querySelectorAll('.section, [data-aue-model="section"]').forEach((section) => {
-    if (section.getAttribute('data-aue-model') === 'hrblock-footer') return;
+    const model = section.getAttribute('data-aue-model');
+    if (model === 'footer' || model === 'hrblock-footer') return;
     const hasFooter = section.querySelector(FOOTER_SEL);
     const hasNav = section.querySelector(NAV_SEL);
     const styled = section.classList.contains('site-footer')

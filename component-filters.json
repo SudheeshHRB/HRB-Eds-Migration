@@ -3,7 +3,7 @@
     "id": "main",
     "components": [
       "section",
-      "hrblock-footer"
+      "footer"
     ]
   },
   {
@@ -22,7 +22,6 @@
       "footer-legal",
       "footer-seals",
       "footer-disclosures",
-      "hrblock-footer",
       "nav-family",
       "nav-brand",
       "nav-menu",
@@ -94,7 +93,7 @@
     ]
   },
   {
-    "id": "hrblock-footer",
+    "id": "footer",
     "components": [
       "footer-disclosures",
       "footer-support",

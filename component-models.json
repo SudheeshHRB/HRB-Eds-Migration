@@ -439,6 +439,40 @@
     ]
   },
   {
+    "id": "footer",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "value": "Site Footer",
+        "label": "Section Name",
+        "valueType": "string",
+        "description": "Label shown in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "value": [
+          "site-footer",
+          "green-dark-theme"
+        ],
+        "label": "Style",
+        "valueType": "string",
+        "description": "Applies dark green footer theme. Keep both selected (editable).",
+        "options": [
+          {
+            "name": "Site Footer",
+            "value": "site-footer"
+          },
+          {
+            "name": "Green Dark Theme",
+            "value": "green-dark-theme"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -471,40 +505,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "hrblock-footer",
-    "fields": [
-      {
-        "component": "text",
-        "name": "name",
-        "value": "Site Footer",
-        "label": "Section Name",
-        "valueType": "string",
-        "description": "Label shown in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "value": [
-          "site-footer",
-          "green-dark-theme"
-        ],
-        "label": "Style",
-        "valueType": "string",
-        "description": "Applies dark green footer theme. Keep both selected (editable).",
-        "options": [
-          {
-            "name": "Site Footer",
-            "value": "site-footer"
-          },
-          {
-            "name": "Green Dark Theme",
-            "value": "green-dark-theme"
-          }
-        ]
       }
     ]
   },

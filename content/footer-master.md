@@ -13,7 +13,7 @@ description: H&R Block site footer — Experience Fragment for Edge Delivery Ser
 
 ```
 /content/NewHRBEds/footer     (UE title: Footer)
-└── H&R Block Footer   (site-footer + green-dark-theme)
+└── Footer   (site-footer + green-dark-theme)
     ├── Footer Disclosures — groups + notes
     ├── Footer Support — heading + Support Action items
     ├── Footer Links — Footer Column items (richtext menus)

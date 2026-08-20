@@ -497,6 +497,26 @@
           }
         },
         {
+          "title": "Footer",
+          "id": "footer",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "Site Footer",
+                  "model": "footer",
+                  "filter": "footer",
+                  "style": [
+                    "site-footer",
+                    "green-dark-theme"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {
@@ -521,26 +541,6 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "H&R Block Footer",
-          "id": "hrblock-footer",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "name": "Site Footer",
-                  "model": "hrblock-footer",
-                  "filter": "hrblock-footer",
-                  "style": [
-                    "site-footer",
-                    "green-dark-theme"
-                  ]
                 }
               }
             }

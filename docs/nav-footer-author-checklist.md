@@ -63,7 +63,7 @@ All labels, links, icons, and images below are authorable. Styling stays in code
 ## `/footer` (Footer)
 
 ### Structure
-1. Add **H&R Block Footer** section (styles: Site Footer + Green Dark Theme)  
+1. Add **Footer** section (styles: Site Footer + Green Dark Theme)  
    **or** normal Section with those two styles selected  
 2. Insert blocks in this order: **Footer Disclosures** → **Footer Support** → **Footer Links** → **Footer Legal** → **Footer Seals**  
 

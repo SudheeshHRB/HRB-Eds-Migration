@@ -36,7 +36,7 @@ flowchart TD
   sTools --> tools["Nav Tools"]
   sSub --> subnav["Nav Secondary"]
 
-  footerXf --> footSec["H and R Block Footer section"]
+  footerXf --> footSec["Footer section"]
   footSec --> support["Footer Support"]
   support --> disclosures["Footer Disclosures inside support wrapper"]
   footSec --> links["Footer Links"]
@@ -161,7 +161,7 @@ Add as **Section 4** of `/nav` (or a page-specific nav XF). Omit this section on
 
 Page: **Footer** (`/content/NewHRBEds/footer` → EDS `/footer`).
 
-**Preferred:** add one **H&R Block Footer** section (auto styles: `site-footer` + `green-dark-theme`).
+**Preferred:** add one **Footer** section (auto styles: `site-footer` + `green-dark-theme`).
 
 **Alternate:** use a normal Section and set Style → **Site Footer** + **Green Dark Theme**.
 
@@ -169,7 +169,7 @@ Authors still insert **Footer Disclosures** as a sibling of **Footer Support** (
 
 ```
 footer / jcr:content / root
-└── section_footer                    model=hrblock-footer  style=[site-footer, green-dark-theme]
+└── section_footer                    model=footer  style=[site-footer, green-dark-theme]
     ├── footer_disclosures            model=footer-disclosures
     │   ├── item_0  disclosure-group  Full Site Disclaimers
     │   │                             File Online, Tax Software, Retail,
@@ -200,7 +200,7 @@ CRXDE annotated tree with every column link: [packages/README.md](../packages/RE
 
 ### 3.1 Footer Disclosures
 
-Collapsible accordion for offer details. Place it **first** in the H&R Block Footer section (before Footer Support). The page then loads it **inside** `.footer-support-wrapper`, above the Need support? row.
+Collapsible accordion for offer details. Place it **first** in the Footer section (before Footer Support). The page then loads it **inside** `.footer-support-wrapper`, above the Need support? row.
 
 | Field / child | Author freedom |
 |---------------|----------------|
@@ -263,7 +263,7 @@ Authors control headings, link text, URLs, and how many menus sit in each column
 ### Footer
 
 1. Open `/footer` (or footer XF) in Universal Editor.  
-2. Add **H&R Block Footer** (or Section with Site Footer + Green Dark Theme).  
+2. Add **Footer** (or Section with Site Footer + Green Dark Theme).  
 3. Insert **Footer Disclosures** first → heading + Disclosure Group + Notes (optional). It will render inside the Footer Support wrapper.
 4. Insert **Footer Support** → heading + Support Actions.
 5. Insert **Footer Links** → Footer Columns with richtext menus.

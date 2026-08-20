@@ -16,7 +16,7 @@
       }
     },
     {
-      "title": "Family Brand",
+      "title": "Family Brand — H&R Block",
       "id": "family-brand",
       "plugins": {
         "xwalk": {
@@ -84,13 +84,13 @@
           "name": "image",
           "label": "Brand Icon / Logo",
           "multi": false,
-          "description": "Optional DAM image shown before the label"
+          "description": "Optional DAM image. Display size (height 18px) comes from nav-family.css — authors only pick the asset."
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "value": "Brand",
+          "value": "H&R Block",
           "label": "Icon Alt Text"
         },
         {
@@ -120,6 +120,7 @@
           "value": "",
           "label": "Style",
           "valueType": "string",
+          "description": "Active white-pill look is styled in nav-family.css (not content size).",
           "options": [
             {
               "name": "Default",

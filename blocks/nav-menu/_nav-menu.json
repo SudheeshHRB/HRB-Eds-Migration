@@ -21,7 +21,10 @@
     {
       "id": "nav-menu",
       "components": [
-        "nav-panel"
+        "nav-panel",
+        "nav-panel-financial",
+        "nav-panel-business",
+        "nav-panel-tools"
       ]
     }
   ]

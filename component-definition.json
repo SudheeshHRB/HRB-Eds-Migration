@@ -597,7 +597,7 @@
           }
         },
         {
-          "title": "Family Brand",
+          "title": "Family Brand — H&R Block",
           "id": "family-brand",
           "plugins": {
             "xwalk": {
@@ -670,7 +670,7 @@
           }
         },
         {
-          "title": "Nav Panel",
+          "title": "Nav Panel — Taxes",
           "id": "nav-panel",
           "plugins": {
             "xwalk": {
@@ -679,7 +679,67 @@
                 "template": {
                   "name": "Nav Panel",
                   "model": "nav-panel",
-                  "filter": "nav-panel"
+                  "filter": "nav-panel",
+                  "link": "/taxes/",
+                  "linkText": "Taxes",
+                  "linkTitle": "Taxes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Panel — Financial products",
+          "id": "nav-panel-financial",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Nav Panel",
+                  "model": "nav-panel",
+                  "filter": "nav-panel",
+                  "link": "/financial-services/",
+                  "linkText": "Financial products",
+                  "linkTitle": "Financial products"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Panel — Business services",
+          "id": "nav-panel-business",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Nav Panel",
+                  "model": "nav-panel",
+                  "filter": "nav-panel",
+                  "link": "/tax-offices/business-services/",
+                  "linkText": "Business services",
+                  "linkTitle": "Business services"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Panel — Tools and resources",
+          "id": "nav-panel-tools",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Nav Panel",
+                  "model": "nav-panel",
+                  "filter": "nav-panel",
+                  "link": "/tax-center/",
+                  "linkText": "Tools and resources",
+                  "linkTitle": "Tools and resources"
                 }
               }
             }
@@ -694,7 +754,10 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Explore",
-                  "model": "mega-explore"
+                  "model": "mega-explore",
+                  "link": "/taxes/",
+                  "linkText": "Explore taxes",
+                  "linkTitle": "Explore taxes"
                 }
               }
             }
@@ -709,7 +772,8 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Primary Links",
-                  "model": "mega-primary"
+                  "model": "mega-primary",
+                  "links": "<ul><li><a href=\"/online-tax-filing/\">File online</a></li><li><a href=\"/tax-offices/\">File with a pro</a></li><li><a href=\"/tax-software/\">Download software</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li></ul>"
                 }
               }
             }
@@ -724,7 +788,9 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Column",
-                  "model": "mega-column"
+                  "model": "mega-column",
+                  "heading": "More tax services",
+                  "links": "<ul><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look® Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind®</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield®</a></li><li><a href=\"/guarantees/\">Tax Notice Services</a></li><li><a href=\"/tax-offices/extended-tax-services/itin/\">ITIN application</a></li></ul>"
                 }
               }
             }
@@ -739,7 +805,13 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Mega Card",
-                  "model": "mega-card"
+                  "model": "mega-card",
+                  "imageAlt": "",
+                  "link": "/tax-center/",
+                  "linkText": "Tax Center",
+                  "linkTitle": "Tax Center",
+                  "description": "<p>Tax help, tips, tools, and answers for every situation.</p>",
+                  "classes": "cream"
                 }
               }
             }
@@ -781,7 +853,7 @@
           }
         },
         {
-          "title": "Nav Secondary Link",
+          "title": "Nav Secondary Link — Life Stages",
           "id": "nav-secondary-link",
           "plugins": {
             "xwalk": {
@@ -793,6 +865,78 @@
                   "link": "/tax-center/life-stages/",
                   "linkText": "Life Stages",
                   "linkTitle": "Life Stages"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Secondary Link — Work",
+          "id": "nav-secondary-link-work",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Nav Secondary Link",
+                  "model": "nav-secondary-link",
+                  "link": "/tax-center/work/",
+                  "linkText": "Work",
+                  "linkTitle": "Work"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Secondary Link — Taxes 101",
+          "id": "nav-secondary-link-taxes101",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Nav Secondary Link",
+                  "model": "nav-secondary-link",
+                  "link": "/tax-center/taxes-101/",
+                  "linkText": "Taxes 101",
+                  "linkTitle": "Taxes 101"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Secondary Link — Tax Breaks and Money",
+          "id": "nav-secondary-link-breaks",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Nav Secondary Link",
+                  "model": "nav-secondary-link",
+                  "link": "/tax-center/tax-breaks-and-money/",
+                  "linkText": "Tax Breaks and Money",
+                  "linkTitle": "Tax Breaks and Money"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Nav Secondary Link — What's New",
+          "id": "nav-secondary-link-whatsnew",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Nav Secondary Link",
+                  "model": "nav-secondary-link",
+                  "link": "/tax-center/whats-new/",
+                  "linkText": "What's New",
+                  "linkTitle": "What's New"
                 }
               }
             }
@@ -814,7 +958,7 @@
           }
         },
         {
-          "title": "Nav Tool",
+          "title": "Nav Tool — Find an office",
           "id": "nav-tool",
           "plugins": {
             "xwalk": {

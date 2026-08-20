@@ -104,6 +104,9 @@
       "nav-brand",
       "nav-menu",
       "nav-panel",
+      "nav-panel-financial",
+      "nav-panel-business",
+      "nav-panel-tools",
       "nav-tools",
       "nav-secondary",
       "text",
@@ -123,7 +126,10 @@
   {
     "id": "nav-menu",
     "components": [
-      "nav-panel"
+      "nav-panel",
+      "nav-panel-financial",
+      "nav-panel-business",
+      "nav-panel-tools"
     ]
   },
   {
@@ -139,7 +145,11 @@
     "id": "nav-secondary",
     "components": [
       "nav-secondary-explore",
-      "nav-secondary-link"
+      "nav-secondary-link",
+      "nav-secondary-link-work",
+      "nav-secondary-link-taxes101",
+      "nav-secondary-link-breaks",
+      "nav-secondary-link-whatsnew"
     ]
   },
   {

@@ -530,7 +530,7 @@
         "name": "image",
         "label": "Logo Image",
         "multi": false,
-        "description": "Select logo from DAM"
+        "description": "Select logo from DAM. Display size (height 40px, max-width 160px) comes from nav-brand.css."
       },
       {
         "component": "text",
@@ -571,13 +571,13 @@
         "name": "image",
         "label": "Brand Icon / Logo",
         "multi": false,
-        "description": "Optional DAM image shown before the label"
+        "description": "Optional DAM image. Display size (height 18px) comes from nav-family.css — authors only pick the asset."
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "value": "Brand",
+        "value": "H&R Block",
         "label": "Icon Alt Text"
       },
       {
@@ -607,6 +607,7 @@
         "value": "",
         "label": "Style",
         "valueType": "string",
+        "description": "Active white-pill look is styled in nav-family.css (not content size).",
         "options": [
           {
             "name": "Default",
@@ -626,19 +627,22 @@
       {
         "component": "aem-content",
         "name": "link",
+        "value": "/taxes/",
         "label": "Top Nav Link"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "Taxes",
         "label": "Top Nav Label",
-        "description": "e.g. Taxes, Financial products"
+        "description": "e.g. Taxes, Financial products, Business services, Tools and resources"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Taxes",
         "label": "Link Title"
       }
     ]
@@ -649,12 +653,14 @@
       {
         "component": "aem-content",
         "name": "link",
+        "value": "/taxes/",
         "label": "Explore Link"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "Explore taxes",
         "label": "Explore Label",
         "description": "e.g. Explore taxes"
       },
@@ -662,6 +668,7 @@
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Explore taxes",
         "label": "Link Title"
       }
     ]
@@ -673,8 +680,9 @@
         "component": "richtext",
         "valueType": "string",
         "name": "links",
+        "value": "<ul><li><a href=\"/online-tax-filing/\">File online</a></li><li><a href=\"/tax-offices/\">File with a pro</a></li><li><a href=\"/tax-software/\">Download software</a></li><li><a href=\"/tax-offices/business-services/small-business-tax/\">Small business taxes</a></li></ul>",
         "label": "Primary Links",
-        "description": "Bold primary links list (File online, Spruce, etc.)"
+        "description": "Bold primary links list. Edit freely in Universal Editor."
       }
     ]
   },
@@ -685,14 +693,16 @@
         "component": "text",
         "valueType": "string",
         "name": "heading",
+        "value": "More tax services",
         "label": "Column Heading"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "links",
+        "value": "<ul><li><a href=\"/tax-offices/extended-tax-services/past-taxes/\">Second Look® Review</a></li><li><a href=\"/tax-offices/tax-prep/extended-service/\">Peace of Mind®</a></li><li><a href=\"/tax-offices/product-services/tax-identity-shield/\">Tax Identity Shield®</a></li><li><a href=\"/guarantees/\">Tax Notice Services</a></li><li><a href=\"/tax-offices/extended-tax-services/itin/\">ITIN application</a></li></ul>",
         "label": "Column Links",
-        "description": "List of links for this column"
+        "description": "List of links for this column. Edit freely."
       }
     ]
   },
@@ -705,35 +715,40 @@
         "name": "image",
         "label": "Card Image",
         "multi": false,
-        "description": "Optional DAM image shown on the left of the card (Spruce debit card, people photos, etc.). Leave empty for text-only cards."
+        "description": "Optional DAM image. Rounded size (104×104, border-radius 8px) comes from nav-panel.css — authors only pick the asset."
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
+        "value": "",
         "label": "Image Alt Text"
       },
       {
         "component": "aem-content",
         "name": "link",
+        "value": "/tax-center/",
         "label": "Card Link"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkText",
+        "value": "Tax Center",
         "label": "Card Title"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "linkTitle",
+        "value": "Tax Center",
         "label": "Link Title"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "description",
+        "value": "<p>Tax help, tips, tools, and answers for every situation.</p>",
         "label": "Description / Disclaimer",
         "description": "Card body text. Add a second paragraph for disclaimer (e.g. Pathward FDIC) if needed."
       },
@@ -741,8 +756,9 @@
         "component": "select",
         "valueType": "string",
         "name": "classes",
+        "value": "cream",
         "label": "Card Style",
-        "description": "Visual style: green (dark), cream (eggshell), accent (eggshell + neon edge — Spruce)",
+        "description": "Visual style from nav-panel.css: green (dark), cream (eggshell), accent (eggshell + neon edge — Spruce)",
         "options": [
           {
             "name": "Green (dark)",
@@ -769,7 +785,7 @@
         "name": "image",
         "label": "Icon Image",
         "multi": false,
-        "description": "Grid / topics icon from DAM"
+        "description": "Optional DAM icon. Size (18×18) and style come from nav-secondary.css — authors only pick the asset."
       },
       {
         "component": "text",
@@ -803,8 +819,9 @@
         "component": "richtext",
         "valueType": "string",
         "name": "topics",
+        "value": "<ul><li><a href=\"/tax-center/life-stages/\">Life Stages</a></li><li><a href=\"/tax-center/work/\">Work</a></li><li><a href=\"/tax-center/taxes-101/\">Taxes 101</a></li><li><a href=\"/tax-center/tax-breaks-and-money/\">Tax Breaks and Money</a></li><li><a href=\"/tax-center/whats-new/\">What's New</a></li></ul>",
         "label": "All Topics List",
-        "description": "Optional dropdown of topic links"
+        "description": "Tax Center topic dropdown. Edit labels/URLs freely."
       }
     ]
   },
@@ -843,7 +860,7 @@
         "name": "image",
         "label": "Icon Image",
         "multi": false,
-        "description": "Select icon from DAM"
+        "description": "Select icon from DAM. Size (20×20) comes from nav-tools.css — authors only pick the asset."
       },
       {
         "component": "text",
@@ -884,7 +901,7 @@
         "name": "image",
         "label": "Icon Image",
         "multi": false,
-        "description": "Select icon from DAM"
+        "description": "Select icon from DAM. Icon size (18×18) and circular/pill button (border-radius 80px) come from nav-tools.css."
       },
       {
         "component": "text",

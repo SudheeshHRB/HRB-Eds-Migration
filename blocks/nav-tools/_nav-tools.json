@@ -16,7 +16,7 @@
       }
     },
     {
-      "title": "Nav Tool",
+      "title": "Nav Tool — Find an office",
       "id": "nav-tool",
       "plugins": {
         "xwalk": {
@@ -84,7 +84,7 @@
           "name": "image",
           "label": "Icon Image",
           "multi": false,
-          "description": "Select icon from DAM"
+          "description": "Select icon from DAM. Size (20×20) comes from nav-tools.css — authors only pick the asset."
         },
         {
           "component": "text",
@@ -125,7 +125,7 @@
           "name": "image",
           "label": "Icon Image",
           "multi": false,
-          "description": "Select icon from DAM"
+          "description": "Select icon from DAM. Icon size (18×18) and circular/pill button (border-radius 80px) come from nav-tools.css."
         },
         {
           "component": "text",

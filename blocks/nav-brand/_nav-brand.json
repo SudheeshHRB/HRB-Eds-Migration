@@ -30,7 +30,7 @@
           "name": "image",
           "label": "Logo Image",
           "multi": false,
-          "description": "Select logo from DAM"
+          "description": "Select logo from DAM. Display size (height 40px, max-width 160px) comes from nav-brand.css."
         },
         {
           "component": "text",

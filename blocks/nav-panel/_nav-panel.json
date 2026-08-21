@@ -279,7 +279,7 @@
           "name": "description",
           "value": "<p>Tax help, tips, tools, and answers for every situation.</p>",
           "label": "Description / Disclaimer",
-          "description": "Card body text. Add a second paragraph for disclaimer (e.g. Pathward FDIC) if needed."
+          "description": "Card body text. Add a second paragraph for disclaimer (e.g. Pathward FDIC) if needed. Layout matches AEM PromoCard (left media / right CTA + bodycopy)."
         },
         {
           "component": "select",

@@ -7,7 +7,8 @@ description: H&R Block primary navigation + mega menus for Edge Delivery Service
 
 **Live reference:** https://www.hrblock.com/  
 **Delivery path:** `/nav` (loaded by the auto `header` block)  
-**Authoring guide:** [docs/nav-footer-universal-editor.md](../docs/nav-footer-universal-editor.md)
+**Authoring guide:** [docs/header-footer-authoring-guide.md](../docs/header-footer-authoring-guide.md)  
+**UE overview:** [docs/nav-footer-universal-editor.md](../docs/nav-footer-universal-editor.md)
 
 ## Content tree (author in Universal Editor)
 

@@ -77,7 +77,7 @@ export default function decorate(block) {
     const img = row.querySelector('img');
     const texts = plainTexts(row);
 
-    // Promo card: style from text cell / row class, or infer from image presence
+    // Promo card (mirrors AEM promocard: left media + right CTA/bodycopy)
     const classStyle = [...row.classList].find((c) => CARD_STYLES.has(c.toLowerCase()));
     const style = texts.find((t) => CARD_STYLES.has(t.toLowerCase())) || classStyle;
     const isCard = Boolean(link && !list && (style || img));
@@ -92,49 +92,68 @@ export default function decorate(block) {
         : texts.filter((t) => t.toLowerCase() !== cardStyle
           && t !== link.textContent.trim());
 
-      const card = document.createElement('a');
-      card.href = link.href;
-      card.className = `mega-card mega-card-${cardStyle}`;
-      if (!img) card.classList.add('mega-card-text');
-      else card.classList.add('mega-card-media');
-      card.setAttribute(
-        'aria-label',
-        (link.getAttribute('title') || link.textContent || '').trim(),
-      );
-      if (link.target) card.target = link.target;
+      // Structure aligned to promocard.html:
+      // .mega-card (= .promocard-body) > .mega-card-left + .mega-card-right
+      //   .mega-card-right > .mega-card-cta + .mega-card-bodycopy
+      const card = document.createElement('div');
+      card.className = `mega-card mega-card-${cardStyle} ${img ? 'height-200' : 'height-140'}`;
       moveInstrumentation(row, card);
 
       if (img) {
-        // Keep SVG / external placeholders as authored; optimize DAM rasters
+        const left = document.createElement('div');
+        // show-large = AEM hideImgMobile: image hidden below 992px (hrb-utility.less)
+        left.className = 'mega-card-left show-large';
         try {
           const url = new URL(img.src, window.location.href);
           const isSvg = url.pathname.toLowerCase().endsWith('.svg');
+          let media;
           if (url.origin === window.location.origin && !isSvg) {
-            card.append(pictureFrom(img, img.alt || link.textContent.trim()));
+            media = pictureFrom(img, img.alt || link.textContent.trim());
           } else {
             const picture = img.closest('picture');
             img.alt = img.alt || link.textContent.trim();
             img.loading = 'lazy';
-            card.append(picture || img);
+            media = picture || img;
           }
+          const mediaEl = media.querySelector?.('img') || (media.tagName === 'IMG' ? media : null);
+          if (mediaEl) mediaEl.classList.add('mega-card-image');
+          else if (media.classList) media.classList.add('mega-card-image');
+          left.append(media);
         } catch {
-          card.append(img);
+          img.classList.add('mega-card-image');
+          left.append(img);
         }
+        card.append(left);
       }
 
-      const body = document.createElement('div');
-      body.className = 'mega-card-body';
-      const title = document.createElement('p');
-      title.className = 'mega-card-title';
-      title.textContent = link.textContent.trim();
-      body.append(title);
+      const right = document.createElement('div');
+      right.className = 'mega-card-right';
+
+      const cta = document.createElement('div');
+      cta.className = 'mega-card-cta';
+      const ctaLink = document.createElement('a');
+      ctaLink.href = link.href;
+      ctaLink.className = 'mega-card-title';
+      ctaLink.textContent = link.textContent.trim();
+      ctaLink.setAttribute(
+        'aria-label',
+        (link.getAttribute('title') || link.textContent || '').trim(),
+      );
+      if (link.target) ctaLink.target = link.target;
+      cta.append(ctaLink);
+      right.append(cta);
+
       if (description) {
+        const bodycopy = document.createElement('div');
+        bodycopy.className = 'mega-card-bodycopy';
         const desc = document.createElement('p');
         desc.className = 'mega-card-desc';
         desc.textContent = description;
-        body.append(desc);
+        bodycopy.append(desc);
+        right.append(bodycopy);
       }
-      card.append(body);
+
+      card.append(right);
 
       const wrap = document.createElement('div');
       wrap.className = 'mega-card-wrap';

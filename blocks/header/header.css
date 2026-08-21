@@ -344,15 +344,30 @@ header nav .nav-sections .nav-menu-link:focus {
 
   header nav .nav-sections .nav-drop[aria-expanded='true'] > .mega-menu {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     align-items: flex-start;
     justify-content: flex-start;
   }
+
+  /* Full desktop: cards stay on RIGHT */
+  header nav .nav-sections .nav-drop[aria-expanded='true'] > .mega-menu > .mega-cards {
+    margin-left: auto;
+  }
 }
 
-@media (width >= 900px) and (width <= 1360px) {
+@media (width >= 900px) and (width < 1360px) {
   header nav .nav-sections .mega-menu {
     padding: 32px 24px 40px;
+  }
+
+  /* Mid viewport: not enough room — cards wrap BELOW columns (come down) */
+  header nav .nav-sections .nav-drop[aria-expanded='true'] > .mega-menu > .mega-cards {
+    flex: 1 0 100%;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    order: 3;
   }
 }
 

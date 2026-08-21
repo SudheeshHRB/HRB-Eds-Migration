@@ -110,4 +110,5 @@ On any page metadata:
 ## Not authorable (code / brand system)
 Colors, spacing, mega hover behavior, footer theme layout — do not change in UE.
 
-For full field details see [nav-footer-universal-editor.md](./nav-footer-universal-editor.md).
+For full field details see [nav-footer-universal-editor.md](./nav-footer-universal-editor.md).  
+For **div-by-div content + Tax Center defaults** see [header-footer-authoring-guide.md](./header-footer-authoring-guide.md).

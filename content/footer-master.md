@@ -7,7 +7,8 @@ description: H&R Block site footer — Experience Fragment for Edge Delivery Ser
 
 **Live reference:** https://www.hrblock.com/  
 **Delivery path:** `/footer` (loaded by the auto `footer` block)  
-**Authoring guide:** [docs/nav-footer-universal-editor.md](../docs/nav-footer-universal-editor.md)
+**Authoring guide:** [docs/header-footer-authoring-guide.md](../docs/header-footer-authoring-guide.md)  
+**UE overview:** [docs/nav-footer-universal-editor.md](../docs/nav-footer-universal-editor.md)
 
 ## Content tree (author in Universal Editor)
 
